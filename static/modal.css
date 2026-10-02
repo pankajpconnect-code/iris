@@ -1,0 +1,8 @@
+.iris-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;
+  align-items:center;justify-content:center;z-index:100}
+.iris-modal-box{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  width:360px;max-width:92vw;padding:16px;display:flex;flex-direction:column;gap:10px}
+.iris-modal-message{font-size:13px;color:var(--txt)}
+.iris-modal-input{background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:7px 9px;font-size:13px}
+.iris-modal-actions{display:flex;justify-content:flex-end;gap:8px}

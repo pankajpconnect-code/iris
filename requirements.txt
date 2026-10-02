@@ -1,0 +1,4 @@
+requests>=2.32,<3
+pywebview>=6.2,<7
+pyobjc-framework-Cocoa; sys_platform == 'darwin'
+pyobjc-framework-WebKit; sys_platform == 'darwin'

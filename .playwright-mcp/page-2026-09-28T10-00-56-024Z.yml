@@ -1,0 +1,456 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - button "Console" [ref=f1e4] [cursor=pointer]
+      - button "Runner" [ref=f1e5] [cursor=pointer]
+    - generic [ref=f1e6]: no collection
+    - combobox "Active environment" [ref=f1e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "test"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f1e8] [cursor=pointer]
+    - generic [ref=f1e9]: "auth: —"
+    - button "⚙ Settings" [ref=f1e10] [cursor=pointer]
+    - button "☽" [ref=f1e11] [cursor=pointer]
+  - generic [ref=f1e12]:
+    - complementary [ref=f1e13]:
+      - generic [ref=f1e14]:
+        - button "+ New ▾" [ref=f1e16] [cursor=pointer]
+        - button "↑ Import" [ref=f1e17] [cursor=pointer]
+        - button "↓ Export" [ref=f1e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f1e20]
+      - generic [ref=f1e69]:
+        - generic [ref=f1e70] [cursor=pointer]:
+          - generic [ref=f1e71]:
+            - generic "Expand/collapse" [ref=f1e72]: ▾
+            - text: Lending
+          - generic [ref=f1e73]:
+            - button "+" [ref=f1e74]
+            - generic [ref=f1e75]: "95"
+        - generic [ref=f1e76]:
+          - generic [ref=f1e77] [cursor=pointer]:
+            - generic [ref=f1e78]: GET
+            - generic [ref=f1e79]: GET all Modified Loan Accounts Copy Copy
+            - button "⧉" [ref=f1e80]
+          - generic [ref=f1e81] [cursor=pointer]:
+            - generic [ref=f1e82]: POST
+            - generic [ref=f1e83]: Fee Accrual
+            - button "⧉" [ref=f1e84]
+          - generic [ref=f1e85] [cursor=pointer]:
+            - generic [ref=f1e86]: POST
+            - generic [ref=f1e87]: Fee Accrual Copy
+            - button "⧉" [ref=f1e88]
+          - generic [ref=f1e89] [cursor=pointer]:
+            - generic [ref=f1e90]: POST
+            - generic [ref=f1e91]: Fee Accrual on Account Closure
+            - button "⧉" [ref=f1e92]
+          - generic [ref=f1e93] [cursor=pointer]:
+            - generic [ref=f1e94]: POST
+            - generic [ref=f1e95]: Prepayment
+            - button "⧉" [ref=f1e96]
+          - generic [ref=f1e97] [cursor=pointer]:
+            - generic [ref=f1e98]: POST
+            - generic [ref=f1e99]: Customer Creation
+            - button "⧉" [ref=f1e100]
+          - generic [ref=f1e101] [cursor=pointer]:
+            - generic [ref=f1e102]: GET
+            - generic [ref=f1e103]: Fee Accrual (2)
+            - button "⧉" [ref=f1e104]
+          - generic [ref=f1e105] [cursor=pointer]:
+            - generic [ref=f1e106]: GET
+            - generic [ref=f1e107]: Loan Statement Details
+            - button "⧉" [ref=f1e108]
+          - generic [ref=f1e109] [cursor=pointer]:
+            - generic [ref=f1e110]: PUT
+            - generic [ref=f1e111]: Edit Loan Account
+            - button "⧉" [ref=f1e112]
+          - generic [ref=f1e113] [cursor=pointer]:
+            - generic [ref=f1e114]: POST
+            - generic [ref=f1e115]: Create Loan Account
+            - button "⧉" [ref=f1e116]
+          - generic [ref=f1e117] [cursor=pointer]:
+            - generic [ref=f1e118]: POST
+            - generic [ref=f1e119]: disburse loan
+            - button "⧉" [ref=f1e120]
+          - generic [ref=f1e121] [cursor=pointer]:
+            - generic [ref=f1e122]: POST
+            - generic [ref=f1e123]: Restructure
+            - button "⧉" [ref=f1e124]
+          - generic [ref=f1e125] [cursor=pointer]:
+            - generic [ref=f1e126]: PUT
+            - generic [ref=f1e127]: Defer Fee
+            - button "⧉" [ref=f1e128]
+          - generic [ref=f1e129] [cursor=pointer]:
+            - generic [ref=f1e130]: GET
+            - generic [ref=f1e131]: GET Loan Account
+            - button "⧉" [ref=f1e132]
+          - generic [ref=f1e133] [cursor=pointer]:
+            - generic [ref=f1e134]: POST
+            - generic [ref=f1e135]: Loan Statement
+            - button "⧉" [ref=f1e136]
+          - generic [ref=f1e137] [cursor=pointer]:
+            - generic [ref=f1e138]: GET
+            - generic [ref=f1e139]: GET Loan Product
+            - button "⧉" [ref=f1e140]
+          - generic [ref=f1e141] [cursor=pointer]:
+            - generic [ref=f1e142]: PUT
+            - generic [ref=f1e143]: Savings Account Bulk Linking
+            - button "⧉" [ref=f1e144]
+          - generic [ref=f1e145] [cursor=pointer]:
+            - generic [ref=f1e146]: PUT
+            - generic [ref=f1e147]: Periodic Fee Application
+            - button "⧉" [ref=f1e148]
+          - generic [ref=f1e149] [cursor=pointer]:
+            - generic [ref=f1e150]: POST
+            - generic [ref=f1e151]: Deferred Demand Batch
+            - button "⧉" [ref=f1e152]
+          - generic [ref=f1e153] [cursor=pointer]:
+            - generic [ref=f1e154]: DEL
+            - generic [ref=f1e155]: Perodic fee Application Copy
+            - button "⧉" [ref=f1e156]
+          - generic [ref=f1e157] [cursor=pointer]:
+            - generic [ref=f1e158]: POST
+            - generic [ref=f1e159]: Channe;l Set Up
+            - button "⧉" [ref=f1e160]
+          - generic [ref=f1e161] [cursor=pointer]:
+            - generic [ref=f1e162]: POST
+            - generic [ref=f1e163]: Roll Up
+            - button "⧉" [ref=f1e164]
+          - generic [ref=f1e165] [cursor=pointer]:
+            - generic [ref=f1e166]: POST
+            - generic [ref=f1e167]: Savings Account Bulk Linking (2)
+            - button "⧉" [ref=f1e168]
+          - generic [ref=f1e169] [cursor=pointer]:
+            - generic [ref=f1e170]: PUT
+            - generic [ref=f1e171]: Update PD LGD values
+            - button "⧉" [ref=f1e172]
+          - generic [ref=f1e173] [cursor=pointer]:
+            - generic [ref=f1e174]: GET
+            - generic [ref=f1e175]: Update cache
+            - button "⧉" [ref=f1e176]
+          - generic [ref=f1e177] [cursor=pointer]:
+            - generic [ref=f1e178]: GET
+            - generic [ref=f1e179]: Update cache Copy
+            - button "⧉" [ref=f1e180]
+          - generic [ref=f1e181] [cursor=pointer]:
+            - generic [ref=f1e182]: GET
+            - generic [ref=f1e183]: Consistency
+            - button "⧉" [ref=f1e184]
+          - generic [ref=f1e185] [cursor=pointer]:
+            - generic [ref=f1e186]: GET
+            - generic [ref=f1e187]: Consistency Copy
+            - button "⧉" [ref=f1e188]
+          - generic [ref=f1e189] [cursor=pointer]:
+            - generic [ref=f1e190]: POST
+            - generic [ref=f1e191]: Rate Reset
+            - button "⧉" [ref=f1e192]
+          - generic [ref=f1e193] [cursor=pointer]:
+            - generic [ref=f1e194]: PUT
+            - generic [ref=f1e195]: Undo Event
+            - button "⧉" [ref=f1e196]
+          - generic [ref=f1e197] [cursor=pointer]:
+            - generic [ref=f1e198]: POST
+            - generic [ref=f1e199]: Interest Accrual
+            - button "⧉" [ref=f1e200]
+          - generic [ref=f1e201] [cursor=pointer]:
+            - generic [ref=f1e202]: POST
+            - generic [ref=f1e203]: Preview Schedule
+            - button "⧉" [ref=f1e204]
+          - generic [ref=f1e205] [cursor=pointer]:
+            - generic [ref=f1e206]: POST
+            - generic [ref=f1e207]: Restructure (2)
+            - button "⧉" [ref=f1e208]
+          - generic [ref=f1e209] [cursor=pointer]:
+            - generic [ref=f1e210]: POST
+            - generic [ref=f1e211]: Preview Restructure
+            - button "⧉" [ref=f1e212]
+          - generic [ref=f1e213] [cursor=pointer]:
+            - generic [ref=f1e214]: POST
+            - generic [ref=f1e215]: Adhoc Fee Capitalization
+            - button "⧉" [ref=f1e216]
+          - generic [ref=f1e217] [cursor=pointer]:
+            - generic [ref=f1e218]: PUT
+            - generic [ref=f1e219]: Feature toggle
+            - button "⧉" [ref=f1e220]
+          - generic [ref=f1e221] [cursor=pointer]:
+            - generic [ref=f1e222]: POST
+            - generic [ref=f1e223]: Add Events
+            - button "⧉" [ref=f1e224]
+          - generic [ref=f1e225] [cursor=pointer]:
+            - generic [ref=f1e226]: GET
+            - generic [ref=f1e227]: Progressive Search
+            - button "⧉" [ref=f1e228]
+          - generic [ref=f1e229] [cursor=pointer]:
+            - generic [ref=f1e230]: POST
+            - generic [ref=f1e231]: Schedule correction PROD
+            - button "⧉" [ref=f1e232]
+          - generic [ref=f1e233] [cursor=pointer]:
+            - generic [ref=f1e234]: POST
+            - generic [ref=f1e235]: Schedule correction Copy
+            - button "⧉" [ref=f1e236]
+          - generic [ref=f1e237] [cursor=pointer]:
+            - generic [ref=f1e238]: POST
+            - generic [ref=f1e239]: Batch end point
+            - button "⧉" [ref=f1e240]
+          - generic [ref=f1e241] [cursor=pointer]:
+            - generic [ref=f1e242]: POST
+            - generic [ref=f1e243]: On Demand Batch Job Run
+            - button "⧉" [ref=f1e244]
+          - generic [ref=f1e245] [cursor=pointer]:
+            - generic [ref=f1e246]: POST
+            - generic [ref=f1e247]: On Demand Batch Job Run Copy
+            - button "⧉" [ref=f1e248]
+          - generic [ref=f1e249] [cursor=pointer]:
+            - generic [ref=f1e250]: POST
+            - generic [ref=f1e251]: On Demand Batch Job Run From Batch
+            - button "⧉" [ref=f1e252]
+          - generic [ref=f1e253] [cursor=pointer]:
+            - generic [ref=f1e254]: POST
+            - generic [ref=f1e255]: On Demand Batch Job Run From Batch Copy
+            - button "⧉" [ref=f1e256]
+          - generic [ref=f1e257] [cursor=pointer]:
+            - generic [ref=f1e258]: GET
+            - generic [ref=f1e259]: Fetch CA by CA Id
+            - button "⧉" [ref=f1e260]
+          - generic [ref=f1e261] [cursor=pointer]:
+            - generic [ref=f1e262]: POST
+            - generic [ref=f1e263]: Rates Insertion
+            - button "⧉" [ref=f1e264]
+          - generic [ref=f1e265] [cursor=pointer]:
+            - generic [ref=f1e266]: POST
+            - generic [ref=f1e267]: Repayment Schedule
+            - button "⧉" [ref=f1e268]
+          - generic [ref=f1e269] [cursor=pointer]:
+            - generic [ref=f1e270]: GET
+            - generic [ref=f1e271]: Consolidated Statement
+            - button "⧉" [ref=f1e272]
+          - generic [ref=f1e273] [cursor=pointer]:
+            - generic [ref=f1e274]: PUT
+            - generic [ref=f1e275]: Defer Fee (2)
+            - button "⧉" [ref=f1e276]
+          - generic [ref=f1e277] [cursor=pointer]:
+            - generic [ref=f1e278]: POST
+            - generic [ref=f1e279]: Create Term Child Loan Account
+            - button "⧉" [ref=f1e280]
+          - generic [ref=f1e281] [cursor=pointer]:
+            - generic [ref=f1e282]: POST
+            - generic [ref=f1e283]: Create Term Child Loan Account - SONIA
+            - button "⧉" [ref=f1e284]
+          - generic [ref=f1e285] [cursor=pointer]:
+            - generic [ref=f1e286]: POST
+            - generic [ref=f1e287]: Create RCF Child Loan Account
+            - button "⧉" [ref=f1e288]
+          - generic [ref=f1e289] [cursor=pointer]:
+            - generic [ref=f1e290]: POST
+            - generic [ref=f1e291]: Create Loan Account - Playground
+            - button "⧉" [ref=f1e292]
+          - generic [ref=f1e293] [cursor=pointer]:
+            - generic [ref=f1e294]: POST
+            - generic [ref=f1e295]: Create Facility Testground
+            - button "⧉" [ref=f1e296]
+          - generic [ref=f1e297] [cursor=pointer]:
+            - generic [ref=f1e298]: POST
+            - generic [ref=f1e299]: Create Child Testground - IO
+            - button "⧉" [ref=f1e300]
+          - generic [ref=f1e301] [cursor=pointer]:
+            - generic [ref=f1e302]: POST
+            - generic [ref=f1e303]: Create Child Testground - IR
+            - button "⧉" [ref=f1e304]
+          - generic [ref=f1e305] [cursor=pointer]:
+            - generic [ref=f1e306]: POST
+            - generic [ref=f1e307]: Create Child Testground - IPP
+            - button "⧉" [ref=f1e308]
+          - generic [ref=f1e309] [cursor=pointer]:
+            - generic [ref=f1e310]: POST
+            - generic [ref=f1e311]: Create Facility Playground
+            - button "⧉" [ref=f1e312]
+          - generic [ref=f1e313] [cursor=pointer]:
+            - generic [ref=f1e314]: POST
+            - generic [ref=f1e315]: Create Term Child Loan Account - SONIA Copy
+            - button "⧉" [ref=f1e316]
+          - generic [ref=f1e317] [cursor=pointer]:
+            - generic [ref=f1e318]: POST
+            - generic [ref=f1e319]: Create Facility Playground Copy
+            - button "⧉" [ref=f1e320]
+          - generic [ref=f1e321] [cursor=pointer]:
+            - generic [ref=f1e322]: POST
+            - generic [ref=f1e323]: LBT
+            - button "⧉" [ref=f1e324]
+          - generic [ref=f1e325] [cursor=pointer]:
+            - generic [ref=f1e326]: POST
+            - generic [ref=f1e327]: Combined Batch
+            - button "⧉" [ref=f1e328]
+          - generic [ref=f1e329] [cursor=pointer]:
+            - generic [ref=f1e330]: PUT
+            - generic [ref=f1e331]: Queue Config
+            - button "⧉" [ref=f1e332]
+          - generic [ref=f1e333] [cursor=pointer]:
+            - generic [ref=f1e334]: GET
+            - generic [ref=f1e335]: Statement
+            - button "⧉" [ref=f1e336]
+          - generic [ref=f1e337] [cursor=pointer]:
+            - generic [ref=f1e338]: POST
+            - generic [ref=f1e339]: Account Reposting
+            - button "⧉" [ref=f1e340]
+          - generic [ref=f1e341] [cursor=pointer]:
+            - generic [ref=f1e342]: POST
+            - generic [ref=f1e343]: Create LF Workaround Term Parent
+            - button "⧉" [ref=f1e344]
+          - generic [ref=f1e345] [cursor=pointer]:
+            - generic [ref=f1e346]: POST
+            - generic [ref=f1e347]: Create LF Workaround Term Testground
+            - button "⧉" [ref=f1e348]
+          - generic [ref=f1e349] [cursor=pointer]:
+            - generic [ref=f1e350]: POST
+            - generic [ref=f1e351]: Create LF Workaround Term Child
+            - button "⧉" [ref=f1e352]
+          - generic [ref=f1e353] [cursor=pointer]:
+            - generic [ref=f1e354]: POST
+            - generic [ref=f1e355]: Create LF Workaround Testground child
+            - button "⧉" [ref=f1e356]
+          - generic [ref=f1e357] [cursor=pointer]:
+            - generic [ref=f1e358]: POST
+            - generic [ref=f1e359]: Create CA Testground
+            - button "⧉" [ref=f1e360]
+          - generic [ref=f1e361] [cursor=pointer]:
+            - generic [ref=f1e362]: POST
+            - generic [ref=f1e363]: Interpolated rate insertion
+            - button "⧉" [ref=f1e364]
+          - generic [ref=f1e365] [cursor=pointer]:
+            - generic [ref=f1e366]: GET
+            - generic [ref=f1e367]: SI Migration Consistency IANP
+            - button "⧉" [ref=f1e368]
+          - generic [ref=f1e369] [cursor=pointer]:
+            - generic [ref=f1e370]: GET
+            - generic [ref=f1e371]: SI Migration Consistency New Interest
+            - button "⧉" [ref=f1e372]
+          - generic [ref=f1e373] [cursor=pointer]:
+            - generic [ref=f1e374]: POST
+            - generic [ref=f1e375]: SI Migration - UAT
+            - button "⧉" [ref=f1e376]
+          - generic [ref=f1e377] [cursor=pointer]:
+            - generic [ref=f1e378]: POST
+            - generic [ref=f1e379]: SI - Fee force accrual
+            - button "⧉" [ref=f1e380]
+          - generic [ref=f1e381] [cursor=pointer]:
+            - generic [ref=f1e382]: POST
+            - generic [ref=f1e383]: Consolidated statement
+            - button "⧉" [ref=f1e384]
+          - generic [ref=f1e385] [cursor=pointer]:
+            - generic [ref=f1e386]: POST
+            - generic [ref=f1e387]: Sequential Statement
+            - button "⧉" [ref=f1e388]
+          - generic [ref=f1e389] [cursor=pointer]:
+            - generic [ref=f1e390]: GET
+            - generic [ref=f1e391]: Sequential Statement Copy
+            - button "⧉" [ref=f1e392]
+          - generic [ref=f1e393] [cursor=pointer]:
+            - generic [ref=f1e394]: GET
+            - generic [ref=f1e395]: Loan Warning
+            - button "⧉" [ref=f1e396]
+          - generic [ref=f1e397] [cursor=pointer]:
+            - generic [ref=f1e398]: POST
+            - generic [ref=f1e399]: Syndication
+            - button "⧉" [ref=f1e400]
+          - generic [ref=f1e401] [cursor=pointer]:
+            - generic [ref=f1e402]: POST
+            - generic [ref=f1e403]: Loan Transfer Filter
+            - button "⧉" [ref=f1e404]
+          - generic [ref=f1e405] [cursor=pointer]:
+            - generic [ref=f1e406]: POST
+            - generic [ref=f1e407]: ca-repayment-settlement-dev Copy
+            - button "⧉" [ref=f1e408]
+          - generic [ref=f1e409] [cursor=pointer]:
+            - generic [ref=f1e410]: POST
+            - generic [ref=f1e411]: Repayment Settlement
+            - button "⧉" [ref=f1e412]
+          - generic [ref=f1e413] [cursor=pointer]:
+            - generic [ref=f1e414]: GET
+            - generic [ref=f1e415]: Eligible Loans Snapshot
+            - button "⧉" [ref=f1e416]
+          - generic [ref=f1e417] [cursor=pointer]:
+            - generic [ref=f1e418]: POST
+            - generic [ref=f1e419]: Snapshot for a particular Loan
+            - button "⧉" [ref=f1e420]
+          - generic [ref=f1e421] [cursor=pointer]:
+            - generic [ref=f1e422]: GET
+            - generic [ref=f1e423]: Loan Get \
+            - button "⧉" [ref=f1e424]
+          - generic [ref=f1e425] [cursor=pointer]:
+            - generic [ref=f1e426]: GET
+            - generic [ref=f1e427]: Get eligible Snapshot
+            - button "⧉" [ref=f1e428]
+          - generic [ref=f1e429] [cursor=pointer]:
+            - generic [ref=f1e430]: PUT
+            - generic [ref=f1e431]: BB Company Id
+            - button "⧉" [ref=f1e432]
+          - generic [ref=f1e433] [cursor=pointer]:
+            - generic [ref=f1e434]: POST
+            - generic [ref=f1e435]: Repayment Settlement Surplus
+            - button "⧉" [ref=f1e436]
+          - generic [ref=f1e437] [cursor=pointer]:
+            - generic [ref=f1e438]: PUT
+            - generic [ref=f1e439]: AppproveDisb
+            - button "⧉" [ref=f1e440]
+          - generic [ref=f1e441] [cursor=pointer]:
+            - generic [ref=f1e442]: POST
+            - generic [ref=f1e443]: AppproveDisb Copy
+            - button "⧉" [ref=f1e444]
+          - generic [ref=f1e445] [cursor=pointer]:
+            - generic [ref=f1e446]: POST
+            - generic [ref=f1e447]: AppproveDisb Copy 2
+            - button "⧉" [ref=f1e448]
+          - generic [ref=f1e449] [cursor=pointer]:
+            - generic [ref=f1e450]: POST
+            - generic [ref=f1e451]: Token Generation-Dev
+            - button "⧉" [ref=f1e452]
+          - generic [ref=f1e453] [cursor=pointer]:
+            - generic [ref=f1e454]: GET
+            - generic [ref=f1e455]: GET all Modified Loan Accounts Copy Copy copy
+            - button "⧉" [ref=f1e456]
+    - generic [ref=f1e24]:
+      - generic [ref=f1e25]:
+        - combobox [ref=f1e26]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f1e28]
+        - button "Duplicate" [ref=f1e29] [cursor=pointer]
+        - button "Save" [ref=f1e30] [cursor=pointer]
+        - button "Send" [ref=f1e31] [cursor=pointer]
+      - generic [ref=f1e32]:
+        - generic [ref=f1e33] [cursor=pointer]: Body
+        - generic [ref=f1e34] [cursor=pointer]: Params
+        - generic [ref=f1e36] [cursor=pointer]: Headers
+        - generic [ref=f1e38] [cursor=pointer]: Vars
+        - generic [ref=f1e40] [cursor=pointer]: Tests
+        - generic [ref=f1e42] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f1e43]
+      - generic [ref=f1e45]:
+        - generic [ref=f1e46]:
+          - generic [ref=f1e47]: Body
+          - combobox "Body" [ref=f1e48]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f1e49]:
+          - generic [ref=f1e50]:
+            - button "✦ Beautify" [ref=f1e51] [cursor=pointer]
+            - button "Find" [ref=f1e52] [cursor=pointer]
+            - button "Wrap" [ref=f1e53] [cursor=pointer]
+            - button "Full Screen" [ref=f1e54] [cursor=pointer]
+          - generic [ref=f1e55]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f1e56]
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]: —
+        - generic [ref=f1e63]:
+          - generic [ref=f1e64] [cursor=pointer]: Body
+          - generic [ref=f1e65] [cursor=pointer]: Headers
+          - generic [ref=f1e66] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f1e67]
+  - text: locked

@@ -1,0 +1,15 @@
+.settings-modal-box{position:fixed;right:14px;width:440px;max-height:calc(100vh - 24px);overflow-y:auto}
+.settings-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.settings-section{border-top:1px solid var(--line);padding-top:10px;margin-top:10px;
+  display:flex;flex-direction:column;gap:8px}
+.settings-section:first-child{border-top:none;padding-top:0;margin-top:0}
+.settings-section-title{font-size:12px;font-weight:600;color:var(--txt)}
+.settings-field{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--txt)}
+.settings-field input,.settings-field textarea{background:var(--panel2);border:1px solid var(--line);
+  color:var(--txt);border-radius:6px;padding:7px 9px;font-size:13px;font-family:inherit}
+.settings-radio-group{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--txt)}
+.settings-proxy-custom-fields{display:flex;flex-direction:column;gap:8px}
+.settings-proxy-custom-fields.hidden{display:none}
+.settings-checkbox-field{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--txt)}
+.settings-field-error{color:#e5484d;font-size:12px}
+.settings-field-error.hidden{display:none}

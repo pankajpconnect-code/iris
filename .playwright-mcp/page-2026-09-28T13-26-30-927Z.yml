@@ -1,0 +1,89 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - button "Console" [ref=e4] [cursor=pointer]
+      - button "Runner" [ref=e5] [cursor=pointer]
+    - generic [ref=e6]: zzz-nested-folders-verify-delete-me
+    - combobox "Active environment" [ref=e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "test"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=e8] [cursor=pointer]
+    - generic [ref=e9]: "auth: none"
+    - button "⚙ Settings" [ref=e10] [cursor=pointer]
+    - button "☽" [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - complementary [ref=e13]:
+      - generic [ref=e14]:
+        - button "+ New ▾" [ref=e16] [cursor=pointer]
+        - button "↑ Import" [ref=e17] [cursor=pointer]
+        - button "↓ Export" [ref=e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e2419] [cursor=pointer]:
+          - generic [ref=e2420]:
+            - generic "Expand/collapse" [ref=e2421]: ▾
+            - text: Lending
+          - generic [ref=e2422]:
+            - button "+" [ref=e2423]
+            - generic [ref=e2424]: "95"
+        - generic [ref=e2425]:
+          - generic [ref=e2426] [cursor=pointer]:
+            - generic [ref=e2427]:
+              - generic "Expand/collapse" [ref=e2428]: ▾
+              - text: zzz-nested-folders-verify-delete-me
+            - generic [ref=e2429]:
+              - button "+" [ref=e2430]
+              - generic [ref=e2431]: "1"
+          - generic [ref=e2434] [cursor=pointer]:
+            - generic [ref=e2435]:
+              - generic "Expand/collapse" [ref=e2436]: ▾
+              - text: Parent
+            - generic [ref=e2437]:
+              - button "+" [ref=e2438]
+              - generic [ref=e2439]: "0"
+    - generic [ref=e411]:
+      - generic [ref=e2341] [cursor=pointer]:
+        - generic [ref=e2342]: GET
+        - generic [ref=e2343]: Deep Request
+        - generic "Close" [ref=e2344]: ×
+      - generic [ref=e412]:
+        - combobox [ref=e413]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - generic [ref=e414]:
+          - generic: http://localhost/fake-endpoint-not-sent
+          - textbox "Enter request URL" [ref=e415]: http://localhost/fake-endpoint-not-sent
+        - button "Duplicate" [ref=e416] [cursor=pointer]
+        - button "Save" [ref=e417] [cursor=pointer]
+        - button "Send" [ref=e418] [cursor=pointer]
+      - generic [ref=e419]:
+        - generic [ref=e420] [cursor=pointer]: Body
+        - generic [ref=e421] [cursor=pointer]: Params
+        - generic [ref=e423] [cursor=pointer]: Headers
+        - generic [ref=e425] [cursor=pointer]: Vars
+        - generic [ref=e427] [cursor=pointer]: Tests
+        - generic [ref=e429] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=e430]
+      - generic [ref=e432]:
+        - generic [ref=e433]:
+          - generic [ref=e434]: Body
+          - combobox "Body" [ref=e435]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=e436]:
+          - generic [ref=e437]:
+            - button "✦ Beautify" [ref=e438] [cursor=pointer]
+            - button "Find" [ref=e439] [cursor=pointer]
+            - button "Wrap" [ref=e440] [cursor=pointer]
+            - button "Full Screen" [ref=e441] [cursor=pointer]
+          - generic [ref=e442]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=e443]
+  - text: locked

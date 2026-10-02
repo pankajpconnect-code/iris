@@ -1,0 +1,196 @@
+.view-switch{display:flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px}
+.view-btn{background:none;border:0;padding:5px 12px;border-radius:5px}
+.view-btn.active{background:var(--panel2);color:var(--accent)}
+
+/* Regrouped into two rows — "what to run" (scope/env/CSV/output) above
+   "how to run it" (iteration count, parallelism, execution options,
+   actions) — instead of one 13-control flat row where setup, execution
+   tuning and actions were indistinguishable at a glance. Everything in the
+   second row stays inline and visible; nothing here is edge-case enough to
+   bury behind a disclosure (write-captures-back already self-hides until a
+   CSV is attached). */
+.runner-setup{display:flex;flex-direction:column;gap:8px;padding:12px;border-bottom:1px solid var(--line)}
+.runner-setup-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.runner-setup-actions{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.runner-parallel-input{width:52px}
+.runner-setup-sep{display:flex;align-items:center;gap:8px}
+.runner-setup select{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:7px 9px;font-size:12.5px}
+.runner-setup .meta{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Same low-contrast problem as the table headers (var(--dim) reads as
+   near-invisible on this background) — "Iterations:", "Run in parallel:"
+   and the two checkbox labels were easy to miss entirely at a glance. */
+.runner-setup .check-row{font-size:12.5px;color:var(--txt);font-weight:600;display:flex;align-items:center;gap:6px}
+.runner-iterations{width:96px;background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:7px 9px;font-size:12.5px}
+.runner-scope-input{width:280px;background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:7px 9px;font-size:12.5px}
+.runner-resp{height:auto;flex:1}
+
+/* Scope picker can list 100+ requests across collections — the shared
+   autocomplete dropdown (autocomplete.css) has no cap on other callers
+   (max 8 rows there), so scope this override to avoid affecting them. */
+/* Two classes, not one, so this reliably beats .var-autocomplete's own
+   overflow:hidden (autocomplete.css loads after runner.css, and the
+   shorthand there would otherwise win the overflow-y sub-property back). */
+.var-autocomplete.runner-scope-dropdown{max-height:400px;overflow-y:auto;padding:4px 0}
+.runner-scope-dropdown .var-autocomplete-name{color:var(--txt)}
+.runner-scope-dropdown .var-autocomplete-value{color:var(--accent)}
+.runner-scope-dropdown-section-label{color:var(--dim);font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.5px;padding:8px 10px 4px}
+.runner-scope-dropdown-section-label-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.runner-scope-dropdown-bulk-actions{display:flex;gap:4px;flex:0 0 auto}
+.runner-scope-dropdown-bulk-actions .icon-btn{background:none;border:1px solid var(--line);border-radius:4px;
+  color:var(--dim);cursor:pointer;font-size:10.5px;padding:2px 6px;text-transform:none;letter-spacing:0}
+.runner-scope-dropdown-bulk-actions .icon-btn:hover{color:var(--txt);border-color:var(--accent)}
+.runner-scope-dropdown-check-row{padding:4px 10px !important;gap:8px}
+.runner-scope-dropdown-check-row .meta{margin-left:auto;color:var(--accent);font-size:11px}
+.runner-scope-dropdown-check-row:hover{background:var(--bg)}
+
+.panel-section{border-bottom:1px solid var(--line);max-height:280px;display:flex;flex-direction:column}
+.panel-section-head{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line)}
+.panel-section-head .icon-btn{margin-left:auto;background:none;border:0;color:var(--dim);cursor:pointer}
+.panel-section-head .icon-btn:hover{color:var(--fail)}
+.panel-section .pad{overflow:auto}
+
+.runner-history-item{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.runner-history-item:hover{background:var(--panel2)}
+.runner-history-item .meta{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.runner-preview-step{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.runner-preview-step:last-child{border-bottom:0}
+.unresolved-var{color:var(--flag);background:rgba(224,168,0,.13);border-radius:4px;padding:0 3px}
+
+.digest-group{display:flex;gap:8px;font-size:11.5px}
+
+#runnerFailuresOnlyRow{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dim);margin-bottom:8px}
+
+.runner-scope-check-row{display:flex;align-items:center;gap:8px;padding:4px 0 4px 4px;border-radius:6px;font-size:12.5px}
+.runner-scope-check-row .mono{color:var(--dim)}
+.runner-scope-check-row.sel{background:var(--sel);box-shadow:inset 2.5px 0 0 var(--accent)}
+#runnerScopeChecklist .panel-section-head .icon-btn{margin-left:0;padding:2px 8px;border:1px solid var(--line);border-radius:5px}
+#runnerScopeChecklist .panel-section-head .icon-btn:last-child{margin-left:6px}
+.runner-scope-checklist-search{width:100%;box-sizing:border-box;background:var(--panel);border:1px solid var(--line);
+  color:var(--txt);border-radius:6px;padding:6px 9px;font-size:12px;margin-bottom:8px}
+
+/* ── §5.4 redesign: command row / filter row / two-pane body / status line ── */
+
+/* var(--dim) here read as near-invisible against --bg for anything meant to
+   be read at a glance, not just discovered on hover — the same low-contrast
+   problem the table headers and Iterations/Parallel labels already hit once
+   (see runner-setup .check-row above). Ghost only means "no border/fill at
+   rest", not "secondary text". */
+.btn.ghost{background:none;border-color:transparent;box-shadow:none;color:var(--txt)}
+.btn.ghost:hover{background:var(--panel2);color:var(--txt);border-color:transparent}
+.btn.ghost.on{color:var(--accent);background:var(--panel2)}
+.btn.xs{padding:3px 9px;font-size:11.5px;border-radius:5px}
+.spacer{flex:1}
+
+/* No overflow:hidden here — it would clip the Options popover, which is
+   absolutely positioned inside this row. The media queries below are what
+   keep the row on one line; they retire items in a stated order instead. */
+.runner-cmd{display:flex;align-items:center;gap:9px;padding:11px 14px;flex:0 0 auto;
+  border-bottom:1px solid var(--line);flex-wrap:nowrap}
+/* Same principle as the status line below: one line, items retire in a
+   stated order as width shrinks. Run configuration and Run/Stop never retire. */
+@media (max-width:1320px){ .runner-cmd .csv{display:none} }
+@media (max-width:1150px){ .runner-cmd .fld small{display:none} }
+.runner-cmd .csv{color:var(--dim);font-size:12px;min-width:0;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+/* var(--txt), not var(--dim) — same fix as .runner-setup .check-row above:
+   these labels must be readable at a glance, not just on hover. */
+.fld{display:flex;align-items:center;gap:6px;flex:0 0 auto;font-size:12.5px;color:var(--txt);font-weight:600}
+.fld input{width:62px;text-align:right}
+/* Locks Reset-captures-each-iteration on while Parallel > 1 (backend hard
+   rule, §8.8 — parallel iterations sharing one mutable capture dict would
+   race). var(--flag) + a visible label, not just a dim glyph relying on a
+   hover tooltip nobody will find. */
+.lock{color:var(--flag);font-size:13px;cursor:help;font-weight:600}
+.lock::after{content:" locked"}
+
+.pop-wrap{position:relative;flex:0 0 auto}
+.pop{position:absolute;top:calc(100% + 7px);right:0;z-index:40;width:300px;
+  background:var(--panel);border:1px solid var(--line2);border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);padding:6px}
+:root[data-theme="light"] .pop{box-shadow:0 10px 30px rgba(16,24,40,.12)}
+.pop h4{margin:0;padding:9px 10px 5px;font-size:10.5px;font-weight:650;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.55px}
+.opt{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:7px;font-size:12.5px}
+.opt:hover{background:var(--panel2)}
+.opt .lb{flex:1;min-width:0}
+.opt .lb small{display:block;color:var(--dim);font-size:11px;line-height:1.35}
+.opt input[type="number"]{width:74px;text-align:right}
+.opt input[type="checkbox"]{width:15px;height:15px;accent-color:var(--accent)}
+.opt.wide{flex-direction:column;align-items:stretch;gap:6px}
+.opt.wide .fp{display:flex;gap:7px;align-items:center}
+.opt.wide .fp .path{flex:1;min-width:0;font-family:var(--mono);font-size:11px;color:var(--dim);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge{background:var(--sel);color:var(--accent);border-radius:5px;padding:1px 6px;
+  font-size:11px;margin-left:6px}
+
+.runner-filter-bar{display:flex;align-items:center;gap:9px;padding:9px 14px;flex:0 0 auto;
+  font-size:12.5px;color:var(--dim);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.runner-filter-bar input[type="text"]{width:200px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--flag-bg);color:var(--flag);
+  border-radius:7px;padding:4px 10px;font-size:11.5px}
+
+.runner-body{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.2fr;gap:12px;padding:0 14px 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
+.runner-list-card{overflow:auto;padding:6px;position:relative}
+
+.row{display:flex;gap:12px;padding:9px 11px;border-radius:8px;cursor:pointer;align-items:flex-start}
+.row:hover{background:var(--panel2)}
+.row.sel{background:var(--sel);box-shadow:inset 2.5px 0 0 var(--accent)}
+.pill{flex:0 0 auto;min-width:42px;text-align:center;border-radius:6px;padding:2px 6px;
+  font-family:var(--mono);font-size:11px;font-weight:600;margin-top:1px}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.fail{background:var(--fail-bg);color:var(--fail)}
+.pill.flag{background:var(--flag-bg);color:var(--flag)}
+.pill.err{background:var(--err-bg);color:var(--dim)}
+.row .bd{flex:1;min-width:0}
+.row .l1{display:flex;align-items:baseline;gap:9px}
+.row .nm{font-size:13px;font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .tm{margin-left:auto;flex:0 0 auto;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.row .l2{font-size:12px;color:var(--dim);margin-top:2px;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.row .l2 .w{color:var(--dim)}
+/* Live per-attempt evidence rows (one per real retry) — visually
+   subordinate to the authoritative result row that follows them, not
+   another equally-weighted result. */
+.row-attempt{opacity:.6;cursor:default;padding-top:5px;padding-bottom:5px}
+.row-attempt .nm{font-weight:400;font-size:12px}
+.none{color:var(--dim);font-size:13px;padding:38px 16px;text-align:center}
+
+/* Compact density (§5.4): one line per row (~24 visible vs ~12) — collapse
+   the two-line layout into one flex line via `order`, not a second render
+   path (list().) so filtering/selection logic never has to know which mode
+   is active. */
+body.runner-compact .row{padding:5px 11px;align-items:baseline}
+body.runner-compact .row .l1{display:contents}
+body.runner-compact .row .nm{width:100px;flex:0 0 auto}
+body.runner-compact .row .tm{order:9;margin-left:auto;padding-left:10px}
+body.runner-compact .row .bd{display:flex;gap:10px;align-items:baseline}
+body.runner-compact .row .l2{margin-top:0;flex:1;min-width:0;-webkit-line-clamp:1;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+
+.runner-resp-card .rh{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.runner-resp-card .mth{font-size:10px;font-weight:750;letter-spacing:.5px;color:var(--flag);flex:0 0 auto}
+.runner-resp-card .u{font-size:12.5px;color:var(--code-txt);flex:1 1 auto;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.runner-resp-card .meta{flex:0 0 auto}
+.runner-resp-card .pad{padding-top:8px}
+#runnerRowDetailBody.none{padding:16px 4px;text-align:left}
+
+.runner-stat{display:flex;align-items:center;gap:12px;padding:8px 14px;flex:0 0 auto;
+  font-size:12px;color:var(--dim);flex-wrap:nowrap;overflow:hidden;white-space:nowrap;border-top:1px solid var(--line)}
+.runner-stat>*{flex:0 0 auto}
+/* Retire in order of value below ~1100px: never the run state or counts. */
+@media (max-width:1100px){ #runnerSelectedEcho{display:none} }
+/* A determinate progress meter, not a chart — the one place a bar earns its
+   place, because "how far through" has no useful text equivalent (§5.4). */
+.prog{display:inline-block;vertical-align:middle;width:120px;height:5px;border-radius:3px;
+  background:var(--panel2);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.retry{background:var(--fail-bg);color:var(--fail);border:0;border-radius:6px;cursor:pointer}
+.retry:hover{filter:brightness(1.1)}

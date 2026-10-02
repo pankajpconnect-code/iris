@@ -1,0 +1,63 @@
+#!/bin/bash
+# Iris launcher. A shell script rather than a Mach-O binary needs no ad-hoc
+# code signature on arm64 (there's no signing identity for this build — see
+# README.md "Known limitations" > "Unsigned"). A Finder-launched .app
+# inherits only /usr/bin:/bin:/usr/sbin:/sbin, not the user's shell PATH —
+# this script never trusts $PATH's python3 and instead
+# probes the same explicit candidate list desktop_runtime.find_python() uses
+# for every later Python-level lookup, so both stay in agreement.
+set -euo pipefail
+
+# This app bundle lives inside the project root's Iris.app/, so the
+# project root is three levels up from Contents/MacOS.
+APP_MACOS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$APP_MACOS_DIR/../../.." && pwd)"
+VENV_DIR="$PROJECT_ROOT/.venv"
+LOG_FILE="$PROJECT_ROOT/iris-bootstrap.log"
+
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG_FILE"; }
+
+fail() {
+  log "FATAL: $*"
+  osascript -e "display alert \"Iris failed to start\" message \"$*\" as critical" || true
+  exit 1
+}
+
+find_system_python() {
+  local candidates=(
+    "/opt/homebrew/bin/python3"
+    "/usr/local/bin/python3"
+  )
+  # Glob Python.framework installs (may not exist; nullglob-style guard below).
+  for fw in /Library/Frameworks/Python.framework/Versions/*/bin/python3; do
+    [ -x "$fw" ] && candidates+=("$fw")
+  done
+  for candidate in "${candidates[@]}"; do
+    if [ -x "$candidate" ]; then
+      local version
+      version="$("$candidate" -c 'import sys; print("%d.%d" % sys.version_info[:2])' 2>/dev/null || echo "0.0")"
+      local major="${version%%.*}"
+      local minor="${version##*.}"
+      if [ "$major" -ge 3 ] && [ "$minor" -ge 11 ]; then
+        echo "$candidate"
+        return 0
+      fi
+    fi
+  done
+  return 1
+}
+
+log "Launching Iris (project root: $PROJECT_ROOT)"
+
+if [ ! -x "$VENV_DIR/bin/python3" ]; then
+  log "No venv found at $VENV_DIR — bootstrapping"
+  SYSTEM_PYTHON="$(find_system_python)" || fail "No Python 3.11+ found. Install it (e.g. brew install python@3.12) and relaunch Iris."
+  log "Using $SYSTEM_PYTHON to create venv"
+  "$SYSTEM_PYTHON" -m venv "$VENV_DIR" >> "$LOG_FILE" 2>&1 || fail "Failed to create the virtual environment — see $LOG_FILE"
+  "$VENV_DIR/bin/pip" install -q --upgrade pip >> "$LOG_FILE" 2>&1 || fail "Failed to upgrade pip — see $LOG_FILE"
+  "$VENV_DIR/bin/pip" install -q -r "$PROJECT_ROOT/requirements.txt" >> "$LOG_FILE" 2>&1 || fail "Failed to install dependencies — see $LOG_FILE"
+  log "Venv bootstrap complete"
+fi
+
+cd "$PROJECT_ROOT"
+exec "$VENV_DIR/bin/python3" desktop_app.py

@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/candidate.json",
+    "sha256": "f4ecf2feca2f3b7c3ec01d68790ec56ee397516b943f5da42966c5ac62901b29",
+    "bytes": 8601
+  },
+  "artifact": {
+    "path": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/iris-system-overview.html",
+    "sha256": "e70dfd7036e115926be57b4fe240d251c14104043b31facfe88dad3740379d72",
+    "bytes": 784770
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/iris-system-overview.finalize.json",
+    "summaryReceipt": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/iris-system-overview.finalize-summary.json",
+    "browserCheckReceipt": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/iris-system-overview.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1725,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 3,
+      "routesOverSuggestedBends": 3
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "ui-calls-api",
+            "from": "webview_ui",
+            "to": "http_server",
+            "label": "fetch() JSON · loopback HTTP",
+            "collectionIndex": 3,
+            "artifactIndex": 4
+          },
+          "right": {
+            "id": "server-to-runner",
+            "from": "http_server",
+            "to": "runner",
+            "label": "/api/run-stream, /api/run-preview",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "point": [
+            424,
+            316.94999999999993
+          ],
+          "sharedNode": "http_server"
+        },
+        {
+          "left": {
+            "id": "server-to-runner",
+            "from": "http_server",
+            "to": "runner",
+            "label": "/api/run-stream, /api/run-preview",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "right": {
+            "id": "send-to-target",
+            "from": "collection_api",
+            "to": "target_api",
+            "label": "requests.request()",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "point": [
+            726,
+            316.94999999999993
+          ]
+        },
+        {
+          "left": {
+            "id": "server-to-runner",
+            "from": "http_server",
+            "to": "runner",
+            "label": "/api/run-stream, /api/run-preview",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "right": {
+            "id": "send-to-oauth2",
+            "from": "collection_api",
+            "to": "oauth2_idp",
+            "label": "client_credentials grant",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "point": [
+            505,
+            316.94999999999993
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "ui-calls-api",
+            "from": "webview_ui",
+            "to": "http_server",
+            "label": "fetch() JSON · loopback HTTP",
+            "collectionIndex": 3,
+            "artifactIndex": 4
+          },
+          "bends": 3,
+          "stretch": 1
+        },
+        {
+          "relationship": {
+            "id": "send-to-target",
+            "from": "collection_api",
+            "to": "target_api",
+            "label": "requests.request()",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "bends": 3,
+          "stretch": 1
+        },
+        {
+          "relationship": {
+            "id": "send-to-oauth2",
+            "from": "collection_api",
+            "to": "oauth2_idp",
+            "label": "client_credentials grant",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "bends": 3,
+          "stretch": 1
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "webview_ui → http_server and http_server → runner cross next to http_server: move node webview_ui or runner so the two reach http_server from different sides (for example one level with it, one directly above or below it).",
+      "http_server → runner crosses collection_api → target_api: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "http_server → runner crosses collection_api → oauth2_idp: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "webview_ui → http_server needs 3 bends: move node webview_ui or http_server so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "collection_api → target_api needs 3 bends: move node collection_api or target_api so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "collection_api → oauth2_idp needs 3 bends: move node collection_api or oauth2_idp so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

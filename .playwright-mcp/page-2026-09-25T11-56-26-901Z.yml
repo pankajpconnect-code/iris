@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: OakNorth
+      - generic [ref=e10]: Nucleus — Regression Automation Tool
+  - generic [ref=e12]:
+    - generic [ref=e13]: 1 Setup
+    - generic [ref=e15]: 2 Capturing
+    - generic [ref=e17]: 3 Map & Review
+    - generic [ref=e19]: 4 Complete
+  - main [ref=e20]:
+    - generic [ref=e68]:
+      - generic [ref=e69]: Proxy Capture
+      - heading "Capturing Traffic" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: Live
+          - generic [ref=e76]: 0 requests captured
+          - generic [ref=e77]: Listening on 127.0.0.1:8080
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - generic [ref=e80]: Chrome
+            - paragraph [ref=e81]: A dedicated Chrome window opens automatically with the proxy pre-configured — no admin or extensions needed.
+            - list [ref=e82]:
+              - listitem [ref=e83]: A new Chrome window opens — all traffic routes through the proxy
+              - listitem [ref=e84]: Do your transaction in that window
+              - listitem [ref=e85]:
+                - text: Return here and click
+                - strong [ref=e86]: Stop Capture
+                - text: — the window closes automatically
+            - paragraph [ref=e87]:
+              - text: "First time only: visit"
+              - code [ref=e88]: http://mitm.it
+              - text: in the capture window to trust the mitmproxy CA certificate (needed for HTTPS).
+          - generic [ref=e89]:
+            - generic [ref=e90]: Postman
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - text: Preferences →
+                - strong [ref=e93]: Proxy
+                - text: → enable, set
+                - code [ref=e94]: "127.0.0.1 : 8080"
+              - listitem [ref=e95]:
+                - text: Preferences →
+                - strong [ref=e96]: General
+                - text: → disable SSL certificate verification
+              - listitem [ref=e97]: Send requests normally — they appear in the captured count
+      - button "Stop Capture" [ref=e99] [cursor=pointer]

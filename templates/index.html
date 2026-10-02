@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iris</title>
+<link rel="stylesheet" href="/static/tokens.css">
+<link rel="stylesheet" href="/static/sidebar.css">
+<link rel="stylesheet" href="/static/panel.css">
+<link rel="stylesheet" href="/static/runner.css">
+<link rel="stylesheet" href="/static/environments.css">
+<link rel="stylesheet" href="/static/tabs.css">
+<link rel="stylesheet" href="/static/autocomplete.css">
+<link rel="stylesheet" href="/static/modal.css">
+<link rel="stylesheet" href="/static/settings-panel.css">
+<script>
+// Runs before first paint so the page never flashes dark before flipping to
+// light — theme.js (loaded at the end of body) re-derives the same value to
+// wire up the toggle button and the live OS-preference listener.
+(function () {
+  var stored = localStorage.getItem("iris-theme");
+  var theme = stored === "light" || stored === "dark" ? stored :
+    (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="view-switch">
+    <button class="btn view-btn active" id="viewConsoleBtn" type="button">Console</button>
+    <button class="btn view-btn" id="viewRunnerBtn" type="button">Runner</button>
+  </div>
+  <div class="pill" id="topbarTenant">no collection</div>
+  <select id="envSelect" class="env-select" title="Active environment">
+    <option value="">No Environment</option>
+  </select>
+  <button class="btn" id="manageEnvBtn" type="button">&#9881; Environments</button>
+  <div class="spacer"></div>
+  <div class="pill" id="topbarAuth">auth: —</div>
+  <button class="btn" id="settingsBtn" type="button" title="Settings">&#9881; Settings</button>
+  <button class="btn theme-toggle" id="themeToggleBtn" type="button" title="Toggle theme">☀</button>
+</div>
+
+<div class="main" id="consoleView">
+
+  <aside class="side" id="collectionSidebar">
+    <div class="side-actions">
+      <div class="new-menu-wrap">
+        <button class="btn" id="newMenuBtn" type="button">+ New &#9662;</button>
+        <div class="new-menu hidden" id="newMenu">
+          <div class="new-menu-item" data-action="collection">Collection</div>
+          <div class="new-menu-sep"></div>
+          <div class="new-menu-item" data-action="request" data-method="GET"><span class="m GET">GET</span> Request</div>
+          <div class="new-menu-item" data-action="request" data-method="POST"><span class="m POST">POST</span> Request</div>
+          <div class="new-menu-item" data-action="request" data-method="PUT"><span class="m PUT">PUT</span> Request</div>
+          <div class="new-menu-item" data-action="request" data-method="PATCH"><span class="m PATCH">PATCH</span> Request</div>
+          <div class="new-menu-item" data-action="request" data-method="DELETE"><span class="m DELETE">DEL</span> Request</div>
+        </div>
+      </div>
+      <button class="btn" id="importCollectionBtn" type="button">&uarr; Import</button>
+      <button class="btn" id="exportCollectionBtn" type="button">&darr; Export</button>
+      <input id="importCollectionFile" type="file" accept="application/json" class="hidden">
+    </div>
+    <div class="search"><input id="collectionSearch" type="text" placeholder="Search requests…"></div>
+    <div class="tree" id="collectionTree">
+      <div class="console-empty">Loading collections…</div>
+    </div>
+  </aside>
+  <div class="side-resize-handle" data-resize-target="collectionSidebar" data-resize-axis="x"></div>
+
+  <section class="work">
+    <div class="req-tabstrip" id="requestTabStrip"></div>
+    <div class="urlbar" id="requestUrlbar">
+      <select id="method">
+        <option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option>
+      </select>
+      <div class="var-input-wrap">
+        <div class="var-input-highlight" id="urlHighlight"></div>
+        <input class="url" id="url" placeholder="Enter request URL">
+      </div>
+      <button class="btn" id="duplicateBtn" type="button">Duplicate</button>
+      <button class="btn" id="saveBtn" type="button">Save</button>
+      <button class="btn primary" id="sendBtn" type="button">Send</button>
+    </div>
+
+    <div class="tabs" id="requestSubTabs">
+      <div class="tab active" data-tab="body">Body</div>
+      <div class="tab" data-tab="params">Params <span class="badge" id="tabParamCount"></span></div>
+      <div class="tab" data-tab="headers">Headers <span class="badge" id="tabHeaderCount"></span></div>
+      <div class="tab" data-tab="vars">Vars <span class="badge" id="tabVarCount"></span></div>
+      <div class="tab" data-tab="tests">Tests <span class="badge" id="tabTestCount"></span></div>
+      <div class="tab" data-tab="auth">Auth <span class="badge" id="tabAuthCount" title="Auth is shared across the whole collection, not just this request"></span></div>
+    </div>
+
+    <div class="editor" id="requestEditor">
+      <div class="pad" id="tab-body">
+        <div id="bodyModeRow">
+          <label for="bodyModeSelect">Body</label>
+          <select id="bodyModeSelect">
+            <option value="raw">raw</option>
+            <option value="urlencoded">x-www-form-urlencoded</option>
+          </select>
+        </div>
+        <div id="bodyRawSection">
+          <div class="body-editor-toolbar">
+            <button class="btn" id="beautifyBodyBtn" type="button">&#10022; Beautify</button>
+            <button class="btn" id="bodyFindBtn" type="button" title="Find (Ctrl/Cmd+F)">Find</button>
+            <button class="btn" id="bodyWrapToggleBtn" type="button" title="Toggle line wrap">Wrap</button>
+            <button class="btn" id="bodyFullscreenBtn" type="button" title="Full screen (Esc to exit)">Full Screen</button>
+            <span class="body-json-error hidden" id="bodyJsonError"></span>
+          </div>
+          <div class="body-find-bar hidden" id="bodyFindBar">
+            <input type="text" id="bodyFindInput" placeholder="Find" autocomplete="off">
+            <span class="body-find-count" id="bodyFindCount"></span>
+            <button class="btn" id="bodyFindPrevBtn" type="button" title="Previous match">&#8593;</button>
+            <button class="btn" id="bodyFindNextBtn" type="button" title="Next match">&#8595;</button>
+            <input type="text" id="bodyReplaceInput" placeholder="Replace with" autocomplete="off">
+            <button class="btn" id="bodyReplaceOneBtn" type="button">Replace</button>
+            <button class="btn" id="bodyReplaceAllBtn" type="button">Replace All</button>
+            <button class="btn" id="bodyFindCloseBtn" type="button" title="Close">&times;</button>
+          </div>
+          <div class="body-editor-wrap" id="bodyEditorWrap">
+            <pre class="line-gutter" id="bodyLineGutter" aria-hidden="true"></pre>
+            <pre class="body-highlight" id="bodyHighlight" aria-hidden="true"><code></code></pre>
+            <textarea id="bodyEditor" placeholder="Request body (JSON)" spellcheck="false"></textarea>
+          </div>
+        </div>
+        <div class="hidden" id="bodyUrlencodedSection">
+          <div class="kv-row-labels" id="bodyParamsKvLabels">
+            <span class="kv-spacer chk"></span>
+            <span class="kv-label">Key</span>
+            <span class="kv-label">Value</span>
+            <span class="kv-spacer del"></span>
+          </div>
+          <div id="bodyParamsList"></div>
+          <textarea class="hidden" id="bodyParamsBulkEditor"
+                    placeholder="grant_type: client_credentials&#10;// disabled_key: value  (prefix with // to disable)"></textarea>
+          <div class="row-actions" style="border:0;padding:10px 0 0;justify-content:flex-start">
+            <button class="btn" id="addBodyParamBtn" type="button">+ Param</button>
+            <button class="btn" id="bulkEditBodyParamsBtn" type="button">Bulk Edit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pad hidden" id="tab-params">
+        <div class="kv-row-labels" id="paramKvLabels">
+          <span class="kv-spacer chk"></span>
+          <span class="kv-label">Key</span>
+          <span class="kv-label">Value</span>
+          <span class="kv-spacer del"></span>
+        </div>
+        <div id="paramsList"></div>
+        <textarea class="hidden" id="paramsBulkEditor"
+                  placeholder="key=value&#10;// disabledKey=value  (prefix with // to disable)"></textarea>
+        <div class="row-actions" style="border:0;padding:10px 0 0;justify-content:flex-start">
+          <button class="btn" id="addParamBtn" type="button">+ Param</button>
+          <button class="btn" id="bulkEditParamsBtn" type="button">Bulk Edit</button>
+        </div>
+        <div class="hint plain">Synced with the URL's query string — editing a row updates the URL, and
+          editing the URL directly re-parses these rows when you leave the field. A disabled param stays
+          in the URL (its key prefixed <code>~</code>) so it's excluded from the request without being lost,
+          same as a disabled header.</div>
+      </div>
+
+      <div class="pad hidden" id="tab-headers">
+        <div class="kv-row-labels" id="headerKvLabels">
+          <span class="kv-spacer chk"></span>
+          <span class="kv-label">Key</span>
+          <span class="kv-label">Value</span>
+          <span class="kv-spacer del"></span>
+        </div>
+        <div id="headersList"></div>
+        <textarea class="hidden" id="headersBulkEditor"
+                  placeholder="Content-Type: application/json&#10;// Disabled-Header: value  (prefix with // to disable)"></textarea>
+        <div class="row-actions" style="border:0;padding:10px 0 0;justify-content:flex-start">
+          <button class="btn" id="addHeaderBtn" type="button">+ Header</button>
+          <button class="btn" id="bulkEditHeadersBtn" type="button">Bulk Edit</button>
+        </div>
+      </div>
+
+      <div class="pad hidden" id="tab-vars">
+        <div class="vars-note hidden" id="varsWarning"></div>
+        <table>
+          <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+          <tbody id="varsBody"></tbody>
+        </table>
+        <div class="row-actions" style="border:0;padding:10px 0 0;justify-content:flex-start">
+          <button class="btn" id="addVarBtn" type="button">+ Variable</button>
+        </div>
+        <div class="hint plain">Casing variants (loanId / loanid / loan_id) are kept separate on purpose —
+          renaming them can silently break requests that rely on the original casing.</div>
+      </div>
+
+      <div class="pad hidden" id="tab-tests">
+        <div class="vars-note">Declarative — no JS engine. Assert/Capture rows cover the common cases;
+          Raw Python is the escape hatch. <b>These also run per-row in CSV batch mode</b> as a pass/fail column.</div>
+        <div id="testsList"></div>
+        <div class="row-actions" style="border:0;padding:10px 0 0;justify-content:flex-start">
+          <button class="btn" id="addAssertBtn" type="button">+ Assert</button>
+          <button class="btn" id="addCaptureBtn" type="button">+ Capture</button>
+          <button class="btn" id="addPythonBtn" type="button">&#9881; Raw Python…</button>
+        </div>
+        <div class="hint plain">Operators: <code>equals · notEquals · exists · notNull · notEmpty · contains ·
+          matches · gt · gte · lt · lte</code>.</div>
+      </div>
+
+      <div class="pad hidden" id="tab-auth">
+        <div class="auth-grid">
+          <label>Mode</label>
+          <select id="authMode">
+            <option value="refresh-cookie">Refresh-token cookie → bearer</option>
+            <option value="bearer">Direct bearer token</option>
+            <option value="basic">Basic Auth</option>
+            <option value="apikey">API Key</option>
+            <option value="oauth2-client-credentials">OAuth2 (Client Credentials)</option>
+            <option value="none">No auth</option>
+          </select>
+          <div id="authRefreshFields" class="check-row" style="display:contents">
+            <label>Token URL</label>
+            <input id="authUrl" type="url" placeholder="https://nucleus.oaknorth.co.uk/identity/v1/token">
+            <label>Tenant</label>
+            <input id="authTenant" type="text" placeholder="playground">
+            <label>Cookie</label>
+            <input id="authRefreshSecret" type="password" placeholder='org.apache.fincn.refreshToken="Bearer...'>
+            <label>User</label>
+            <input id="authUser" type="text" placeholder="pankaj.pandey">
+            <label></label>
+            <label class="check-row"><input id="authRefreshEachRow" type="checkbox"> Create a fresh API token before each row</label>
+          </div>
+          <div id="authBearerFields" style="display:contents">
+            <label>Bearer token</label>
+            <input id="authBearerToken" type="password" placeholder="Bearer eyJ...">
+          </div>
+          <div id="authBasicFields" style="display:contents">
+            <label>Username</label>
+            <input id="authBasicUser" type="text" placeholder="username">
+            <label>Password</label>
+            <input id="authBasicPassword" type="password" placeholder="password">
+          </div>
+          <div id="authApiKeyFields" style="display:contents">
+            <label>Key</label>
+            <input id="authApiKeyName" type="text" placeholder="X-Api-Key">
+            <label>Value</label>
+            <input id="authApiKeyValue" type="password" placeholder="key value">
+            <label>Add to</label>
+            <select id="authApiKeyLocation">
+              <option value="header">Header</option>
+              <option value="query">Query Param</option>
+            </select>
+          </div>
+          <div id="authOauth2Fields" style="display:contents">
+            <label>Client ID</label>
+            <input id="authOauth2ClientId" type="text" placeholder="client id">
+            <label>Client Secret</label>
+            <input id="authOauth2ClientSecret" type="password" placeholder="client secret">
+            <label>Token URL</label>
+            <input id="authOauth2TokenUrl" type="url" placeholder="https://idp.example/oauth2/token">
+            <label>Scope</label>
+            <input id="authOauth2Scope" type="text" placeholder="read write (optional)">
+            <label>Client auth style</label>
+            <select id="authOauth2AuthStyle">
+              <option value="basic-header">HTTP Basic header</option>
+              <option value="post-body">Client credentials in POST body</option>
+            </select>
+          </div>
+        </div>
+        <div class="row-actions" style="border:0;padding:14px 0 0;justify-content:flex-start">
+          <button class="btn" id="saveAuthBtn" type="button">Save Auth</button>
+        </div>
+        <div class="hint plain">Cookie and Bearer token are session-only — never written to disk.</div>
+      </div>
+
+    </div>
+
+    <div class="pad hidden" id="overviewPane"></div>
+
+    <div class="resp-resize-handle" data-resize-target="respSingle" data-resize-axis="y"></div>
+    <div class="resp" id="respSingle">
+      <div class="resp-head">
+        <div class="status"><span class="dot" id="singleDot"></span><span id="singleStatusText">—</span></div>
+        <div class="meta" id="singleMeta"></div>
+        <div class="resp-tabs" style="margin-left:auto;border:0;padding:0">
+          <div class="tab active" data-response-tab="body">Body</div>
+          <div class="tab" data-response-tab="headers">Headers</div>
+          <div class="tab" data-response-tab="raw">Raw</div>
+          <div class="tab hidden" id="singleTestsTab" data-response-tab="tests">Test Results</div>
+        </div>
+        <button class="btn" id="saveResponseBtn" type="button" disabled title="Save this response body to a file">Save Response</button>
+      </div>
+      <div class="pad">
+        <pre id="singleBody"></pre>
+        <pre id="singleHeaders" class="hidden"></pre>
+        <pre id="singleRaw" class="hidden"></pre>
+        <div id="singleTestResults" class="hidden"></div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- ── Runner view: sequence execution (request/folder/collection), separate from the single-send Console ──
+     Layout locked ROADMAP.md §5.4 2026-09-07: command row / filter row / two-pane
+     body (result list left, response right) / status line. Iterations and
+     Parallel stay on the command row (changed per-run); Options holds only
+     genuinely set-once settings, and its trigger shows any non-default value
+     inline so nothing is silently in effect while hidden. -->
+<div class="main hidden" id="runnerView">
+  <section class="work">
+    <div class="runner-cmd">
+      <input class="runner-scope-input" id="runnerRequestSelect" type="text" autocomplete="off"
+             placeholder="Search a request, folder or collection…">
+      <select id="runnerEnvSelect">
+        <option value="">No Environment</option>
+      </select>
+      <button class="btn ghost" id="runnerChooseCsvBtn" type="button">CSV</button>
+      <span class="meta csv" id="runnerCsvLabel">No CSV — runs once</span>
+      <span class="meta" id="runnerCsvMeta"></span>
+      <label class="fld"
+             title="Leave blank to run once (no CSV) or once per CSV row (CSV attached). Type a number only to CAP how many rows/iterations run.">
+        Iterations
+        <input class="runner-iterations" id="runnerIterationsInput" type="number" min="1" placeholder="Auto">
+      </label>
+      <label class="fld" id="runnerParallelRow"
+             title="Run this many iterations at the same time instead of one after another. Requests within one iteration still run in order — the second request may need a value captured by the first. Requires 'Reset captures each iteration'.">
+        Parallel
+        <input class="runner-iterations runner-parallel-input" id="runnerWorkersInput" type="number" min="1" max="8" value="1">
+        <span class="lock hidden" id="runnerParallelLock" title="Reset captures each iteration is forced on while running in parallel">&#128274;</span>
+      </label>
+
+      <div class="pop-wrap">
+        <button class="btn ghost" id="runnerOptionsBtn" type="button">Options</button>
+        <div class="pop hidden" id="runnerOptionsPop">
+          <h4>Captures</h4>
+          <label class="opt"><span class="lb">Reset captures each iteration<small id="runnerResetNote"></small></span>
+            <input id="runnerResetCapturesCheck" type="checkbox" checked></label>
+          <label class="opt hidden" id="runnerPersistCapturesRow"><span class="lb">Write captures back to environment</span>
+            <input id="runnerPersistCapturesCheck" type="checkbox"></label>
+          <h4>Output</h4>
+          <div class="opt wide hidden" id="runnerOutputRow"><span class="lb">Output folder</span>
+            <span class="fp"><button class="btn xs" id="runnerChooseOutputBtn" type="button">Choose…</button>
+              <span class="path" id="runnerOutputLabel">Default output folder</span></span></div>
+          <h4>Response</h4>
+          <label class="opt"><span class="lb">Response cap (chars)<small>Per response body kept for the list, detail pane and CSV export</small></span>
+            <input id="runnerResponseCapInput" type="number" min="0" placeholder="20000"></label>
+          <h4>Retry</h4>
+          <label class="opt"><span class="lb">Retries per request</span>
+            <input id="runnerRetriesInput" type="number" min="0" placeholder="0"></label>
+          <label class="opt"><span class="lb">Delay between retries (ms)</span>
+            <input id="runnerRetryDelayInput" type="number" min="0" placeholder="0"></label>
+          <h4>Auth</h4>
+          <label class="opt"><span class="lb">Max token refreshes</span>
+            <input id="runnerMaxTokenRefreshesInput" type="number" min="1" placeholder="10"></label>
+          <label class="opt"><span class="lb">Stop run if auth fails repeatedly</span>
+            <input id="runnerAuthBreakerCheck" type="checkbox" checked></label>
+          <label class="opt wide"><span class="lb">Refresh cookie name</span>
+            <input id="runnerRefreshCookieNameInput" type="text" placeholder="org.apache.fincn.refreshToken"></label>
+          <div class="opt wide"><span class="lb">Retry on auth status</span>
+            <span><label><input id="runnerAuthRetry401Check" type="checkbox" checked> 401</label>
+              <label><input id="runnerAuthRetry403Check" type="checkbox" checked> 403</label></span></div>
+        </div>
+      </div>
+
+      <span class="spacer"></span>
+      <button class="btn ghost" id="runnerPreviewBtn" type="button">Preview</button>
+      <button class="btn primary" id="runnerRunBtn" type="button">Run</button>
+      <button class="btn danger" id="runnerStopBtn" type="button" disabled>Stop</button>
+    </div>
+
+    <div class="runner-filter-bar">
+      <input type="text" id="runnerFilterInput" placeholder="Filter results…">
+      <select id="runnerFilterRequestSelect"><option value="">All requests</option></select>
+      <button class="btn ghost toggle" id="runnerFailuresOnlyBtn" type="button">Failures only</button>
+      <button class="btn ghost toggle" id="runnerCompactBtn" type="button">Compact</button>
+      <span class="spacer"></span>
+      <span class="meta" id="runnerResultCount"></span>
+      <span class="chip hidden" id="runnerTruncationWarning"></span>
+      <button class="btn ghost" id="runnerHistoryBtn" type="button">History</button>
+      <button class="btn ghost" id="runnerExportBtn" type="button" disabled title="Export the current/last-viewed run's results as CSV">Export</button>
+      <button class="btn ghost" id="runnerClearBtn" type="button" title="Clear results, preview and history panels — does not change your scope, CSV or output folder">Clear</button>
+    </div>
+
+    <div class="panel-section hidden" id="runnerScopeChecklist">
+      <div class="panel-section-head">
+        <b>Requests in scope</b>
+        <span class="meta" id="runnerScopeChecklistMeta"></span>
+        <button class="btn icon-btn" id="runnerScopeSelectAllBtn" type="button" title="Select all">All</button>
+        <button class="btn icon-btn" id="runnerScopeSelectNoneBtn" type="button" title="Select none">None</button>
+      </div>
+      <div class="pad">
+        <input class="runner-scope-checklist-search" id="runnerScopeChecklistSearch" type="text"
+               placeholder="Filter this list… (e.g. run just 2-3 of 94 — click None, then filter and check each one)">
+        <div id="runnerScopeChecklistBody"></div>
+      </div>
+    </div>
+
+    <div class="panel-section hidden" id="runnerPreviewPanel">
+      <div class="panel-section-head">
+        <b>Preview</b>
+        <span class="meta" id="runnerPreviewMeta"></span>
+        <button class="btn icon-btn" id="runnerPreviewCloseBtn" type="button">✕</button>
+      </div>
+      <div class="pad" id="runnerPreviewBody"></div>
+    </div>
+
+    <div class="panel-section hidden" id="runnerHistoryPanel">
+      <div class="panel-section-head">
+        <b>Run history</b>
+        <button class="btn icon-btn" id="runnerHistoryClearBtn" type="button" title="Delete all run history">Clear</button>
+        <button class="btn icon-btn" id="runnerHistoryCloseBtn" type="button">✕</button>
+      </div>
+      <div class="pad" id="runnerHistoryBody"></div>
+    </div>
+
+    <div class="runner-body" id="runnerBody">
+      <div class="card runner-list-card">
+        <div id="runnerListBody"></div>
+        <div class="none hidden" id="runnerListEmpty"></div>
+      </div>
+
+      <!-- Master-detail response pane (ROADMAP §Batch 4 / §5.4) — the
+           persistent right pane. Click a row in the list to inspect it. -->
+      <div class="card runner-resp-card" id="runnerRespCard">
+        <div class="rh">
+          <span class="mth" id="runnerRespMethod"></span>
+          <span class="u mono" id="runnerRespUrl">—</span>
+          <span class="meta" id="runnerRespMeta"></span>
+        </div>
+        <div class="resp-tabs">
+          <div class="tab active" data-runner-detail-tab="body">Response</div>
+          <div class="tab" data-runner-detail-tab="headers">Headers</div>
+          <div class="tab" data-runner-detail-tab="request">Request</div>
+          <div class="tab hidden" id="runnerRowDetailTestsTab" data-runner-detail-tab="tests">Tests</div>
+        </div>
+        <div class="pad">
+          <pre id="runnerRowDetailBody" class="none">Select a result.</pre>
+          <pre id="runnerRowDetailHeaders" class="hidden"></pre>
+          <pre id="runnerRowDetailRequest" class="hidden"></pre>
+          <div id="runnerRowDetailTests" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="runner-stat">
+      <span class="dot" id="runnerDot"></span><span id="runnerStatusText">Idle</span>
+      <span class="meta" id="runnerMeta"></span>
+      <span class="prog hidden" id="runnerProgWrap"><i id="runnerProgBar" style="width:0%"></i></span>
+      <span class="counter">
+        <span class="c-ok">OK <b id="runnerOkCount">0</b></span>
+        <span class="c-fail">Failed <b id="runnerFailedCount">0</b></span>
+        <span class="c-flag">Flagged <b id="runnerFlaggedCount">0</b></span>
+        <span class="c-fail">Errored <b id="runnerErroredCount">0</b></span>
+      </span>
+      <button class="btn xs retry hidden" id="runnerRetryBtn" type="button">Retry failed iterations</button>
+      <span class="spacer"></span>
+      <span class="meta" id="runnerSelectedEcho"></span>
+    </div>
+    <div class="hint" id="runnerFailureDigest"></div>
+    <div class="hint" id="runnerHint">No CSV attached — the sequence runs once. Attach a CSV to run once per row (an unresolved <code>{{col}}</code> in a header, URL or body fails the run up front — a typo'd column name, not a bug).</div>
+  </section>
+</div>
+
+<!-- ── Environment manager ── -->
+<div class="env-modal hidden" id="envModal">
+  <div class="env-modal-box">
+    <div class="env-modal-head">
+      <b>Manage Environments</b>
+      <button class="icon-btn" id="envModalClose" type="button">&times;</button>
+    </div>
+    <div class="env-modal-body">
+      <div class="env-modal-list">
+        <button class="btn" id="envCreateBtn" type="button" style="width:100%;margin-bottom:8px">+ New Environment</button>
+        <div id="envList"></div>
+      </div>
+      <div class="env-modal-editor" id="envEditor">
+        <div class="console-empty">Select or create an environment.</div>
+      </div>
+    </div>
+    <div class="env-modal-foot">
+      <span class="env-modal-saved-flash hidden" id="envModalSavedFlash">✓ Saved</span>
+      <button class="btn" id="envModalCancelBtn" type="button">Cancel</button>
+      <button class="btn primary" id="envModalSaveBtn" type="button">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Settings ── -->
+<div class="iris-modal settings-modal hidden" id="settingsModal">
+  <div class="iris-modal-box settings-modal-box" id="settingsModalBox">
+    <div class="settings-modal-head">
+      <b>Settings</b>
+      <button class="icon-btn" id="settingsModalClose" type="button">&times;</button>
+    </div>
+
+    <div class="settings-section">
+      <label class="settings-field" title="Per-request timeout in seconds — applies to Send and the Runner">
+        <span>Timeout (seconds)</span>
+        <input type="number" id="requestTimeoutInput" min="1" step="1">
+      </label>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-section-title">Proxy</div>
+      <div class="settings-radio-group">
+        <label><input type="radio" name="proxyMode" id="proxyModeSystem" value="system"> System proxy</label>
+        <label><input type="radio" name="proxyMode" id="proxyModeEnv" value="env"> Respect environment variables</label>
+        <label><input type="radio" name="proxyMode" id="proxyModeCustom" value="custom"> Custom</label>
+      </div>
+      <div class="settings-proxy-custom-fields" id="proxyCustomFields">
+        <label class="settings-field">
+          <span>Proxy URL</span>
+          <input type="text" id="proxyUrlInput" placeholder="http://127.0.0.1:8080">
+        </label>
+        <span class="settings-field-error hidden" id="proxyUrlError">Enter a valid URL</span>
+        <label class="settings-field">
+          <span>Username</span>
+          <input type="text" id="proxyUsernameInput" autocomplete="off">
+        </label>
+        <label class="settings-field">
+          <span>Password</span>
+          <input type="password" id="proxyPasswordInput" autocomplete="off">
+        </label>
+      </div>
+      <label class="settings-field">
+        <span>Bypass hosts (one per line — prefix with "." to match subdomains, e.g. .internal.corp)</span>
+        <textarea id="proxyBypassListInput" rows="3" placeholder=".internal.corp"></textarea>
+      </label>
+    </div>
+
+    <div class="settings-section">
+      <label class="settings-checkbox-field" title="Disable TLS certificate verification for outbound requests. Use only for trusted internal/dev endpoints with self-signed certificates.">
+        <input type="checkbox" id="insecureModeCheckbox">
+        <span>Disable TLS certificate verification (insecure)</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<script src="/static/shared.js"></script>
+<script src="/static/markdown.js"></script>
+<script src="/static/resize.js"></script>
+<script src="/static/modal.js"></script>
+<script src="/static/save_bridge.js"></script>
+<script src="/static/environments.js"></script>
+<script src="/static/env-modal-footer.js"></script>
+<script src="/static/folders.js"></script>
+<script src="/static/sidebar.js"></script>
+<script src="/static/sidebar-request-actions.js"></script>
+<script src="/static/curl-import.js"></script>
+<script src="/static/sidebar-context-menu.js"></script>
+<script src="/static/request-tabs.js"></script>
+<script src="/static/headers.js"></script>
+<script src="/static/console-vars.js"></script>
+<script src="/static/request-tests.js"></script>
+<script src="/static/request-auth.js"></script>
+<script src="/static/body-params.js"></script>
+<script src="/static/query-params.js"></script>
+<script src="/static/body-editor.js"></script>
+<script src="/static/tabs.js"></script>
+<script src="/static/autocomplete.js"></script>
+<script src="/static/request-timeout.js"></script>
+<script src="/static/proxy-settings.js"></script>
+<script src="/static/insecure-settings.js"></script>
+<script src="/static/settings-panel.js"></script>
+<script src="/static/send.js"></script>
+<script src="/static/runner-view.js"></script>
+<script src="/static/runner-scope-picker.js"></script>
+<script src="/static/runner-row-detail.js"></script>
+<script src="/static/runner-list-filters.js"></script>
+<script src="/static/runner-options-popover.js"></script>
+<script src="/static/runner-history.js"></script>
+<script src="/static/view-switch.js"></script>
+<script src="/static/theme.js"></script>
+</body>
+</html>

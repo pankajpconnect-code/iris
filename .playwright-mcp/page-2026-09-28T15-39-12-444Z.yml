@@ -1,0 +1,75 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - button "Console" [ref=f3e4] [cursor=pointer]
+      - button "Runner" [ref=f3e5] [cursor=pointer]
+    - generic [ref=f3e6]: no collection
+    - combobox "Active environment" [ref=f3e7]:
+      - option "No Environment" [selected]
+    - button "⚙ Environments" [ref=f3e8] [cursor=pointer]
+    - generic [ref=f3e9]: "auth: —"
+    - button "⚙ Settings" [ref=f3e10] [cursor=pointer]
+    - button "☽" [ref=f3e11] [cursor=pointer]
+  - generic [ref=f3e12]:
+    - complementary [ref=f3e13]:
+      - generic [ref=f3e14]:
+        - button "+ New ▾" [ref=f3e16] [cursor=pointer]
+        - button "↑ Import" [ref=f3e17] [cursor=pointer]
+        - button "↓ Export" [ref=f3e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f3e20]
+      - generic [ref=f3e22]:
+        - generic [ref=f3e23] [cursor=pointer]:
+          - generic [ref=f3e24]:
+            - generic "Expand/collapse" [ref=f3e25]: ▾
+            - text: Auth Fallback Fixture
+          - generic [ref=f3e26]:
+            - button "+" [ref=f3e27]
+            - generic [ref=f3e28]: "1"
+        - generic [ref=f3e30] [cursor=pointer]:
+          - generic [ref=f3e31]: GET
+          - generic [ref=f3e32]: Get Widget (own bearer auth)
+          - button "⧉" [ref=f3e33]
+    - generic [ref=f3e35]:
+      - generic [ref=f3e36]:
+        - combobox [ref=f3e37]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f3e39]
+        - button "Duplicate" [ref=f3e40] [cursor=pointer]
+        - button "Save" [ref=f3e41] [cursor=pointer]
+        - button "Send" [ref=f3e42] [cursor=pointer]
+      - generic [ref=f3e43]:
+        - generic [ref=f3e44] [cursor=pointer]: Body
+        - generic [ref=f3e45] [cursor=pointer]: Params
+        - generic [ref=f3e47] [cursor=pointer]: Headers
+        - generic [ref=f3e49] [cursor=pointer]: Vars
+        - generic [ref=f3e51] [cursor=pointer]: Tests
+        - generic [ref=f3e53] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f3e54]
+      - generic [ref=f3e56]:
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]: Body
+          - combobox "Body" [ref=f3e59]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f3e60]:
+          - generic [ref=f3e61]:
+            - button "✦ Beautify" [ref=f3e62] [cursor=pointer]
+            - button "Find" [ref=f3e63] [cursor=pointer]
+            - button "Wrap" [ref=f3e64] [cursor=pointer]
+            - button "Full Screen" [ref=f3e65] [cursor=pointer]
+          - generic [ref=f3e66]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f3e67]
+      - generic [ref=f3e70]:
+        - generic [ref=f3e71]: —
+        - generic [ref=f3e74]:
+          - generic [ref=f3e75] [cursor=pointer]: Body
+          - generic [ref=f3e76] [cursor=pointer]: Headers
+          - generic [ref=f3e77] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f3e78]
+  - text: locked

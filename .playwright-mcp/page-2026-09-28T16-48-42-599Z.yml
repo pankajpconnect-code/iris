@@ -1,0 +1,105 @@
+- generic [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - button "Console" [ref=f5e4] [cursor=pointer]
+      - button "Runner" [ref=f5e5] [cursor=pointer]
+    - generic [ref=f5e6]: no collection
+    - combobox "Active environment" [ref=f5e7]:
+      - option "No Environment" [selected]
+    - button "⚙ Environments" [ref=f5e8] [cursor=pointer]
+    - generic [ref=f5e9]: "auth: —"
+    - button "⚙ Settings" [ref=f5e10] [cursor=pointer]
+    - button "☀" [ref=f5e11] [cursor=pointer]
+  - generic [ref=f5e12]:
+    - complementary [ref=f5e13]:
+      - generic [ref=f5e14]:
+        - button "+ New ▾" [ref=f5e16] [cursor=pointer]
+        - button "↑ Import" [ref=f5e17] [cursor=pointer]
+        - button "↓ Export" [ref=f5e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f5e20]
+      - generic [ref=f5e69]:
+        - generic [ref=f5e70] [cursor=pointer]:
+          - generic [ref=f5e71]:
+            - generic "Expand/collapse" [ref=f5e72]: ▾
+            - text: GoCardless Payments
+            - button "ⓘ" [ref=f5e73]
+          - generic [ref=f5e74]:
+            - button "+" [ref=f5e75]
+            - generic [ref=f5e76]: "189"
+        - generic [ref=f5e77]:
+          - generic [ref=f5e79] [cursor=pointer]:
+            - generic [ref=f5e80]:
+              - generic "Expand/collapse" [ref=f5e81]: ▾
+              - text: 🚀 Getting Started
+            - generic [ref=f5e82]:
+              - button "+" [ref=f5e83]
+              - generic [ref=f5e84]: "0"
+          - generic [ref=f5e86] [cursor=pointer]:
+            - generic [ref=f5e87]:
+              - generic "Expand/collapse" [ref=f5e88]: ▾
+              - text: Billing Requests
+            - generic [ref=f5e89]:
+              - button "+" [ref=f5e90]
+              - generic [ref=f5e91]: "0"
+          - generic [ref=f5e93] [cursor=pointer]:
+            - generic [ref=f5e94]:
+              - generic "Expand/collapse" [ref=f5e95]: ▾
+              - text: Core Endpoints
+            - generic [ref=f5e96]:
+              - button "+" [ref=f5e97]
+              - generic [ref=f5e98]: "0"
+          - generic [ref=f5e100] [cursor=pointer]:
+            - generic [ref=f5e101]:
+              - generic "Expand/collapse" [ref=f5e102]: ▾
+              - text: Helper Endpoints
+            - generic [ref=f5e103]:
+              - button "+" [ref=f5e104]
+              - generic [ref=f5e105]: "3"
+    - generic [ref=f5e24]:
+      - generic [ref=f5e25]:
+        - combobox [ref=f5e26]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f5e28]
+        - button "Duplicate" [ref=f5e29] [cursor=pointer]
+        - button "Save" [ref=f5e30] [cursor=pointer]
+        - button "Send" [ref=f5e31] [cursor=pointer]
+      - generic [ref=f5e32]:
+        - generic [ref=f5e33] [cursor=pointer]: Body
+        - generic [ref=f5e34] [cursor=pointer]: Params
+        - generic [ref=f5e36] [cursor=pointer]: Headers
+        - generic [ref=f5e38] [cursor=pointer]: Vars
+        - generic [ref=f5e40] [cursor=pointer]: Tests
+        - generic [ref=f5e42] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f5e43]
+      - generic [ref=f5e45]:
+        - generic [ref=f5e46]:
+          - generic [ref=f5e47]: Body
+          - combobox "Body" [ref=f5e48]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f5e49]:
+          - generic [ref=f5e50]:
+            - button "✦ Beautify" [ref=f5e51] [cursor=pointer]
+            - button "Find" [ref=f5e52] [cursor=pointer]
+            - button "Wrap" [ref=f5e53] [cursor=pointer]
+            - button "Full Screen" [ref=f5e54] [cursor=pointer]
+          - generic [ref=f5e55]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f5e56]
+      - generic [ref=f5e59]:
+        - generic [ref=f5e60]: —
+        - generic [ref=f5e63]:
+          - generic [ref=f5e64] [cursor=pointer]: Body
+          - generic [ref=f5e65] [cursor=pointer]: Headers
+          - generic [ref=f5e66] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f5e67]
+  - text: locked
+  - generic [ref=f5e107]:
+    - generic [ref=f5e108]: GoCardless Payments
+    - generic [ref=f5e109]: "# 👋 Introduction Documentation for how to use this collection, including a Quickstart guide, is available on the [GoCardless Developer Docs](https://developer.gocardless.com/getting-started/introduction). Detailed documentation for GoCardless API endpoints is at the [GoCardless API reference guide](https://developer.gocardless.com/api-reference/). ## 📝 Prerequisites [Postman](https://www.getpostman.com/downloads/) [GoCardless Account](https://manage-sandbox.gocardless.com/) Before you begin, set up your free GoCardless Sandbox account. Here, you can create an access token to add to your forked Postman collection. ## 🏃 Getting Started 1\\. Create a GoCardless Sandbox account [here](https://manage-sandbox.gocardless.com/sign-up): the sandbox is our dedicated testing environment where you can build and test your integration without touching real money. 2\\. Go to [Developers &gt; Create &gt; Access Token](https://manage-sandbox.gocardless.com/developers/access-tokens/create) to generate an API access token. Give it a memorable name, with read-write access. <img src=\"https://content.pstmn.io/0dfaf33e-fbff-4ba9-836a-3ba2da42734f/MjAyMy4wNy4yMSBhdCAxNC40Ny4wOEAyeC5wbmc=\" alt=\"Creating%20a%20new%20access%20token\" width=\"270\" height=\"163\"> 3\\. [Fork](https://www.postman.com/gocardlessapi/workspace/gocardless-api/collection/22460459-bae9db02-4aec-428e-bbe4-c36d6d199fd0/fork?origin=tab) the collection into Postman to synchronize with future updates. <img src=\"https://content.pstmn.io/6fe085d7-eee3-4af4-9090-3aa7e15a9e09/MjAyMy4wMS4xNyBhdCAxNi4xOS40M0AyeC5wbmc=\" width=\"422\" height=\"458\"> 4\\. Set up a [Postman Environment](https://learning.postman.com/docs/sending-requests/managing-environments/) for the GoCardless API collection by navigating to Environments and selecting the + icon to create a new environment. <img src=\"https://content.pstmn.io/f6aa7ce1-78d4-4042-becd-25331e63739d/aW1hZ2UucG5n\" alt=\"Creating%20a%20new%20Environment%20to%20store%20collection%20data\" width=\"330\" height=\"375\"> 5\\. Navigate to an API call you'd like to test to save your key into the collection: - With an API call open, click into \"Authorization\" - Expand the section - Paste in Copy the access token from _step 2_. - \"Save authorization to collection\" with the link <img src=\"https://content.pstmn.io/68f58aae-7057-44ec-b877-62d23dac4205/aW1hZ2UucG5n\" alt=\"Save%20token%20to%20your%20Postman%20collection%20to%20execute%20calls\" width=\"1608\" height=\"746\"> # Things to Note 1. There are often additional URL parameters or various request bodies that can be passed, we recommended going through our API Developer Guide [here](https://developer.gocardless.com/api-reference/#core-endpoints) and amending the requests as necessary. 2. The Bank Account field requirements will vary depending on the scheme and payment method - please update the relevant requests accordingly. See more info [here](https://developer.gocardless.com/api-reference/#appendix-local-bank-details). 3. Our requests are chained together automatically via Environment variables, so there is no need to copy & paste IDs across requests. 4. Enjoy! 🥳"
+    - button "Close" [active] [ref=f5e111] [cursor=pointer]

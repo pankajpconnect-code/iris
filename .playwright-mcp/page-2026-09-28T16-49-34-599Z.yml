@@ -1,0 +1,109 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - button "Console" [ref=f6e4] [cursor=pointer]
+      - button "Runner" [ref=f6e5] [cursor=pointer]
+    - generic [ref=f6e6]: no collection
+    - combobox "Active environment" [ref=f6e7]:
+      - option "No Environment" [selected]
+    - button "⚙ Environments" [ref=f6e8] [cursor=pointer]
+    - generic [ref=f6e9]: "auth: —"
+    - button "⚙ Settings" [ref=f6e10] [cursor=pointer]
+    - button "☀" [ref=f6e11] [cursor=pointer]
+  - generic [ref=f6e12]:
+    - complementary [ref=f6e13]:
+      - generic [ref=f6e14]:
+        - button "+ New ▾" [ref=f6e16] [cursor=pointer]
+        - button "↑ Import" [ref=f6e17] [cursor=pointer]
+        - button "↓ Export" [ref=f6e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f6e20]
+      - generic [ref=f6e21]:
+        - generic [ref=f6e22]:
+          - generic [ref=f6e23] [cursor=pointer]:
+            - generic [ref=f6e24]:
+              - generic "Expand/collapse" [ref=f6e25]: ▾
+              - text: GoCardless Payments
+              - button "ⓘ" [ref=f6e26]
+            - generic [ref=f6e27]:
+              - button "+" [ref=f6e28]
+              - generic [ref=f6e29]: "189"
+          - generic [ref=f6e30]:
+            - generic [ref=f6e32] [cursor=pointer]:
+              - generic [ref=f6e33]:
+                - generic "Expand/collapse" [ref=f6e34]: ▾
+                - text: 🚀 Getting Started
+              - generic [ref=f6e35]:
+                - button "+" [ref=f6e36]
+                - generic [ref=f6e37]: "0"
+            - generic [ref=f6e39] [cursor=pointer]:
+              - generic [ref=f6e40]:
+                - generic "Expand/collapse" [ref=f6e41]: ▾
+                - text: Billing Requests
+              - generic [ref=f6e42]:
+                - button "+" [ref=f6e43]
+                - generic [ref=f6e44]: "0"
+            - generic [ref=f6e46] [cursor=pointer]:
+              - generic [ref=f6e47]:
+                - generic "Expand/collapse" [ref=f6e48]: ▾
+                - text: Core Endpoints
+              - generic [ref=f6e49]:
+                - button "+" [ref=f6e50]
+                - generic [ref=f6e51]: "0"
+            - generic [ref=f6e53] [cursor=pointer]:
+              - generic [ref=f6e54]:
+                - generic "Expand/collapse" [ref=f6e55]: ▾
+                - text: Helper Endpoints
+              - generic [ref=f6e56]:
+                - button "+" [ref=f6e57]
+                - generic [ref=f6e58]: "3"
+        - generic [ref=f6e60] [cursor=pointer]:
+          - generic [ref=f6e61]:
+            - generic "Expand/collapse" [ref=f6e62]: ▾
+            - text: No Description Test
+          - generic [ref=f6e63]:
+            - button "+" [ref=f6e64]
+            - generic [ref=f6e65]: "0"
+    - generic [ref=f6e67]:
+      - generic [ref=f6e68]:
+        - combobox [ref=f6e69]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f6e71]
+        - button "Duplicate" [ref=f6e72] [cursor=pointer]
+        - button "Save" [ref=f6e73] [cursor=pointer]
+        - button "Send" [ref=f6e74] [cursor=pointer]
+      - generic [ref=f6e75]:
+        - generic [ref=f6e76] [cursor=pointer]: Body
+        - generic [ref=f6e77] [cursor=pointer]: Params
+        - generic [ref=f6e79] [cursor=pointer]: Headers
+        - generic [ref=f6e81] [cursor=pointer]: Vars
+        - generic [ref=f6e83] [cursor=pointer]: Tests
+        - generic [ref=f6e85] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f6e86]
+      - generic [ref=f6e88]:
+        - generic [ref=f6e89]:
+          - generic [ref=f6e90]: Body
+          - combobox "Body" [ref=f6e91]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f6e92]:
+          - generic [ref=f6e93]:
+            - button "✦ Beautify" [ref=f6e94] [cursor=pointer]
+            - button "Find" [ref=f6e95] [cursor=pointer]
+            - button "Wrap" [ref=f6e96] [cursor=pointer]
+            - button "Full Screen" [ref=f6e97] [cursor=pointer]
+          - generic [ref=f6e98]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f6e99]
+      - generic [ref=f6e102]:
+        - generic [ref=f6e103]: —
+        - generic [ref=f6e106]:
+          - generic [ref=f6e107] [cursor=pointer]: Body
+          - generic [ref=f6e108] [cursor=pointer]: Headers
+          - generic [ref=f6e109] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f6e110]
+  - text: locked

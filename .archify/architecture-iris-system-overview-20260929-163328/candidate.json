@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Iris — System Overview",
+    "subtitle": "Local API-testing desktop app: pywebview shell over a loopback HTTP server",
+    "output": "iris-system-overview.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/oaknorthbank/iris.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "a82e61f7e14d043c321890cb99176934f709c8ad"
+    }
+  },
+  "components": [
+    { "id": "user", "type": "external", "label": "User", "sublabel": "Engineer testing an API", "pos": [40, 20], "size": [140, 60] },
+
+    { "id": "iris_app", "type": "backend", "label": "Iris.app", "sublabel": "desktop_app.py — main()", "pos": [40, 150], "size": [170, 64],
+      "sources": [
+        { "path": "desktop_app.py", "line": 88, "end_line": 117, "label": "main(): starts server thread" },
+        { "path": "desktop_app.py", "line": 119, "end_line": 128, "label": "webview.create_window()" }
+      ] },
+
+    { "id": "webview_ui", "type": "frontend", "label": "Iris UI", "sublabel": "WKWebView · static/*.js", "pos": [390, 150], "size": [170, 64],
+      "sources": [
+        { "path": "templates/index.html", "line": 1, "end_line": 16 },
+        { "path": "static/shared.js", "line": 1, "end_line": 14, "label": "postJson/putJson/deleteJson" }
+      ] },
+
+    { "id": "http_server", "type": "backend", "label": "Local HTTP Server", "sublabel": "server.py · 127.0.0.1:5090+ (loopback only)", "pos": [200, 300], "size": [200, 64],
+      "sources": [
+        { "path": "server.py", "line": 467, "end_line": 496, "label": "LocalThreadingHTTPServer" },
+        { "path": "server.py", "line": 119, "end_line": 150, "label": "do_POST route dispatch" }
+      ] },
+
+    { "id": "environment_api", "type": "backend", "label": "Environments API", "sublabel": "environment_routes.py", "pos": [40, 460], "size": [170, 64],
+      "sources": [ { "path": "environment_routes.py", "line": 26, "end_line": 59, "label": "handle_get/post/put/delete" } ] },
+
+    { "id": "import_api", "type": "backend", "label": "Postman Import", "sublabel": "import_routes.py + collection_io.py", "pos": [230, 460], "size": [170, 64],
+      "sources": [
+        { "path": "import_routes.py", "line": 17, "end_line": 17, "label": "handle_post" },
+        { "path": "import_routes.py", "line": 68, "end_line": 92, "label": "_import_collection" }
+      ] },
+
+    { "id": "collection_api", "type": "backend", "label": "Collections & Send", "sublabel": "collection_routes.py", "pos": [420, 460], "size": [170, 64],
+      "sources": [
+        { "path": "collection_routes.py", "line": 54, "end_line": 64, "label": "handle_post: routes Send" },
+        { "path": "collection_routes.py", "line": 396, "end_line": 431, "label": "_send_one()" }
+      ] },
+
+    { "id": "runner", "type": "backend", "label": "Runner Orchestrator", "sublabel": "run_orchestrator.py · runner_commands.py", "pos": [750, 460], "size": [180, 64],
+      "sources": [
+        { "path": "run_orchestrator.py", "line": 365, "end_line": 368, "label": "execute()" },
+        { "path": "server.py", "line": 405, "end_line": 419, "label": "_stream_run_command" }
+      ] },
+
+    { "id": "oauth2_idp", "type": "external", "label": "OAuth2 Token Endpoint", "sublabel": "user-configured client_credentials IdP", "pos": [750, 150], "size": [170, 60],
+      "sources": [ { "path": "oauth2_client_credentials.py", "line": 13, "end_line": 24, "label": "mint_client_credentials_token" } ] },
+
+    { "id": "target_api", "type": "external", "label": "Target API", "sublabel": "user-configured endpoint under test", "pos": [750, 240], "size": [170, 60],
+      "sources": [ { "path": "collection_routes.py", "line": 422, "end_line": 431, "label": "requests.request()" } ] },
+
+    { "id": "environments_store", "type": "database", "label": "environments/*.json", "sublabel": "environment_store.py", "pos": [40, 650], "size": [170, 60],
+      "sources": [
+        { "path": "environment_store.py", "line": 57, "end_line": 60, "label": "_read_json" },
+        { "path": "environment_store.py", "line": 39, "end_line": 39, "label": "keychain_backend=keychain" }
+      ] },
+
+    { "id": "collections_store", "type": "database", "label": "collections/*.json", "sublabel": "collection_store.py · atomic write", "pos": [310, 650], "size": [200, 60],
+      "sources": [
+        { "path": "collection_store.py", "line": 48, "end_line": 53, "label": "_atomic_write_json" },
+        { "path": "collection_store.py", "line": 79, "end_line": 82, "label": "_read_json" }
+      ] },
+
+    { "id": "runs_store", "type": "database", "label": "runs/*.json", "sublabel": "run_history_store.py", "pos": [755, 650], "size": [170, 60],
+      "sources": [ { "path": "run_history_store.py", "line": 93, "end_line": 118, "label": "record()/_write()" } ] },
+
+    { "id": "keychain", "type": "security", "label": "macOS Keychain", "sublabel": "`security` CLI via subprocess", "pos": [40, 780], "size": [170, 60],
+      "sources": [ { "path": "keychain.py", "line": 30, "end_line": 63, "label": "set/get/delete_secret" } ] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Iris.app process (single local machine)", "wraps": ["iris_app", "webview_ui", "http_server", "environment_api", "import_api", "collection_api", "runner"] },
+    { "kind": "region", "label": "Local filesystem (repo working directory)", "wraps": ["environments_store", "collections_store", "runs_store"] }
+  ],
+  "connections": [
+    { "id": "user-launches", "from": "user", "to": "iris_app", "label": "launches Iris.app", "variant": "emphasis" },
+    { "id": "app-opens-window", "from": "iris_app", "to": "webview_ui", "label": "webview.create_window(url)" },
+    { "id": "app-starts-server", "from": "iris_app", "to": "http_server", "label": "threading.Thread(serve_forever)" },
+    { "id": "ui-calls-api", "from": "webview_ui", "to": "http_server", "label": "fetch() JSON · loopback HTTP", "variant": "emphasis" },
+
+    { "id": "server-to-env", "from": "http_server", "to": "environment_api", "label": "/api/environments*" },
+    { "id": "server-to-import", "from": "http_server", "to": "import_api", "label": "/api/collections/*/import" },
+    { "id": "server-to-collections", "from": "http_server", "to": "collection_api", "label": "/api/collections*, console send" },
+    { "id": "server-to-runner", "from": "http_server", "to": "runner", "label": "/api/run-stream, /api/run-preview" },
+
+    { "id": "runner-reuses-send", "from": "runner", "to": "collection_api", "label": "resolves & sends each step" },
+
+    { "id": "send-to-target", "from": "collection_api", "to": "target_api", "label": "requests.request()", "variant": "emphasis", "fromSide": "top" },
+    { "id": "send-to-oauth2", "from": "collection_api", "to": "oauth2_idp", "label": "client_credentials grant", "fromSide": "top" },
+
+    { "id": "env-persist", "from": "environment_api", "to": "environments_store", "label": "read/write JSON" },
+    { "id": "import-persist", "from": "import_api", "to": "collections_store", "label": "create/save requests" },
+    { "id": "collections-persist", "from": "collection_api", "to": "collections_store", "label": "atomic JSON read/write" },
+    { "id": "runner-persist", "from": "runner", "to": "runs_store", "label": "record run events" },
+
+    { "id": "env-secrets", "from": "environments_store", "to": "keychain", "label": "`security` CLI (secret vars)", "variant": "security" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Runtime", "items": ["Single local process: pywebview shell + a loopback-only threading HTTP server, no network exposure beyond 127.0.0.1", "Route handlers are plain Python modules called by server.py's do_GET/POST/PUT/DELETE dispatch, not a framework", "Collections & Send also owns folder CRUD (folder_routes.py) — same store, folded in rather than shown as a separate node"] },
+    { "dot": "amber", "title": "Persistence", "items": ["Collections, environments, and run history are plain JSON files under the repo working directory, written atomically", "Environment secret values are the one exception — stored in the macOS Keychain via the `security` CLI, never in the JSON files"] },
+    { "dot": "rose", "title": "External calls", "items": ["Collections & Send is the only component that reaches the network: the user's configured Target API, and optionally an OAuth2 token endpoint for client_credentials auth", "The Runner Orchestrator drives bulk/CSV runs by calling back into Collections & Send's own request-resolution logic rather than duplicating it"] }
+  ]
+}

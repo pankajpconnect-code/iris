@@ -1,0 +1,94 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - button "Console" [ref=f2e4] [cursor=pointer]
+      - button "Runner" [ref=f2e5] [cursor=pointer]
+    - generic [ref=f2e6]: Retry Fix Demo (local mock)
+    - combobox "Active environment" [ref=f2e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f2e8] [cursor=pointer]
+    - generic "Per-request timeout in seconds — applies to Send and the Runner" [ref=f2e9]:
+      - generic [ref=f2e10]: Timeout
+      - spinbutton "Timeout s" [ref=f2e11]: "120"
+      - generic [ref=f2e12]: s
+    - generic [ref=f2e13]: "auth: none"
+    - button "☽" [ref=f2e14] [cursor=pointer]
+  - generic [ref=f2e1284]:
+    - generic [ref=f2e1285]:
+      - textbox "Search a request, folder or collection…" [ref=f2e1286]: Flaky GET (passes on retry)
+      - combobox [ref=f2e1287]:
+        - option "No Environment" [selected]
+        - option "Dev Playground"
+        - option "Dev Testground"
+        - option "UAT Playground"
+      - button "CSV" [ref=f2e1288] [cursor=pointer]
+      - generic [ref=f2e1289]: No CSV — runs once
+      - generic "Leave blank to run once (no CSV) or once per CSV row (CSV attached). Type a number only to CAP how many rows/iterations run." [ref=f2e1290]:
+        - text: Iterations
+        - spinbutton "Iterations" [ref=f2e1291]
+      - generic "Run this many iterations at the same time instead of one after another. Requests within one iteration still run in order — the second request may need a value captured by the first. Requires 'Reset captures each iteration'." [ref=f2e1292]:
+        - text: Parallel
+        - spinbutton "Parallel" [ref=f2e1293]: "1"
+        - text: locked
+      - button "Options 3 retries" [ref=f2e1295] [cursor=pointer]
+      - button "Preview" [ref=f2e1296] [cursor=pointer]
+      - button "Run" [ref=f2e1297] [cursor=pointer]
+      - button "Stop" [disabled] [ref=f2e1298]
+    - generic [ref=f2e1299]:
+      - textbox "Filter results…" [ref=f2e1300]
+      - combobox [ref=f2e1301]:
+        - option "All requests" [selected]
+      - button "Failures only" [ref=f2e1302] [cursor=pointer]
+      - button "Compact" [ref=f2e1303] [cursor=pointer]
+      - button "History" [ref=f2e1304] [cursor=pointer]
+      - button "Export" [disabled] [ref=f2e1305]
+      - button "Clear" [ref=f2e1306] [cursor=pointer]
+    - generic [ref=f2e1642]:
+      - generic [ref=f2e1643]:
+        - generic [ref=f2e1644]: Requests in scope
+        - generic [ref=f2e1645]: 1/2 request(s) selected
+        - button "All" [ref=f2e1646] [cursor=pointer]
+        - button "None" [ref=f2e1647] [cursor=pointer]
+      - generic [ref=f2e1648]:
+        - textbox "Filter this list… (e.g. run just 2-3 of 94 — click None, then filter and check each one)" [ref=f2e1649]
+        - generic [ref=f2e1650]:
+          - generic [ref=f2e1651]:
+            - checkbox [ref=f2e1652]
+            - generic [ref=f2e1653]: GET
+            - generic [ref=f2e1654]: Always-500 GET
+          - generic [ref=f2e1655]:
+            - checkbox [checked] [ref=f2e1656]
+            - generic [ref=f2e1657]: GET
+            - generic [ref=f2e1658]: Flaky GET (passes on retry)
+    - generic [ref=f2e1309]:
+      - generic [ref=f2e1310]: —
+      - generic [ref=f2e1312]:
+        - generic [ref=f2e1313] [cursor=pointer]: Response
+        - generic [ref=f2e1314] [cursor=pointer]: Headers
+        - generic [ref=f2e1315] [cursor=pointer]: Request
+      - generic [ref=f2e1316]: Select a result.
+    - generic [ref=f2e1318]:
+      - generic [ref=f2e1320]: Idle
+      - generic [ref=f2e1321]:
+        - generic [ref=f2e1322]: OK 0
+        - generic [ref=f2e1323]: Failed 0
+        - generic [ref=f2e1324]: Flagged 0
+        - generic [ref=f2e1325]: Errored 0
+    - generic [ref=f2e1327]:
+      - text: No CSV attached — the sequence runs once. Attach a CSV to run once per row (an unresolved
+      - code [ref=f2e1328]: "{{col}}"
+      - text: in a header, URL or body fails the run up front — a typo'd column name, not a bug).
+  - generic [ref=f2e1659]:
+    - generic [ref=f2e1660]:
+      - generic [ref=f2e1661]: Select individual requests — check as many as you need, this stays open
+      - generic [ref=f2e1662]:
+        - button "Select all" [ref=f2e1663] [cursor=pointer]
+        - button "Clear" [ref=f2e1664] [cursor=pointer]
+    - generic [ref=f2e1665]:
+      - checkbox [checked] [ref=f2e1666]
+      - generic [ref=f2e1667]: GET
+      - generic [ref=f2e1668]: Flaky GET (passes on retry)
+      - generic [ref=f2e1669]: Retry Fix Demo (local mock)

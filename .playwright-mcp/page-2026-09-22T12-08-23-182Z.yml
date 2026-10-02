@@ -1,0 +1,70 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - button "Console" [ref=e4] [cursor=pointer]
+      - button "Runner" [ref=e5] [cursor=pointer]
+    - generic [ref=e6]: no collection
+    - combobox "Active environment" [ref=e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=e8] [cursor=pointer]
+    - generic "Per-request timeout in seconds — applies to Send and the Runner" [ref=e9]:
+      - generic [ref=e10]: Timeout
+      - spinbutton "Timeout s" [ref=e11]: "120"
+      - generic [ref=e12]: s
+    - generic [ref=e13]: "auth: —"
+    - button "☽" [ref=e14] [cursor=pointer]
+  - generic [ref=e15]:
+    - complementary [ref=e16]:
+      - generic [ref=e17]:
+        - button "+ New ▾" [ref=e19] [cursor=pointer]
+        - button "↑ Import" [ref=e20] [cursor=pointer]
+        - button "↓ Export" [ref=e21] [cursor=pointer]
+      - textbox "Search requests…" [ref=e23]
+      - generic [ref=e24]: Loading collections…
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - combobox [ref=e29]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=e31]
+        - button "Duplicate" [ref=e32] [cursor=pointer]
+        - button "Save" [ref=e33] [cursor=pointer]
+        - button "Send" [ref=e34] [cursor=pointer]
+      - generic [ref=e35]:
+        - generic [ref=e36] [cursor=pointer]: Body
+        - generic [ref=e37] [cursor=pointer]: Params
+        - generic [ref=e39] [cursor=pointer]: Headers
+        - generic [ref=e41] [cursor=pointer]: Vars
+        - generic [ref=e43] [cursor=pointer]: Tests
+        - generic [ref=e45] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=e46]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: Body
+          - combobox "Body" [ref=e51]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - button "✦ Beautify" [ref=e54] [cursor=pointer]
+            - button "Find" [ref=e55] [cursor=pointer]
+            - button "Wrap" [ref=e56] [cursor=pointer]
+            - button "Full Screen" [ref=e57] [cursor=pointer]
+          - generic [ref=e58]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=e59]
+      - generic [ref=e62]:
+        - generic [ref=e63]: —
+        - generic [ref=e66]:
+          - generic [ref=e67] [cursor=pointer]: Body
+          - generic [ref=e68] [cursor=pointer]: Headers
+          - generic [ref=e69] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=e70]
+  - text: locked

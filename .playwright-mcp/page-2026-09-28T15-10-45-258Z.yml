@@ -1,0 +1,1663 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - button "Console" [ref=f1e4] [cursor=pointer]
+      - button "Runner" [ref=f1e5] [cursor=pointer]
+    - generic [ref=f1e6]: Lending
+    - combobox "Active environment" [ref=f1e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "test"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f1e8] [cursor=pointer]
+    - generic [ref=f1e9]: "auth: none"
+    - button "⚙ Settings" [ref=f1e10] [cursor=pointer]
+    - button "☽" [ref=f1e11] [cursor=pointer]
+  - generic [ref=f1e12]:
+    - complementary [ref=f1e13]:
+      - generic [ref=f1e14]:
+        - button "+ New ▾" [ref=f1e16] [cursor=pointer]
+        - button "↑ Import" [ref=f1e17] [cursor=pointer]
+        - button "↓ Export" [ref=f1e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f1e20]
+      - generic [ref=f1e21]:
+        - generic [ref=f1e2008]:
+          - generic [ref=f1e2009] [cursor=pointer]:
+            - generic [ref=f1e2010]:
+              - generic "Expand/collapse" [ref=f1e2011]: ▾
+              - text: Lending
+            - generic [ref=f1e2012]:
+              - button "+" [ref=f1e2013]
+              - generic [ref=f1e2014]: "95"
+          - generic [ref=f1e2015]:
+            - generic [ref=f1e2016] [cursor=pointer]:
+              - generic [ref=f1e2017]: GET
+              - generic [ref=f1e2018]: GET all Modified Loan Accounts Copy Copy
+              - button "⧉" [ref=f1e2019]
+            - generic [ref=f1e2020] [cursor=pointer]:
+              - generic [ref=f1e2021]: POST
+              - generic [ref=f1e2022]: Fee Accrual
+              - button "⧉" [ref=f1e2023]
+            - generic [ref=f1e2024] [cursor=pointer]:
+              - generic [ref=f1e2025]: POST
+              - generic [ref=f1e2026]: Fee Accrual Copy
+              - button "⧉" [ref=f1e2027]
+            - generic [ref=f1e2028] [cursor=pointer]:
+              - generic [ref=f1e2029]: POST
+              - generic [ref=f1e2030]: Fee Accrual on Account Closure
+              - button "⧉" [ref=f1e2031]
+            - generic [ref=f1e2032] [cursor=pointer]:
+              - generic [ref=f1e2033]: POST
+              - generic [ref=f1e2034]: Prepayment
+              - button "⧉" [ref=f1e2035]
+            - generic [ref=f1e2036] [cursor=pointer]:
+              - generic [ref=f1e2037]: POST
+              - generic [ref=f1e2038]: Customer Creation
+              - button "⧉" [ref=f1e2039]
+            - generic [ref=f1e2040] [cursor=pointer]:
+              - generic [ref=f1e2041]: GET
+              - generic [ref=f1e2042]: Fee Accrual (2)
+              - button "⧉" [ref=f1e2043]
+            - generic [ref=f1e2044] [cursor=pointer]:
+              - generic [ref=f1e2045]: GET
+              - generic [ref=f1e2046]: Loan Statement Details
+              - button "⧉" [ref=f1e2047]
+            - generic [ref=f1e2048] [cursor=pointer]:
+              - generic [ref=f1e2049]: PUT
+              - generic [ref=f1e2050]: Edit Loan Account
+              - button "⧉" [ref=f1e2051]
+            - generic [ref=f1e2052] [cursor=pointer]:
+              - generic [ref=f1e2053]: POST
+              - generic [ref=f1e2054]: Create Loan Account
+              - button "⧉" [ref=f1e2055]
+            - generic [ref=f1e2056] [cursor=pointer]:
+              - generic [ref=f1e2057]: POST
+              - generic [ref=f1e2058]: disburse loan
+              - button "⧉" [ref=f1e2059]
+            - generic [ref=f1e2060] [cursor=pointer]:
+              - generic [ref=f1e2061]: POST
+              - generic [ref=f1e2062]: Restructure
+              - button "⧉" [ref=f1e2063]
+            - generic [ref=f1e2064] [cursor=pointer]:
+              - generic [ref=f1e2065]: PUT
+              - generic [ref=f1e2066]: Defer Fee
+              - button "⧉" [ref=f1e2067]
+            - generic [ref=f1e2068] [cursor=pointer]:
+              - generic [ref=f1e2069]: GET
+              - generic [ref=f1e2070]: GET Loan Account
+              - button "⧉" [ref=f1e2071]
+            - generic [ref=f1e2072] [cursor=pointer]:
+              - generic [ref=f1e2073]: POST
+              - generic [ref=f1e2074]: Loan Statement
+              - button "⧉" [ref=f1e2075]
+            - generic [ref=f1e2076] [cursor=pointer]:
+              - generic [ref=f1e2077]: GET
+              - generic [ref=f1e2078]: GET Loan Product
+              - button "⧉" [ref=f1e2079]
+            - generic [ref=f1e2080] [cursor=pointer]:
+              - generic [ref=f1e2081]: PUT
+              - generic [ref=f1e2082]: Savings Account Bulk Linking
+              - button "⧉" [ref=f1e2083]
+            - generic [ref=f1e2084] [cursor=pointer]:
+              - generic [ref=f1e2085]: PUT
+              - generic [ref=f1e2086]: Periodic Fee Application
+              - button "⧉" [ref=f1e2087]
+            - generic [ref=f1e2088] [cursor=pointer]:
+              - generic [ref=f1e2089]: POST
+              - generic [ref=f1e2090]: Deferred Demand Batch
+              - button "⧉" [ref=f1e2091]
+            - generic [ref=f1e2092] [cursor=pointer]:
+              - generic [ref=f1e2093]: DEL
+              - generic [ref=f1e2094]: Perodic fee Application Copy
+              - button "⧉" [ref=f1e2095]
+            - generic [ref=f1e2096] [cursor=pointer]:
+              - generic [ref=f1e2097]: POST
+              - generic [ref=f1e2098]: Channe;l Set Up
+              - button "⧉" [ref=f1e2099]
+            - generic [ref=f1e2100] [cursor=pointer]:
+              - generic [ref=f1e2101]: POST
+              - generic [ref=f1e2102]: Roll Up
+              - button "⧉" [ref=f1e2103]
+            - generic [ref=f1e2104] [cursor=pointer]:
+              - generic [ref=f1e2105]: POST
+              - generic [ref=f1e2106]: Savings Account Bulk Linking (2)
+              - button "⧉" [ref=f1e2107]
+            - generic [ref=f1e2108] [cursor=pointer]:
+              - generic [ref=f1e2109]: PUT
+              - generic [ref=f1e2110]: Update PD LGD values
+              - button "⧉" [ref=f1e2111]
+            - generic [ref=f1e2112] [cursor=pointer]:
+              - generic [ref=f1e2113]: GET
+              - generic [ref=f1e2114]: Update cache
+              - button "⧉" [ref=f1e2115]
+            - generic [ref=f1e2116] [cursor=pointer]:
+              - generic [ref=f1e2117]: GET
+              - generic [ref=f1e2118]: Update cache Copy
+              - button "⧉" [ref=f1e2119]
+            - generic [ref=f1e2120] [cursor=pointer]:
+              - generic [ref=f1e2121]: GET
+              - generic [ref=f1e2122]: Consistency
+              - button "⧉" [ref=f1e2123]
+            - generic [ref=f1e2124] [cursor=pointer]:
+              - generic [ref=f1e2125]: GET
+              - generic [ref=f1e2126]: Consistency Copy
+              - button "⧉" [ref=f1e2127]
+            - generic [ref=f1e2128] [cursor=pointer]:
+              - generic [ref=f1e2129]: POST
+              - generic [ref=f1e2130]: Rate Reset
+              - button "⧉" [ref=f1e2131]
+            - generic [ref=f1e2132] [cursor=pointer]:
+              - generic [ref=f1e2133]: PUT
+              - generic [ref=f1e2134]: Undo Event
+              - button "⧉" [ref=f1e2135]
+            - generic [ref=f1e2136] [cursor=pointer]:
+              - generic [ref=f1e2137]: POST
+              - generic [ref=f1e2138]: Interest Accrual
+              - button "⧉" [ref=f1e2139]
+            - generic [ref=f1e2140] [cursor=pointer]:
+              - generic [ref=f1e2141]: POST
+              - generic [ref=f1e2142]: Preview Schedule
+              - button "⧉" [ref=f1e2143]
+            - generic [ref=f1e2144] [cursor=pointer]:
+              - generic [ref=f1e2145]: POST
+              - generic [ref=f1e2146]: Restructure (2)
+              - button "⧉" [ref=f1e2147]
+            - generic [ref=f1e2148] [cursor=pointer]:
+              - generic [ref=f1e2149]: POST
+              - generic [ref=f1e2150]: Preview Restructure
+              - button "⧉" [ref=f1e2151]
+            - generic [ref=f1e2152] [cursor=pointer]:
+              - generic [ref=f1e2153]: POST
+              - generic [ref=f1e2154]: Adhoc Fee Capitalization
+              - button "⧉" [ref=f1e2155]
+            - generic [ref=f1e2156] [cursor=pointer]:
+              - generic [ref=f1e2157]: PUT
+              - generic [ref=f1e2158]: Feature toggle
+              - button "⧉" [ref=f1e2159]
+            - generic [ref=f1e2160] [cursor=pointer]:
+              - generic [ref=f1e2161]: POST
+              - generic [ref=f1e2162]: Add Events
+              - button "⧉" [ref=f1e2163]
+            - generic [ref=f1e2164] [cursor=pointer]:
+              - generic [ref=f1e2165]: GET
+              - generic [ref=f1e2166]: Progressive Search
+              - button "⧉" [ref=f1e2167]
+            - generic [ref=f1e2168] [cursor=pointer]:
+              - generic [ref=f1e2169]: POST
+              - generic [ref=f1e2170]: Schedule correction PROD
+              - button "⧉" [ref=f1e2171]
+            - generic [ref=f1e2172] [cursor=pointer]:
+              - generic [ref=f1e2173]: POST
+              - generic [ref=f1e2174]: Schedule correction Copy
+              - button "⧉" [ref=f1e2175]
+            - generic [ref=f1e2176] [cursor=pointer]:
+              - generic [ref=f1e2177]: POST
+              - generic [ref=f1e2178]: Batch end point
+              - button "⧉" [ref=f1e2179]
+            - generic [ref=f1e2180] [cursor=pointer]:
+              - generic [ref=f1e2181]: POST
+              - generic [ref=f1e2182]: On Demand Batch Job Run
+              - button "⧉" [ref=f1e2183]
+            - generic [ref=f1e2184] [cursor=pointer]:
+              - generic [ref=f1e2185]: POST
+              - generic [ref=f1e2186]: On Demand Batch Job Run Copy
+              - button "⧉" [ref=f1e2187]
+            - generic [ref=f1e2188] [cursor=pointer]:
+              - generic [ref=f1e2189]: POST
+              - generic [ref=f1e2190]: On Demand Batch Job Run From Batch
+              - button "⧉" [ref=f1e2191]
+            - generic [ref=f1e2192] [cursor=pointer]:
+              - generic [ref=f1e2193]: POST
+              - generic [ref=f1e2194]: On Demand Batch Job Run From Batch Copy
+              - button "⧉" [ref=f1e2195]
+            - generic [ref=f1e2196] [cursor=pointer]:
+              - generic [ref=f1e2197]: GET
+              - generic [ref=f1e2198]: Fetch CA by CA Id
+              - button "⧉" [ref=f1e2199]
+            - generic [ref=f1e2200] [cursor=pointer]:
+              - generic [ref=f1e2201]: POST
+              - generic [ref=f1e2202]: Rates Insertion
+              - button "⧉" [ref=f1e2203]
+            - generic [ref=f1e2204] [cursor=pointer]:
+              - generic [ref=f1e2205]: POST
+              - generic [ref=f1e2206]: Repayment Schedule
+              - button "⧉" [ref=f1e2207]
+            - generic [ref=f1e2208] [cursor=pointer]:
+              - generic [ref=f1e2209]: GET
+              - generic [ref=f1e2210]: Consolidated Statement
+              - button "⧉" [ref=f1e2211]
+            - generic [ref=f1e2212] [cursor=pointer]:
+              - generic [ref=f1e2213]: PUT
+              - generic [ref=f1e2214]: Defer Fee (2)
+              - button "⧉" [ref=f1e2215]
+            - generic [ref=f1e2216] [cursor=pointer]:
+              - generic [ref=f1e2217]: POST
+              - generic [ref=f1e2218]: Create Term Child Loan Account
+              - button "⧉" [ref=f1e2219]
+            - generic [ref=f1e2220] [cursor=pointer]:
+              - generic [ref=f1e2221]: POST
+              - generic [ref=f1e2222]: Create Term Child Loan Account - SONIA
+              - button "⧉" [ref=f1e2223]
+            - generic [ref=f1e2224] [cursor=pointer]:
+              - generic [ref=f1e2225]: POST
+              - generic [ref=f1e2226]: Create RCF Child Loan Account
+              - button "⧉" [ref=f1e2227]
+            - generic [ref=f1e2228] [cursor=pointer]:
+              - generic [ref=f1e2229]: POST
+              - generic [ref=f1e2230]: Create Loan Account - Playground
+              - button "⧉" [ref=f1e2231]
+            - generic [ref=f1e2232] [cursor=pointer]:
+              - generic [ref=f1e2233]: POST
+              - generic [ref=f1e2234]: Create Facility Testground
+              - button "⧉" [ref=f1e2235]
+            - generic [ref=f1e2236] [cursor=pointer]:
+              - generic [ref=f1e2237]: POST
+              - generic [ref=f1e2238]: Create Child Testground - IO
+              - button "⧉" [ref=f1e2239]
+            - generic [ref=f1e2240] [cursor=pointer]:
+              - generic [ref=f1e2241]: POST
+              - generic [ref=f1e2242]: Create Child Testground - IR
+              - button "⧉" [ref=f1e2243]
+            - generic [ref=f1e2244] [cursor=pointer]:
+              - generic [ref=f1e2245]: POST
+              - generic [ref=f1e2246]: Create Child Testground - IPP
+              - button "⧉" [ref=f1e2247]
+            - generic [ref=f1e2248] [cursor=pointer]:
+              - generic [ref=f1e2249]: POST
+              - generic [ref=f1e2250]: Create Facility Playground
+              - button "⧉" [ref=f1e2251]
+            - generic [ref=f1e2252] [cursor=pointer]:
+              - generic [ref=f1e2253]: POST
+              - generic [ref=f1e2254]: Create Term Child Loan Account - SONIA Copy
+              - button "⧉" [ref=f1e2255]
+            - generic [ref=f1e2256] [cursor=pointer]:
+              - generic [ref=f1e2257]: POST
+              - generic [ref=f1e2258]: Create Facility Playground Copy
+              - button "⧉" [ref=f1e2259]
+            - generic [ref=f1e2260] [cursor=pointer]:
+              - generic [ref=f1e2261]: POST
+              - generic [ref=f1e2262]: LBT
+              - button "⧉" [ref=f1e2263]
+            - generic [ref=f1e2264] [cursor=pointer]:
+              - generic [ref=f1e2265]: POST
+              - generic [ref=f1e2266]: Combined Batch
+              - button "⧉" [ref=f1e2267]
+            - generic [ref=f1e2268] [cursor=pointer]:
+              - generic [ref=f1e2269]: PUT
+              - generic [ref=f1e2270]: Queue Config
+              - button "⧉" [ref=f1e2271]
+            - generic [ref=f1e2272] [cursor=pointer]:
+              - generic [ref=f1e2273]: GET
+              - generic [ref=f1e2274]: Statement
+              - button "⧉" [ref=f1e2275]
+            - generic [ref=f1e2276] [cursor=pointer]:
+              - generic [ref=f1e2277]: POST
+              - generic [ref=f1e2278]: Account Reposting
+              - button "⧉" [ref=f1e2279]
+            - generic [ref=f1e2280] [cursor=pointer]:
+              - generic [ref=f1e2281]: POST
+              - generic [ref=f1e2282]: Create LF Workaround Term Parent
+              - button "⧉" [ref=f1e2283]
+            - generic [ref=f1e2284] [cursor=pointer]:
+              - generic [ref=f1e2285]: POST
+              - generic [ref=f1e2286]: Create LF Workaround Term Testground
+              - button "⧉" [ref=f1e2287]
+            - generic [ref=f1e2288] [cursor=pointer]:
+              - generic [ref=f1e2289]: POST
+              - generic [ref=f1e2290]: Create LF Workaround Term Child
+              - button "⧉" [ref=f1e2291]
+            - generic [ref=f1e2292] [cursor=pointer]:
+              - generic [ref=f1e2293]: POST
+              - generic [ref=f1e2294]: Create LF Workaround Testground child
+              - button "⧉" [ref=f1e2295]
+            - generic [ref=f1e2296] [cursor=pointer]:
+              - generic [ref=f1e2297]: POST
+              - generic [ref=f1e2298]: Create CA Testground
+              - button "⧉" [ref=f1e2299]
+            - generic [ref=f1e2300] [cursor=pointer]:
+              - generic [ref=f1e2301]: POST
+              - generic [ref=f1e2302]: Interpolated rate insertion
+              - button "⧉" [ref=f1e2303]
+            - generic [ref=f1e2304] [cursor=pointer]:
+              - generic [ref=f1e2305]: GET
+              - generic [ref=f1e2306]: SI Migration Consistency IANP
+              - button "⧉" [ref=f1e2307]
+            - generic [ref=f1e2308] [cursor=pointer]:
+              - generic [ref=f1e2309]: GET
+              - generic [ref=f1e2310]: SI Migration Consistency New Interest
+              - button "⧉" [ref=f1e2311]
+            - generic [ref=f1e2312] [cursor=pointer]:
+              - generic [ref=f1e2313]: POST
+              - generic [ref=f1e2314]: SI Migration - UAT
+              - button "⧉" [ref=f1e2315]
+            - generic [ref=f1e2316] [cursor=pointer]:
+              - generic [ref=f1e2317]: POST
+              - generic [ref=f1e2318]: SI - Fee force accrual
+              - button "⧉" [ref=f1e2319]
+            - generic [ref=f1e2320] [cursor=pointer]:
+              - generic [ref=f1e2321]: POST
+              - generic [ref=f1e2322]: Consolidated statement
+              - button "⧉" [ref=f1e2323]
+            - generic [ref=f1e2324] [cursor=pointer]:
+              - generic [ref=f1e2325]: POST
+              - generic [ref=f1e2326]: Sequential Statement
+              - button "⧉" [ref=f1e2327]
+            - generic [ref=f1e2328] [cursor=pointer]:
+              - generic [ref=f1e2329]: GET
+              - generic [ref=f1e2330]: Sequential Statement Copy
+              - button "⧉" [ref=f1e2331]
+            - generic [ref=f1e2332] [cursor=pointer]:
+              - generic [ref=f1e2333]: GET
+              - generic [ref=f1e2334]: Loan Warning
+              - button "⧉" [ref=f1e2335]
+            - generic [ref=f1e2336] [cursor=pointer]:
+              - generic [ref=f1e2337]: POST
+              - generic [ref=f1e2338]: Syndication
+              - button "⧉" [ref=f1e2339]
+            - generic [ref=f1e2340] [cursor=pointer]:
+              - generic [ref=f1e2341]: POST
+              - generic [ref=f1e2342]: Loan Transfer Filter
+              - button "⧉" [ref=f1e2343]
+            - generic [ref=f1e2344] [cursor=pointer]:
+              - generic [ref=f1e2345]: POST
+              - generic [ref=f1e2346]: ca-repayment-settlement-dev Copy
+              - button "⧉" [ref=f1e2347]
+            - generic [ref=f1e2348] [cursor=pointer]:
+              - generic [ref=f1e2349]: POST
+              - generic [ref=f1e2350]: Repayment Settlement
+              - button "⧉" [ref=f1e2351]
+            - generic [ref=f1e2352] [cursor=pointer]:
+              - generic [ref=f1e2353]: GET
+              - generic [ref=f1e2354]: Eligible Loans Snapshot
+              - button "⧉" [ref=f1e2355]
+            - generic [ref=f1e2356] [cursor=pointer]:
+              - generic [ref=f1e2357]: POST
+              - generic [ref=f1e2358]: Snapshot for a particular Loan
+              - button "⧉" [ref=f1e2359]
+            - generic [ref=f1e2360] [cursor=pointer]:
+              - generic [ref=f1e2361]: GET
+              - generic [ref=f1e2362]: Loan Get \
+              - button "⧉" [ref=f1e2363]
+            - generic [ref=f1e2364] [cursor=pointer]:
+              - generic [ref=f1e2365]: GET
+              - generic [ref=f1e2366]: Get eligible Snapshot
+              - button "⧉" [ref=f1e2367]
+            - generic [ref=f1e2368] [cursor=pointer]:
+              - generic [ref=f1e2369]: PUT
+              - generic [ref=f1e2370]: BB Company Id
+              - button "⧉" [ref=f1e2371]
+            - generic [ref=f1e2372] [cursor=pointer]:
+              - generic [ref=f1e2373]: POST
+              - generic [ref=f1e2374]: Repayment Settlement Surplus
+              - button "⧉" [ref=f1e2375]
+            - generic [ref=f1e2376] [cursor=pointer]:
+              - generic [ref=f1e2377]: PUT
+              - generic [ref=f1e2378]: AppproveDisb
+              - button "⧉" [ref=f1e2379]
+            - generic [ref=f1e2380] [cursor=pointer]:
+              - generic [ref=f1e2381]: POST
+              - generic [ref=f1e2382]: AppproveDisb Copy
+              - button "⧉" [ref=f1e2383]
+            - generic [ref=f1e2384] [cursor=pointer]:
+              - generic [ref=f1e2385]: POST
+              - generic [ref=f1e2386]: AppproveDisb Copy 2
+              - button "⧉" [ref=f1e2387]
+            - generic [ref=f1e2388] [cursor=pointer]:
+              - generic [ref=f1e2389]: POST
+              - generic [ref=f1e2390]: Token Generation-Dev
+              - button "⧉" [ref=f1e2391]
+            - generic [ref=f1e2392] [cursor=pointer]:
+              - generic [ref=f1e2393]: GET
+              - generic [ref=f1e2394]: GET all Modified Loan Accounts Copy Copy copy
+              - button "⧉" [ref=f1e2395]
+        - generic [ref=f1e2396]:
+          - generic [ref=f1e2397] [cursor=pointer]:
+            - generic [ref=f1e2398]:
+              - generic "Expand/collapse" [ref=f1e2399]: ▾
+              - text: GoCardless Payments
+            - generic [ref=f1e2400]:
+              - button "+" [ref=f1e2401]
+              - generic [ref=f1e2402]: "189"
+          - generic [ref=f1e2403]:
+            - generic [ref=f1e2404]:
+              - generic [ref=f1e2405] [cursor=pointer]:
+                - generic [ref=f1e2406]:
+                  - generic "Expand/collapse" [ref=f1e2407]: ▾
+                  - text: 🚀 Getting Started
+                - generic [ref=f1e2408]:
+                  - button "+" [ref=f1e2409]
+                  - generic [ref=f1e2410]: "0"
+              - generic [ref=f1e2411]:
+                - generic [ref=f1e2412]:
+                  - generic [ref=f1e2413] [cursor=pointer]:
+                    - generic [ref=f1e2414]:
+                      - generic "Expand/collapse" [ref=f1e2415]: ▾
+                      - text: Step 1 - Taking a first instant payment with mandate set up
+                    - generic [ref=f1e2416]:
+                      - button "+" [ref=f1e2417]
+                      - generic [ref=f1e2418]: "2"
+                  - generic [ref=f1e2419]:
+                    - generic [ref=f1e2420] [cursor=pointer]:
+                      - generic [ref=f1e2421]: POST
+                      - generic [ref=f1e2422]: Initiate your Billing Request
+                      - button "⧉" [ref=f1e2423]
+                    - generic [ref=f1e2424] [cursor=pointer]:
+                      - generic [ref=f1e2425]: POST
+                      - generic [ref=f1e2426]: Create a Billing Request Flow
+                      - button "⧉" [ref=f1e2427]
+                - generic [ref=f1e2428]:
+                  - generic [ref=f1e2429] [cursor=pointer]:
+                    - generic [ref=f1e2430]:
+                      - generic "Expand/collapse" [ref=f1e2431]: ▾
+                      - text: Step 2 - Collecting payments against a mandate
+                    - generic [ref=f1e2432]:
+                      - button "+" [ref=f1e2433]
+                      - generic [ref=f1e2434]: "4"
+                  - generic [ref=f1e2435]:
+                    - generic [ref=f1e2436] [cursor=pointer]:
+                      - generic [ref=f1e2437]: GET
+                      - generic [ref=f1e2438]: Retrieve a fulfilled Billing Request
+                      - button "⧉" [ref=f1e2439]
+                    - generic [ref=f1e2440] [cursor=pointer]:
+                      - generic [ref=f1e2441]: POST
+                      - generic [ref=f1e2442]: Create a Direct Debit Payment
+                      - button "⧉" [ref=f1e2443]
+                    - generic [ref=f1e2444] [cursor=pointer]:
+                      - generic [ref=f1e2445]: POST
+                      - generic [ref=f1e2446]: CA a Direct Debit Payment
+                      - button "⧉" [ref=f1e2447]
+                    - generic [ref=f1e2448] [cursor=pointer]:
+                      - generic [ref=f1e2449]: GET
+                      - generic [ref=f1e2450]: GET Direct Debit Payment
+                      - button "⧉" [ref=f1e2451]
+                - generic [ref=f1e2452]:
+                  - generic [ref=f1e2453] [cursor=pointer]:
+                    - generic [ref=f1e2454]:
+                      - generic "Expand/collapse" [ref=f1e2455]: ▾
+                      - text: Step 3 - Monitor Webhooks
+                    - generic [ref=f1e2456]:
+                      - button "+" [ref=f1e2457]
+                      - generic [ref=f1e2458]: "1"
+                  - generic [ref=f1e2460] [cursor=pointer]:
+                    - generic [ref=f1e2461]: GET
+                    - generic [ref=f1e2462]: List Events
+                    - button "⧉" [ref=f1e2463]
+                - generic [ref=f1e2464]:
+                  - generic [ref=f1e2465] [cursor=pointer]:
+                    - generic [ref=f1e2466]:
+                      - generic "Expand/collapse" [ref=f1e2467]: ▾
+                      - text: Next steps
+                    - generic [ref=f1e2468]:
+                      - button "+" [ref=f1e2469]
+                      - generic [ref=f1e2470]: "0"
+                  - generic [ref=f1e2471]:
+                    - generic [ref=f1e2472]:
+                      - generic [ref=f1e2473] [cursor=pointer]:
+                        - generic [ref=f1e2474]:
+                          - generic "Expand/collapse" [ref=f1e2475]: ▾
+                          - text: Explore global payment journeys
+                        - generic [ref=f1e2476]:
+                          - button "+" [ref=f1e2477]
+                          - generic [ref=f1e2478]: "4"
+                      - generic [ref=f1e2479]:
+                        - generic [ref=f1e2480] [cursor=pointer]:
+                          - generic [ref=f1e2481]: POST
+                          - generic [ref=f1e2482]: 🇬🇧 VRP Mandate
+                          - button "⧉" [ref=f1e2483]
+                        - generic [ref=f1e2484] [cursor=pointer]:
+                          - generic [ref=f1e2485]: POST
+                          - generic [ref=f1e2486]: 🇪🇺 SEPA Mandate
+                          - button "⧉" [ref=f1e2487]
+                        - generic [ref=f1e2488] [cursor=pointer]:
+                          - generic [ref=f1e2489]: POST
+                          - generic [ref=f1e2490]: 🇺🇸 ACH Mandate
+                          - button "⧉" [ref=f1e2491]
+                        - generic [ref=f1e2492] [cursor=pointer]:
+                          - generic [ref=f1e2493]: POST
+                          - generic [ref=f1e2494]: 🇦🇺 PayTo Mandate
+                          - button "⧉" [ref=f1e2495]
+                    - generic [ref=f1e2496]:
+                      - generic [ref=f1e2497] [cursor=pointer]:
+                        - generic [ref=f1e2498]:
+                          - generic "Expand/collapse" [ref=f1e2499]: ▾
+                          - text: Custom Payment Pages
+                        - generic [ref=f1e2500]:
+                          - button "+" [ref=f1e2501]
+                          - generic [ref=f1e2502]: "0"
+                      - generic [ref=f1e2503]:
+                        - generic [ref=f1e2504]:
+                          - generic [ref=f1e2505] [cursor=pointer]:
+                            - generic [ref=f1e2506]:
+                              - generic "Expand/collapse" [ref=f1e2507]: ▾
+                              - text: Direct Debit
+                            - generic [ref=f1e2508]:
+                              - button "+" [ref=f1e2509]
+                              - generic [ref=f1e2510]: "6"
+                          - generic [ref=f1e2511]:
+                            - generic [ref=f1e2512] [cursor=pointer]:
+                              - generic [ref=f1e2513]: POST
+                              - generic [ref=f1e2514]: Create a Billing Request (Mandate)
+                              - button "⧉" [ref=f1e2515]
+                            - generic [ref=f1e2516] [cursor=pointer]:
+                              - generic [ref=f1e2517]: POST
+                              - generic [ref=f1e2518]: Collect Customer Details
+                              - button "⧉" [ref=f1e2519]
+                            - generic [ref=f1e2520] [cursor=pointer]:
+                              - generic [ref=f1e2521]: POST
+                              - generic [ref=f1e2522]: Collect Bank Account Details
+                              - button "⧉" [ref=f1e2523]
+                            - generic [ref=f1e2524] [cursor=pointer]:
+                              - generic [ref=f1e2525]: POST
+                              - generic [ref=f1e2526]: Confirm Customer & Bank Account Details
+                              - button "⧉" [ref=f1e2527]
+                            - generic [ref=f1e2528] [cursor=pointer]:
+                              - generic [ref=f1e2529]: POST
+                              - generic [ref=f1e2530]: Fulfill a Billing Request
+                              - button "⧉" [ref=f1e2531]
+                            - generic [ref=f1e2532] [cursor=pointer]:
+                              - generic [ref=f1e2533]: POST
+                              - generic [ref=f1e2534]: Create a Payment
+                              - button "⧉" [ref=f1e2535]
+                        - generic [ref=f1e2536]:
+                          - generic [ref=f1e2537] [cursor=pointer]:
+                            - generic [ref=f1e2538]:
+                              - generic "Expand/collapse" [ref=f1e2539]: ▾
+                              - text: Open Banking - Instant Bank Pay
+                            - generic [ref=f1e2540]:
+                              - button "+" [ref=f1e2541]
+                              - generic [ref=f1e2542]: "6"
+                          - generic [ref=f1e2543]:
+                            - generic [ref=f1e2544] [cursor=pointer]:
+                              - generic [ref=f1e2545]: POST
+                              - generic [ref=f1e2546]: Create an Instant Payment Billing Request
+                              - button "⧉" [ref=f1e2547]
+                            - generic [ref=f1e2548] [cursor=pointer]:
+                              - generic [ref=f1e2549]: POST
+                              - generic [ref=f1e2550]: Collect Customer Details (2)
+                              - button "⧉" [ref=f1e2551]
+                            - generic [ref=f1e2552] [cursor=pointer]:
+                              - generic [ref=f1e2553]: GET
+                              - generic [ref=f1e2554]: List Institutions for Billing Request
+                              - button "⧉" [ref=f1e2555]
+                            - generic [ref=f1e2556] [cursor=pointer]:
+                              - generic [ref=f1e2557]: POST
+                              - generic [ref=f1e2558]: Select Institution for a Billing Request
+                              - button "⧉" [ref=f1e2559]
+                            - generic [ref=f1e2560] [cursor=pointer]:
+                              - generic [ref=f1e2561]: POST
+                              - generic [ref=f1e2562]: Create a Bank Authorisation
+                              - button "⧉" [ref=f1e2563]
+                            - generic [ref=f1e2564] [cursor=pointer]:
+                              - generic [ref=f1e2565]: GET
+                              - generic [ref=f1e2566]: Get a Billing Request
+                              - button "⧉" [ref=f1e2567]
+            - generic [ref=f1e2568]:
+              - generic [ref=f1e2569] [cursor=pointer]:
+                - generic [ref=f1e2570]:
+                  - generic "Expand/collapse" [ref=f1e2571]: ▾
+                  - text: Billing Requests
+                - generic [ref=f1e2572]:
+                  - button "+" [ref=f1e2573]
+                  - generic [ref=f1e2574]: "0"
+              - generic [ref=f1e2575]:
+                - generic [ref=f1e2576]:
+                  - generic [ref=f1e2577] [cursor=pointer]:
+                    - generic [ref=f1e2578]:
+                      - generic "Expand/collapse" [ref=f1e2579]: ▾
+                      - text: Billing Requests
+                    - generic [ref=f1e2580]:
+                      - button "+" [ref=f1e2581]
+                      - generic [ref=f1e2582]: "12"
+                  - generic [ref=f1e2583]:
+                    - generic [ref=f1e2584] [cursor=pointer]:
+                      - generic [ref=f1e2585]: POST
+                      - generic [ref=f1e2586]: Create a Billing Request
+                      - button "⧉" [ref=f1e2587]
+                    - generic [ref=f1e2588] [cursor=pointer]:
+                      - generic [ref=f1e2589]: POST
+                      - generic [ref=f1e2590]: Collect Customer Details (3)
+                      - button "⧉" [ref=f1e2591]
+                    - generic [ref=f1e2592] [cursor=pointer]:
+                      - generic [ref=f1e2593]: POST
+                      - generic [ref=f1e2594]: Collect Bank Account Details (2)
+                      - button "⧉" [ref=f1e2595]
+                    - generic [ref=f1e2596] [cursor=pointer]:
+                      - generic [ref=f1e2597]: POST
+                      - generic [ref=f1e2598]: Confirm Customer & Bank Account Details (2)
+                      - button "⧉" [ref=f1e2599]
+                    - generic [ref=f1e2600] [cursor=pointer]:
+                      - generic [ref=f1e2601]: POST
+                      - generic [ref=f1e2602]: Select Institution for a Billing Request (2)
+                      - button "⧉" [ref=f1e2603]
+                    - generic [ref=f1e2604] [cursor=pointer]:
+                      - generic [ref=f1e2605]: POST
+                      - generic [ref=f1e2606]: Fulfill a Billing Request (2)
+                      - button "⧉" [ref=f1e2607]
+                    - generic [ref=f1e2608] [cursor=pointer]:
+                      - generic [ref=f1e2609]: POST
+                      - generic [ref=f1e2610]: Cancel a Billing Request
+                      - button "⧉" [ref=f1e2611]
+                    - generic [ref=f1e2612] [cursor=pointer]:
+                      - generic [ref=f1e2613]: POST
+                      - generic [ref=f1e2614]: Trigger Fallback
+                      - button "⧉" [ref=f1e2615]
+                    - generic [ref=f1e2616] [cursor=pointer]:
+                      - generic [ref=f1e2617]: POST
+                      - generic [ref=f1e2618]: Change Currency for a Billing Request
+                      - button "⧉" [ref=f1e2619]
+                    - generic [ref=f1e2620] [cursor=pointer]:
+                      - generic [ref=f1e2621]: POST
+                      - generic [ref=f1e2622]: Notify Customer of Billing Request
+                      - button "⧉" [ref=f1e2623]
+                    - generic [ref=f1e2624] [cursor=pointer]:
+                      - generic [ref=f1e2625]: GET
+                      - generic [ref=f1e2626]: List Billing Requests
+                      - button "⧉" [ref=f1e2627]
+                    - generic [ref=f1e2628] [cursor=pointer]:
+                      - generic [ref=f1e2629]: GET
+                      - generic [ref=f1e2630]: Get a Billing Request (2)
+                      - button "⧉" [ref=f1e2631]
+                    - generic [ref=f1e2632]:
+                      - generic [ref=f1e2633] [cursor=pointer]:
+                        - generic [ref=f1e2634]:
+                          - generic "Expand/collapse" [ref=f1e2635]: ▾
+                          - text: Examples
+                        - generic [ref=f1e2636]:
+                          - button "+" [ref=f1e2637]
+                          - generic [ref=f1e2638]: "0"
+                      - generic [ref=f1e2639]:
+                        - generic [ref=f1e2640]:
+                          - generic [ref=f1e2641] [cursor=pointer]:
+                            - generic [ref=f1e2642]:
+                              - generic "Expand/collapse" [ref=f1e2643]: ▾
+                              - text: DD only
+                            - generic [ref=f1e2644]:
+                              - button "+" [ref=f1e2645]
+                              - generic [ref=f1e2646]: "5"
+                          - generic [ref=f1e2647]:
+                            - generic [ref=f1e2648] [cursor=pointer]:
+                              - generic [ref=f1e2649]: POST
+                              - generic [ref=f1e2650]: Mandate Only
+                              - button "⧉" [ref=f1e2651]
+                            - generic [ref=f1e2652] [cursor=pointer]:
+                              - generic [ref=f1e2653]: POST
+                              - generic [ref=f1e2654]: Offline Mandate Only
+                              - button "⧉" [ref=f1e2655]
+                            - generic [ref=f1e2656] [cursor=pointer]:
+                              - generic [ref=f1e2657]: POST
+                              - generic [ref=f1e2658]: ACH/PAD One-off Consent
+                              - button "⧉" [ref=f1e2659]
+                            - generic [ref=f1e2660] [cursor=pointer]:
+                              - generic [ref=f1e2661]: POST
+                              - generic [ref=f1e2662]: ACH/PAD Standing Consent
+                              - button "⧉" [ref=f1e2663]
+                            - generic [ref=f1e2664] [cursor=pointer]:
+                              - generic [ref=f1e2665]: POST
+                              - generic [ref=f1e2666]: ACH/PAD Recurring Consent
+                              - button "⧉" [ref=f1e2667]
+                        - generic [ref=f1e2668]:
+                          - generic [ref=f1e2669] [cursor=pointer]:
+                            - generic [ref=f1e2670]:
+                              - generic "Expand/collapse" [ref=f1e2671]: ▾
+                              - text: AIS
+                            - generic [ref=f1e2672]:
+                              - button "+" [ref=f1e2673]
+                              - generic [ref=f1e2674]: "1"
+                          - generic [ref=f1e2676] [cursor=pointer]:
+                            - generic [ref=f1e2677]: POST
+                            - generic [ref=f1e2678]: Verified Mandate Only
+                            - button "⧉" [ref=f1e2679]
+                        - generic [ref=f1e2680]:
+                          - generic [ref=f1e2681] [cursor=pointer]:
+                            - generic [ref=f1e2682]:
+                              - generic "Expand/collapse" [ref=f1e2683]: ▾
+                              - text: PIS
+                            - generic [ref=f1e2684]:
+                              - button "+" [ref=f1e2685]
+                              - generic [ref=f1e2686]: "8"
+                          - generic [ref=f1e2687]:
+                            - generic [ref=f1e2688] [cursor=pointer]:
+                              - generic [ref=f1e2689]: POST
+                              - generic [ref=f1e2690]: Payment Only
+                              - button "⧉" [ref=f1e2691]
+                            - generic [ref=f1e2692] [cursor=pointer]:
+                              - generic [ref=f1e2693]: POST
+                              - generic [ref=f1e2694]: Mandate and Payment
+                              - button "⧉" [ref=f1e2695]
+                            - generic [ref=f1e2696] [cursor=pointer]:
+                              - generic [ref=f1e2697]: POST
+                              - generic [ref=f1e2698]: sVRP Mandate
+                              - button "⧉" [ref=f1e2699]
+                            - generic [ref=f1e2700] [cursor=pointer]:
+                              - generic [ref=f1e2701]: POST
+                              - generic [ref=f1e2702]: sVRP Mandate and Payment
+                              - button "⧉" [ref=f1e2703]
+                            - generic [ref=f1e2704] [cursor=pointer]:
+                              - generic [ref=f1e2705]: POST
+                              - generic [ref=f1e2706]: cVRP Mandate
+                              - button "⧉" [ref=f1e2707]
+                            - generic [ref=f1e2708] [cursor=pointer]:
+                              - generic [ref=f1e2709]: POST
+                              - generic [ref=f1e2710]: cVRP Mandate and Payment
+                              - button "⧉" [ref=f1e2711]
+                            - generic [ref=f1e2712] [cursor=pointer]:
+                              - generic [ref=f1e2713]: POST
+                              - generic [ref=f1e2714]: PayTo Mandate
+                              - button "⧉" [ref=f1e2715]
+                            - generic [ref=f1e2716] [cursor=pointer]:
+                              - generic [ref=f1e2717]: POST
+                              - generic [ref=f1e2718]: PayTo Mandate and Payment
+                              - button "⧉" [ref=f1e2719]
+                - generic [ref=f1e2720]:
+                  - generic [ref=f1e2721] [cursor=pointer]:
+                    - generic [ref=f1e2722]:
+                      - generic "Expand/collapse" [ref=f1e2723]: ▾
+                      - text: Billing Request Flows
+                    - generic [ref=f1e2724]:
+                      - button "+" [ref=f1e2725]
+                      - generic [ref=f1e2726]: "2"
+                  - generic [ref=f1e2727]:
+                    - generic [ref=f1e2728] [cursor=pointer]:
+                      - generic [ref=f1e2729]: POST
+                      - generic [ref=f1e2730]: Create a Billing Request Flow (2)
+                      - button "⧉" [ref=f1e2731]
+                    - generic [ref=f1e2732] [cursor=pointer]:
+                      - generic [ref=f1e2733]: POST
+                      - generic [ref=f1e2734]: Initialise a Billing Request Flow
+                      - button "⧉" [ref=f1e2735]
+                - generic [ref=f1e2736]:
+                  - generic [ref=f1e2737] [cursor=pointer]:
+                    - generic [ref=f1e2738]:
+                      - generic "Expand/collapse" [ref=f1e2739]: ▾
+                      - text: Bank Authorisations
+                    - generic [ref=f1e2740]:
+                      - button "+" [ref=f1e2741]
+                      - generic [ref=f1e2742]: "2"
+                  - generic [ref=f1e2743]:
+                    - generic [ref=f1e2744] [cursor=pointer]:
+                      - generic [ref=f1e2745]: POST
+                      - generic [ref=f1e2746]: Create a Bank Authorisation (2)
+                      - button "⧉" [ref=f1e2747]
+                    - generic [ref=f1e2748] [cursor=pointer]:
+                      - generic [ref=f1e2749]: GET
+                      - generic [ref=f1e2750]: Get Bank Authorisation
+                      - button "⧉" [ref=f1e2751]
+                - generic [ref=f1e2752]:
+                  - generic [ref=f1e2753] [cursor=pointer]:
+                    - generic [ref=f1e2754]:
+                      - generic "Expand/collapse" [ref=f1e2755]: ▾
+                      - text: Billing Request Templates
+                    - generic [ref=f1e2756]:
+                      - button "+" [ref=f1e2757]
+                      - generic [ref=f1e2758]: "4"
+                  - generic [ref=f1e2759]:
+                    - generic [ref=f1e2760] [cursor=pointer]:
+                      - generic [ref=f1e2761]: POST
+                      - generic [ref=f1e2762]: Create a Billing Request Template
+                      - button "⧉" [ref=f1e2763]
+                    - generic [ref=f1e2764] [cursor=pointer]:
+                      - generic [ref=f1e2765]: PUT
+                      - generic [ref=f1e2766]: Update a Billing Request Template
+                      - button "⧉" [ref=f1e2767]
+                    - generic [ref=f1e2768] [cursor=pointer]:
+                      - generic [ref=f1e2769]: GET
+                      - generic [ref=f1e2770]: Get a Billing Request Template
+                      - button "⧉" [ref=f1e2771]
+                    - generic [ref=f1e2772] [cursor=pointer]:
+                      - generic [ref=f1e2773]: GET
+                      - generic [ref=f1e2774]: List Billing Request Templates
+                      - button "⧉" [ref=f1e2775]
+                - generic [ref=f1e2776]:
+                  - generic [ref=f1e2777] [cursor=pointer]:
+                    - generic [ref=f1e2778]:
+                      - generic "Expand/collapse" [ref=f1e2779]: ▾
+                      - text: Billing Requests with Actions
+                    - generic [ref=f1e2780]:
+                      - button "+" [ref=f1e2781]
+                      - generic [ref=f1e2782]: "1"
+                  - generic [ref=f1e2783]:
+                    - generic [ref=f1e2784] [cursor=pointer]:
+                      - generic [ref=f1e2785]: POST
+                      - generic [ref=f1e2786]: Create a Billing Request with Actions
+                      - button "⧉" [ref=f1e2787]
+                    - generic [ref=f1e2788]:
+                      - generic [ref=f1e2789] [cursor=pointer]:
+                        - generic [ref=f1e2790]:
+                          - generic "Expand/collapse" [ref=f1e2791]: ▾
+                          - text: Examples
+                        - generic [ref=f1e2792]:
+                          - button "+" [ref=f1e2793]
+                          - generic [ref=f1e2794]: "8"
+                      - generic [ref=f1e2795]:
+                        - generic [ref=f1e2796] [cursor=pointer]:
+                          - generic [ref=f1e2797]: POST
+                          - generic [ref=f1e2798]: Direct Debit Mandate
+                          - button "⧉" [ref=f1e2799]
+                        - generic [ref=f1e2800] [cursor=pointer]:
+                          - generic [ref=f1e2801]: POST
+                          - generic [ref=f1e2802]: Verified Mandate Prefill
+                          - button "⧉" [ref=f1e2803]
+                        - generic [ref=f1e2804] [cursor=pointer]:
+                          - generic [ref=f1e2805]: POST
+                          - generic [ref=f1e2806]: Instant Bank Payment
+                          - button "⧉" [ref=f1e2807]
+                        - generic [ref=f1e2808] [cursor=pointer]:
+                          - generic [ref=f1e2809]: POST
+                          - generic [ref=f1e2810]: Mandate and Payment (2)
+                          - button "⧉" [ref=f1e2811]
+                        - generic [ref=f1e2812] [cursor=pointer]:
+                          - generic [ref=f1e2813]: POST
+                          - generic [ref=f1e2814]: VRP Mandate
+                          - button "⧉" [ref=f1e2815]
+                        - generic [ref=f1e2816] [cursor=pointer]:
+                          - generic [ref=f1e2817]: POST
+                          - generic [ref=f1e2818]: VRP Mandate and Payment
+                          - button "⧉" [ref=f1e2819]
+                        - generic [ref=f1e2820] [cursor=pointer]:
+                          - generic [ref=f1e2821]: POST
+                          - generic [ref=f1e2822]: PayTo Mandate (2)
+                          - button "⧉" [ref=f1e2823]
+                        - generic [ref=f1e2824] [cursor=pointer]:
+                          - generic [ref=f1e2825]: POST
+                          - generic [ref=f1e2826]: PayTo Mandate and Payment (2)
+                          - button "⧉" [ref=f1e2827]
+                - generic [ref=f1e2828]:
+                  - generic [ref=f1e2829] [cursor=pointer]:
+                    - generic [ref=f1e2830]:
+                      - generic "Expand/collapse" [ref=f1e2831]: ▾
+                      - text: Institutions
+                    - generic [ref=f1e2832]:
+                      - button "+" [ref=f1e2833]
+                      - generic [ref=f1e2834]: "1"
+                  - generic [ref=f1e2836] [cursor=pointer]:
+                    - generic [ref=f1e2837]: GET
+                    - generic [ref=f1e2838]: List Institutions for Billing Request (2)
+                    - button "⧉" [ref=f1e2839]
+            - generic [ref=f1e2840]:
+              - generic [ref=f1e2841] [cursor=pointer]:
+                - generic [ref=f1e2842]:
+                  - generic "Expand/collapse" [ref=f1e2843]: ▾
+                  - text: Core Endpoints
+                - generic [ref=f1e2844]:
+                  - button "+" [ref=f1e2845]
+                  - generic [ref=f1e2846]: "0"
+              - generic [ref=f1e2847]:
+                - generic [ref=f1e2848]:
+                  - generic [ref=f1e2849] [cursor=pointer]:
+                    - generic [ref=f1e2850]:
+                      - generic "Expand/collapse" [ref=f1e2851]: ▾
+                      - text: Balances
+                    - generic [ref=f1e2852]:
+                      - button "+" [ref=f1e2853]
+                      - generic [ref=f1e2854]: "1"
+                  - generic [ref=f1e2856] [cursor=pointer]:
+                    - generic [ref=f1e2857]: GET
+                    - generic [ref=f1e2858]: List Balances
+                    - button "⧉" [ref=f1e2859]
+                - generic [ref=f1e2860]:
+                  - generic [ref=f1e2861] [cursor=pointer]:
+                    - generic [ref=f1e2862]:
+                      - generic "Expand/collapse" [ref=f1e2863]: ▾
+                      - text: Blocks
+                    - generic [ref=f1e2864]:
+                      - button "+" [ref=f1e2865]
+                      - generic [ref=f1e2866]: "6"
+                  - generic [ref=f1e2867]:
+                    - generic [ref=f1e2868] [cursor=pointer]:
+                      - generic [ref=f1e2869]: POST
+                      - generic [ref=f1e2870]: Create a Block
+                      - button "⧉" [ref=f1e2871]
+                    - generic [ref=f1e2872] [cursor=pointer]:
+                      - generic [ref=f1e2873]: POST
+                      - generic [ref=f1e2874]: Create Blocks by Reference
+                      - button "⧉" [ref=f1e2875]
+                    - generic [ref=f1e2876] [cursor=pointer]:
+                      - generic [ref=f1e2877]: POST
+                      - generic [ref=f1e2878]: Disable a Block
+                      - button "⧉" [ref=f1e2879]
+                    - generic [ref=f1e2880] [cursor=pointer]:
+                      - generic [ref=f1e2881]: POST
+                      - generic [ref=f1e2882]: Enable a Block
+                      - button "⧉" [ref=f1e2883]
+                    - generic [ref=f1e2884] [cursor=pointer]:
+                      - generic [ref=f1e2885]: GET
+                      - generic [ref=f1e2886]: Get a Block
+                      - button "⧉" [ref=f1e2887]
+                    - generic [ref=f1e2888] [cursor=pointer]:
+                      - generic [ref=f1e2889]: GET
+                      - generic [ref=f1e2890]: List Blocks
+                      - button "⧉" [ref=f1e2891]
+                - generic [ref=f1e2892]:
+                  - generic [ref=f1e2893] [cursor=pointer]:
+                    - generic [ref=f1e2894]:
+                      - generic "Expand/collapse" [ref=f1e2895]: ▾
+                      - text: Creditors
+                    - generic [ref=f1e2896]:
+                      - button "+" [ref=f1e2897]
+                      - generic [ref=f1e2898]: "4"
+                  - generic [ref=f1e2899]:
+                    - generic [ref=f1e2900] [cursor=pointer]:
+                      - generic [ref=f1e2901]: POST
+                      - generic [ref=f1e2902]: Create a Creditor
+                      - button "⧉" [ref=f1e2903]
+                    - generic [ref=f1e2904] [cursor=pointer]:
+                      - generic [ref=f1e2905]: PUT
+                      - generic [ref=f1e2906]: Update a Creditor
+                      - button "⧉" [ref=f1e2907]
+                    - generic [ref=f1e2908] [cursor=pointer]:
+                      - generic [ref=f1e2909]: GET
+                      - generic [ref=f1e2910]: List Creditors
+                      - button "⧉" [ref=f1e2911]
+                    - generic [ref=f1e2912] [cursor=pointer]:
+                      - generic [ref=f1e2913]: GET
+                      - generic [ref=f1e2914]: Get a single Creditor
+                      - button "⧉" [ref=f1e2915]
+                - generic [ref=f1e2916]:
+                  - generic [ref=f1e2917] [cursor=pointer]:
+                    - generic [ref=f1e2918]:
+                      - generic "Expand/collapse" [ref=f1e2919]: ▾
+                      - text: Customer Bank Accounts
+                    - generic [ref=f1e2920]:
+                      - button "+" [ref=f1e2921]
+                      - generic [ref=f1e2922]: "5"
+                  - generic [ref=f1e2923]:
+                    - generic [ref=f1e2924] [cursor=pointer]:
+                      - generic [ref=f1e2925]: POST
+                      - generic [ref=f1e2926]: Create a Customer Bank Account
+                      - button "⧉" [ref=f1e2927]
+                    - generic [ref=f1e2928] [cursor=pointer]:
+                      - generic [ref=f1e2929]: PUT
+                      - generic [ref=f1e2930]: Update a Customer Bank Account
+                      - button "⧉" [ref=f1e2931]
+                    - generic [ref=f1e2932] [cursor=pointer]:
+                      - generic [ref=f1e2933]: GET
+                      - generic [ref=f1e2934]: List Customer Bank Accounts
+                      - button "⧉" [ref=f1e2935]
+                    - generic [ref=f1e2936] [cursor=pointer]:
+                      - generic [ref=f1e2937]: GET
+                      - generic [ref=f1e2938]: Get a single Customer Bank Account
+                      - button "⧉" [ref=f1e2939]
+                    - generic [ref=f1e2940] [cursor=pointer]:
+                      - generic [ref=f1e2941]: POST
+                      - generic [ref=f1e2942]: Disable a Customer Bank Account
+                      - button "⧉" [ref=f1e2943]
+                - generic [ref=f1e2944]:
+                  - generic [ref=f1e2945] [cursor=pointer]:
+                    - generic [ref=f1e2946]:
+                      - generic "Expand/collapse" [ref=f1e2947]: ▾
+                      - text: Currency Exchange Rates
+                    - generic [ref=f1e2948]:
+                      - button "+" [ref=f1e2949]
+                      - generic [ref=f1e2950]: "1"
+                  - generic [ref=f1e2952] [cursor=pointer]:
+                    - generic [ref=f1e2953]: GET
+                    - generic [ref=f1e2954]: List Currency Exchange
+                    - button "⧉" [ref=f1e2955]
+                - generic [ref=f1e2956]:
+                  - generic [ref=f1e2957] [cursor=pointer]:
+                    - generic [ref=f1e2958]:
+                      - generic "Expand/collapse" [ref=f1e2959]: ▾
+                      - text: Customers
+                    - generic [ref=f1e2960]:
+                      - button "+" [ref=f1e2961]
+                      - generic [ref=f1e2962]: "5"
+                  - generic [ref=f1e2963]:
+                    - generic [ref=f1e2964] [cursor=pointer]:
+                      - generic [ref=f1e2965]: POST
+                      - generic [ref=f1e2966]: Create a Customer
+                      - button "⧉" [ref=f1e2967]
+                    - generic [ref=f1e2968] [cursor=pointer]:
+                      - generic [ref=f1e2969]: PUT
+                      - generic [ref=f1e2970]: Update a Customer
+                      - button "⧉" [ref=f1e2971]
+                    - generic [ref=f1e2972] [cursor=pointer]:
+                      - generic [ref=f1e2973]: GET
+                      - generic [ref=f1e2974]: List Customers
+                      - button "⧉" [ref=f1e2975]
+                    - generic [ref=f1e2976] [cursor=pointer]:
+                      - generic [ref=f1e2977]: GET
+                      - generic [ref=f1e2978]: Get a single Customer
+                      - button "⧉" [ref=f1e2979]
+                    - generic [ref=f1e2980] [cursor=pointer]:
+                      - generic [ref=f1e2981]: DEL
+                      - generic [ref=f1e2982]: Remove a Customer
+                      - button "⧉" [ref=f1e2983]
+                - generic [ref=f1e2984]:
+                  - generic [ref=f1e2985] [cursor=pointer]:
+                    - generic [ref=f1e2986]:
+                      - generic "Expand/collapse" [ref=f1e2987]: ▾
+                      - text: Creditors Bank Accounts
+                    - generic [ref=f1e2988]:
+                      - button "+" [ref=f1e2989]
+                      - generic [ref=f1e2990]: "4"
+                  - generic [ref=f1e2991]:
+                    - generic [ref=f1e2992] [cursor=pointer]:
+                      - generic [ref=f1e2993]: POST
+                      - generic [ref=f1e2994]: Create a Creditor Bank Account
+                      - button "⧉" [ref=f1e2995]
+                    - generic [ref=f1e2996] [cursor=pointer]:
+                      - generic [ref=f1e2997]: GET
+                      - generic [ref=f1e2998]: List Creditor Bank Accounts
+                      - button "⧉" [ref=f1e2999]
+                    - generic [ref=f1e3000] [cursor=pointer]:
+                      - generic [ref=f1e3001]: GET
+                      - generic [ref=f1e3002]: Get a single Creditor Bank Account
+                      - button "⧉" [ref=f1e3003]
+                    - generic [ref=f1e3004] [cursor=pointer]:
+                      - generic [ref=f1e3005]: POST
+                      - generic [ref=f1e3006]: Disable a Creditor Bank Account
+                      - button "⧉" [ref=f1e3007]
+                - generic [ref=f1e3008]:
+                  - generic [ref=f1e3009] [cursor=pointer]:
+                    - generic [ref=f1e3010]:
+                      - generic "Expand/collapse" [ref=f1e3011]: ▾
+                      - text: Customer Notifications
+                    - generic [ref=f1e3012]:
+                      - button "+" [ref=f1e3013]
+                      - generic [ref=f1e3014]: "1"
+                  - generic [ref=f1e3016] [cursor=pointer]:
+                    - generic [ref=f1e3017]: POST
+                    - generic [ref=f1e3018]: Handle a notification
+                    - button "⧉" [ref=f1e3019]
+                - generic [ref=f1e3020]:
+                  - generic [ref=f1e3021] [cursor=pointer]:
+                    - generic [ref=f1e3022]:
+                      - generic "Expand/collapse" [ref=f1e3023]: ▾
+                      - text: Events
+                    - generic [ref=f1e3024]:
+                      - button "+" [ref=f1e3025]
+                      - generic [ref=f1e3026]: "2"
+                  - generic [ref=f1e3027]:
+                    - generic [ref=f1e3028] [cursor=pointer]:
+                      - generic [ref=f1e3029]: GET
+                      - generic [ref=f1e3030]: List Events (2)
+                      - button "⧉" [ref=f1e3031]
+                    - generic [ref=f1e3032] [cursor=pointer]:
+                      - generic [ref=f1e3033]: GET
+                      - generic [ref=f1e3034]: Get a single Event
+                      - button "⧉" [ref=f1e3035]
+                - generic [ref=f1e3036]:
+                  - generic [ref=f1e3037] [cursor=pointer]:
+                    - generic [ref=f1e3038]:
+                      - generic "Expand/collapse" [ref=f1e3039]: ▾
+                      - text: Funds Availability
+                    - generic [ref=f1e3040]:
+                      - button "+" [ref=f1e3041]
+                      - generic [ref=f1e3042]: "1"
+                  - generic [ref=f1e3044] [cursor=pointer]:
+                    - generic [ref=f1e3045]: GET
+                    - generic [ref=f1e3046]: Funds Availability
+                    - button "⧉" [ref=f1e3047]
+                - generic [ref=f1e3048]:
+                  - generic [ref=f1e3049] [cursor=pointer]:
+                    - generic [ref=f1e3050]:
+                      - generic "Expand/collapse" [ref=f1e3051]: ▾
+                      - text: Instalment Schedules
+                    - generic [ref=f1e3052]:
+                      - button "+" [ref=f1e3053]
+                      - generic [ref=f1e3054]: "6"
+                  - generic [ref=f1e3055]:
+                    - generic [ref=f1e3056] [cursor=pointer]:
+                      - generic [ref=f1e3057]: POST
+                      - generic [ref=f1e3058]: Create Instalment Schedules (with dates)
+                      - button "⧉" [ref=f1e3059]
+                    - generic [ref=f1e3060] [cursor=pointer]:
+                      - generic [ref=f1e3061]: POST
+                      - generic [ref=f1e3062]: Create Instalment Schedules (with schedule)
+                      - button "⧉" [ref=f1e3063]
+                    - generic [ref=f1e3064] [cursor=pointer]:
+                      - generic [ref=f1e3065]: GET
+                      - generic [ref=f1e3066]: List Instalment Schedules
+                      - button "⧉" [ref=f1e3067]
+                    - generic [ref=f1e3068] [cursor=pointer]:
+                      - generic [ref=f1e3069]: GET
+                      - generic [ref=f1e3070]: Get a Single Instalment Schedules
+                      - button "⧉" [ref=f1e3071]
+                    - generic [ref=f1e3072] [cursor=pointer]:
+                      - generic [ref=f1e3073]: PUT
+                      - generic [ref=f1e3074]: Update an Instalment Schedule
+                      - button "⧉" [ref=f1e3075]
+                    - generic [ref=f1e3076] [cursor=pointer]:
+                      - generic [ref=f1e3077]: POST
+                      - generic [ref=f1e3078]: Cancel an Instalment Schedule
+                      - button "⧉" [ref=f1e3079]
+                - generic [ref=f1e3080]:
+                  - generic [ref=f1e3081] [cursor=pointer]:
+                    - generic [ref=f1e3082]:
+                      - generic "Expand/collapse" [ref=f1e3083]: ▾
+                      - text: Mandates
+                    - generic [ref=f1e3084]:
+                      - button "+" [ref=f1e3085]
+                      - generic [ref=f1e3086]: "6"
+                  - generic [ref=f1e3087]:
+                    - generic [ref=f1e3088] [cursor=pointer]:
+                      - generic [ref=f1e3089]: POST
+                      - generic [ref=f1e3090]: Create a Mandate
+                      - button "⧉" [ref=f1e3091]
+                    - generic [ref=f1e3092] [cursor=pointer]:
+                      - generic [ref=f1e3093]: PUT
+                      - generic [ref=f1e3094]: Update a Mandate
+                      - button "⧉" [ref=f1e3095]
+                    - generic [ref=f1e3096] [cursor=pointer]:
+                      - generic [ref=f1e3097]: GET
+                      - generic [ref=f1e3098]: List Mandates
+                      - button "⧉" [ref=f1e3099]
+                    - generic [ref=f1e3100] [cursor=pointer]:
+                      - generic [ref=f1e3101]: GET
+                      - generic [ref=f1e3102]: Get a single Mandate
+                      - button "⧉" [ref=f1e3103]
+                    - generic [ref=f1e3104] [cursor=pointer]:
+                      - generic [ref=f1e3105]: POST
+                      - generic [ref=f1e3106]: Cancel a Mandate
+                      - button "⧉" [ref=f1e3107]
+                    - generic [ref=f1e3108] [cursor=pointer]:
+                      - generic [ref=f1e3109]: POST
+                      - generic [ref=f1e3110]: Reinstate a Mandate
+                      - button "⧉" [ref=f1e3111]
+                - generic [ref=f1e3112]:
+                  - generic [ref=f1e3113] [cursor=pointer]:
+                    - generic [ref=f1e3114]:
+                      - generic "Expand/collapse" [ref=f1e3115]: ▾
+                      - text: Mandate Imports
+                    - generic [ref=f1e3116]:
+                      - button "+" [ref=f1e3117]
+                      - generic [ref=f1e3118]: "4"
+                  - generic [ref=f1e3119]:
+                    - generic [ref=f1e3120] [cursor=pointer]:
+                      - generic [ref=f1e3121]: POST
+                      - generic [ref=f1e3122]: Create New Mandate Import
+                      - button "⧉" [ref=f1e3123]
+                    - generic [ref=f1e3124] [cursor=pointer]:
+                      - generic [ref=f1e3125]: POST
+                      - generic [ref=f1e3126]: Submit Mandate Import
+                      - button "⧉" [ref=f1e3127]
+                    - generic [ref=f1e3128] [cursor=pointer]:
+                      - generic [ref=f1e3129]: POST
+                      - generic [ref=f1e3130]: Cancel Mandate Import
+                      - button "⧉" [ref=f1e3131]
+                    - generic [ref=f1e3132] [cursor=pointer]:
+                      - generic [ref=f1e3133]: GET
+                      - generic [ref=f1e3134]: Get a Single Mandate import
+                      - button "⧉" [ref=f1e3135]
+                - generic [ref=f1e3136]:
+                  - generic [ref=f1e3137] [cursor=pointer]:
+                    - generic [ref=f1e3138]:
+                      - generic "Expand/collapse" [ref=f1e3139]: ▾
+                      - text: Mandate Import Entries
+                    - generic [ref=f1e3140]:
+                      - button "+" [ref=f1e3141]
+                      - generic [ref=f1e3142]: "2"
+                  - generic [ref=f1e3143]:
+                    - generic [ref=f1e3144] [cursor=pointer]:
+                      - generic [ref=f1e3145]: POST
+                      - generic [ref=f1e3146]: Add Mandate import Entry
+                      - button "⧉" [ref=f1e3147]
+                    - generic [ref=f1e3148] [cursor=pointer]:
+                      - generic [ref=f1e3149]: GET
+                      - generic [ref=f1e3150]: List All Mandate Import Entries
+                      - button "⧉" [ref=f1e3151]
+                - generic [ref=f1e3152]:
+                  - generic [ref=f1e3153] [cursor=pointer]:
+                    - generic [ref=f1e3154]:
+                      - generic "Expand/collapse" [ref=f1e3155]: ▾
+                      - text: Outbound Payments
+                    - generic [ref=f1e3156]:
+                      - button "+" [ref=f1e3157]
+                      - generic [ref=f1e3158]: "7"
+                  - generic [ref=f1e3159]:
+                    - generic [ref=f1e3160] [cursor=pointer]:
+                      - generic [ref=f1e3161]: POST
+                      - generic [ref=f1e3162]: Create an outbound payment
+                      - button "⧉" [ref=f1e3163]
+                    - generic [ref=f1e3164] [cursor=pointer]:
+                      - generic [ref=f1e3165]: POST
+                      - generic [ref=f1e3166]: Create a withdrawal payment
+                      - button "⧉" [ref=f1e3167]
+                    - generic [ref=f1e3168] [cursor=pointer]:
+                      - generic [ref=f1e3169]: GET
+                      - generic [ref=f1e3170]: Get a single outbound payment
+                      - button "⧉" [ref=f1e3171]
+                    - generic [ref=f1e3172] [cursor=pointer]:
+                      - generic [ref=f1e3173]: POST
+                      - generic [ref=f1e3174]: Approve an outbound payment
+                      - button "⧉" [ref=f1e3175]
+                    - generic [ref=f1e3176] [cursor=pointer]:
+                      - generic [ref=f1e3177]: POST
+                      - generic [ref=f1e3178]: Cancel an outbound payment
+                      - button "⧉" [ref=f1e3179]
+                    - generic [ref=f1e3180] [cursor=pointer]:
+                      - generic [ref=f1e3181]: PUT
+                      - generic [ref=f1e3182]: Update an outbound payment
+                      - button "⧉" [ref=f1e3183]
+                    - generic [ref=f1e3184] [cursor=pointer]:
+                      - generic [ref=f1e3185]: GET
+                      - generic [ref=f1e3186]: List outbound payments
+                      - button "⧉" [ref=f1e3187]
+                - generic [ref=f1e3188]:
+                  - generic [ref=f1e3189] [cursor=pointer]:
+                    - generic [ref=f1e3190]:
+                      - generic "Expand/collapse" [ref=f1e3191]: ▾
+                      - text: Payer Authorisations (deprecated)
+                    - generic [ref=f1e3192]:
+                      - button "+" [ref=f1e3193]
+                      - generic [ref=f1e3194]: "5"
+                  - generic [ref=f1e3195]:
+                    - generic [ref=f1e3196] [cursor=pointer]:
+                      - generic [ref=f1e3197]: POST
+                      - generic [ref=f1e3198]: Create a Payer Authorisation
+                      - button "⧉" [ref=f1e3199]
+                    - generic [ref=f1e3200] [cursor=pointer]:
+                      - generic [ref=f1e3201]: PUT
+                      - generic [ref=f1e3202]: Update a Payer Authorisation
+                      - button "⧉" [ref=f1e3203]
+                    - generic [ref=f1e3204] [cursor=pointer]:
+                      - generic [ref=f1e3205]: POST
+                      - generic [ref=f1e3206]: Submit a Payer Authorisation
+                      - button "⧉" [ref=f1e3207]
+                    - generic [ref=f1e3208] [cursor=pointer]:
+                      - generic [ref=f1e3209]: POST
+                      - generic [ref=f1e3210]: Confirm a Payer Authorisation
+                      - button "⧉" [ref=f1e3211]
+                    - generic [ref=f1e3212] [cursor=pointer]:
+                      - generic [ref=f1e3213]: GET
+                      - generic [ref=f1e3214]: Get a Payer Authorisation
+                      - button "⧉" [ref=f1e3215]
+                - generic [ref=f1e3216]:
+                  - generic [ref=f1e3217] [cursor=pointer]:
+                    - generic [ref=f1e3218]:
+                      - generic "Expand/collapse" [ref=f1e3219]: ▾
+                      - text: Payments
+                    - generic [ref=f1e3220]:
+                      - button "+" [ref=f1e3221]
+                      - generic [ref=f1e3222]: "6"
+                  - generic [ref=f1e3223]:
+                    - generic [ref=f1e3224] [cursor=pointer]:
+                      - generic [ref=f1e3225]: POST
+                      - generic [ref=f1e3226]: Create a Payment (2)
+                      - button "⧉" [ref=f1e3227]
+                    - generic [ref=f1e3228] [cursor=pointer]:
+                      - generic [ref=f1e3229]: PUT
+                      - generic [ref=f1e3230]: Update a Payment
+                      - button "⧉" [ref=f1e3231]
+                    - generic [ref=f1e3232] [cursor=pointer]:
+                      - generic [ref=f1e3233]: GET
+                      - generic [ref=f1e3234]: List Payments
+                      - button "⧉" [ref=f1e3235]
+                    - generic [ref=f1e3236] [cursor=pointer]:
+                      - generic [ref=f1e3237]: GET
+                      - generic [ref=f1e3238]: Get a single Payment
+                      - button "⧉" [ref=f1e3239]
+                    - generic [ref=f1e3240] [cursor=pointer]:
+                      - generic [ref=f1e3241]: POST
+                      - generic [ref=f1e3242]: Retry Payment
+                      - button "⧉" [ref=f1e3243]
+                    - generic [ref=f1e3244] [cursor=pointer]:
+                      - generic [ref=f1e3245]: POST
+                      - generic [ref=f1e3246]: Cancel a Payment
+                      - button "⧉" [ref=f1e3247]
+                - generic [ref=f1e3248]:
+                  - generic [ref=f1e3249] [cursor=pointer]:
+                    - generic [ref=f1e3250]:
+                      - generic "Expand/collapse" [ref=f1e3251]: ▾
+                      - text: Payouts
+                    - generic [ref=f1e3252]:
+                      - button "+" [ref=f1e3253]
+                      - generic [ref=f1e3254]: "3"
+                  - generic [ref=f1e3255]:
+                    - generic [ref=f1e3256] [cursor=pointer]:
+                      - generic [ref=f1e3257]: GET
+                      - generic [ref=f1e3258]: List Payouts
+                      - button "⧉" [ref=f1e3259]
+                    - generic [ref=f1e3260] [cursor=pointer]:
+                      - generic [ref=f1e3261]: GET
+                      - generic [ref=f1e3262]: Get a single Payout
+                      - button "⧉" [ref=f1e3263]
+                    - generic [ref=f1e3264] [cursor=pointer]:
+                      - generic [ref=f1e3265]: PUT
+                      - generic [ref=f1e3266]: Update a Payout
+                      - button "⧉" [ref=f1e3267]
+                - generic [ref=f1e3268]:
+                  - generic [ref=f1e3269] [cursor=pointer]:
+                    - generic [ref=f1e3270]:
+                      - generic "Expand/collapse" [ref=f1e3271]: ▾
+                      - text: Payout Items
+                    - generic [ref=f1e3272]:
+                      - button "+" [ref=f1e3273]
+                      - generic [ref=f1e3274]: "1"
+                  - generic [ref=f1e3276] [cursor=pointer]:
+                    - generic [ref=f1e3277]: GET
+                    - generic [ref=f1e3278]: List All Payout Items
+                    - button "⧉" [ref=f1e3279]
+                - generic [ref=f1e3280]:
+                  - generic [ref=f1e3281] [cursor=pointer]:
+                    - generic [ref=f1e3282]:
+                      - generic "Expand/collapse" [ref=f1e3283]: ▾
+                      - text: Redirect Flows
+                    - generic [ref=f1e3284]:
+                      - button "+" [ref=f1e3285]
+                      - generic [ref=f1e3286]: "3"
+                  - generic [ref=f1e3287]:
+                    - generic [ref=f1e3288] [cursor=pointer]:
+                      - generic [ref=f1e3289]: POST
+                      - generic [ref=f1e3290]: Create a Redirect Flow
+                      - button "⧉" [ref=f1e3291]
+                    - generic [ref=f1e3292] [cursor=pointer]:
+                      - generic [ref=f1e3293]: POST
+                      - generic [ref=f1e3294]: Complete a single Redirect Flow
+                      - button "⧉" [ref=f1e3295]
+                    - generic [ref=f1e3296] [cursor=pointer]:
+                      - generic [ref=f1e3297]: GET
+                      - generic [ref=f1e3298]: Get a single Redirect Flow
+                      - button "⧉" [ref=f1e3299]
+                - generic [ref=f1e3300]:
+                  - generic [ref=f1e3301] [cursor=pointer]:
+                    - generic [ref=f1e3302]:
+                      - generic "Expand/collapse" [ref=f1e3303]: ▾
+                      - text: Refunds
+                    - generic [ref=f1e3304]:
+                      - button "+" [ref=f1e3305]
+                      - generic [ref=f1e3306]: "4"
+                  - generic [ref=f1e3307]:
+                    - generic [ref=f1e3308] [cursor=pointer]:
+                      - generic [ref=f1e3309]: POST
+                      - generic [ref=f1e3310]: Create a Refund
+                      - button "⧉" [ref=f1e3311]
+                    - generic [ref=f1e3312] [cursor=pointer]:
+                      - generic [ref=f1e3313]: PUT
+                      - generic [ref=f1e3314]: Update a Refund
+                      - button "⧉" [ref=f1e3315]
+                    - generic [ref=f1e3316] [cursor=pointer]:
+                      - generic [ref=f1e3317]: GET
+                      - generic [ref=f1e3318]: List Refunds
+                      - button "⧉" [ref=f1e3319]
+                    - generic [ref=f1e3320] [cursor=pointer]:
+                      - generic [ref=f1e3321]: GET
+                      - generic [ref=f1e3322]: Get a single Refund
+                      - button "⧉" [ref=f1e3323]
+                - generic [ref=f1e3324]:
+                  - generic [ref=f1e3325] [cursor=pointer]:
+                    - generic [ref=f1e3326]:
+                      - generic "Expand/collapse" [ref=f1e3327]: ▾
+                      - text: Scenario Simulators
+                    - generic [ref=f1e3328]:
+                      - button "+" [ref=f1e3329]
+                      - generic [ref=f1e3330]: "26"
+                  - generic [ref=f1e3331]:
+                    - generic [ref=f1e3332] [cursor=pointer]:
+                      - generic [ref=f1e3333]: POST
+                      - generic [ref=f1e3334]: Billing Request Fulfilled Scenario
+                      - button "⧉" [ref=f1e3335]
+                    - generic [ref=f1e3336] [cursor=pointer]:
+                      - generic [ref=f1e3337]: POST
+                      - generic [ref=f1e3338]: Billing Request Fulfilled & Payment Paid Out Scenario
+                      - button "⧉" [ref=f1e3339]
+                    - generic [ref=f1e3340] [cursor=pointer]:
+                      - generic [ref=f1e3341]: POST
+                      - generic [ref=f1e3342]: Billing Request Fulfilled & Payment Failed Scenario
+                      - button "⧉" [ref=f1e3343]
+                    - generic [ref=f1e3344] [cursor=pointer]:
+                      - generic [ref=f1e3345]: POST
+                      - generic [ref=f1e3346]: Payment Submitted Scenario
+                      - button "⧉" [ref=f1e3347]
+                    - generic [ref=f1e3348] [cursor=pointer]:
+                      - generic [ref=f1e3349]: POST
+                      - generic [ref=f1e3350]: Payment Confirmed Scenario
+                      - button "⧉" [ref=f1e3351]
+                    - generic [ref=f1e3352] [cursor=pointer]:
+                      - generic [ref=f1e3353]: POST
+                      - generic [ref=f1e3354]: Payment Paid Out Scenario
+                      - button "⧉" [ref=f1e3355]
+                    - generic [ref=f1e3356] [cursor=pointer]:
+                      - generic [ref=f1e3357]: POST
+                      - generic [ref=f1e3358]: Payment Failed Scenario
+                      - button "⧉" [ref=f1e3359]
+                    - generic [ref=f1e3360] [cursor=pointer]:
+                      - generic [ref=f1e3361]: POST
+                      - generic [ref=f1e3362]: Payment Charged Back Scenario
+                      - button "⧉" [ref=f1e3363]
+                    - generic [ref=f1e3364] [cursor=pointer]:
+                      - generic [ref=f1e3365]: POST
+                      - generic [ref=f1e3366]: Payment Charged Back Settled Scenario
+                      - button "⧉" [ref=f1e3367]
+                    - generic [ref=f1e3368] [cursor=pointer]:
+                      - generic [ref=f1e3369]: POST
+                      - generic [ref=f1e3370]: Payment Late Failure Scenario
+                      - button "⧉" [ref=f1e3371]
+                    - generic [ref=f1e3372] [cursor=pointer]:
+                      - generic [ref=f1e3373]: POST
+                      - generic [ref=f1e3374]: Payment Late Failure Settled Scenario
+                      - button "⧉" [ref=f1e3375]
+                    - generic [ref=f1e3376] [cursor=pointer]:
+                      - generic [ref=f1e3377]: POST
+                      - generic [ref=f1e3378]: Mandate Activated Scenario
+                      - button "⧉" [ref=f1e3379]
+                    - generic [ref=f1e3380] [cursor=pointer]:
+                      - generic [ref=f1e3381]: POST
+                      - generic [ref=f1e3382]: Mandate Failed Scenario
+                      - button "⧉" [ref=f1e3383]
+                    - generic [ref=f1e3384] [cursor=pointer]:
+                      - generic [ref=f1e3385]: POST
+                      - generic [ref=f1e3386]: Mandate Expired Scenario
+                      - button "⧉" [ref=f1e3387]
+                    - generic [ref=f1e3388] [cursor=pointer]:
+                      - generic [ref=f1e3389]: POST
+                      - generic [ref=f1e3390]: Mandate Customer Approval Granted Scenario
+                      - button "⧉" [ref=f1e3391]
+                    - generic [ref=f1e3392] [cursor=pointer]:
+                      - generic [ref=f1e3393]: POST
+                      - generic [ref=f1e3394]: Mandate Customer Approval Skipped Scenario
+                      - button "⧉" [ref=f1e3395]
+                    - generic [ref=f1e3396] [cursor=pointer]:
+                      - generic [ref=f1e3397]: POST
+                      - generic [ref=f1e3398]: Mandate Transferred Scenario
+                      - button "⧉" [ref=f1e3399]
+                    - generic [ref=f1e3400] [cursor=pointer]:
+                      - generic [ref=f1e3401]: POST
+                      - generic [ref=f1e3402]: Mandate Transferred with Resubmission Scenario
+                      - button "⧉" [ref=f1e3403]
+                    - generic [ref=f1e3404] [cursor=pointer]:
+                      - generic [ref=f1e3405]: POST
+                      - generic [ref=f1e3406]: Refund Paid Scenario
+                      - button "⧉" [ref=f1e3407]
+                    - generic [ref=f1e3408] [cursor=pointer]:
+                      - generic [ref=f1e3409]: POST
+                      - generic [ref=f1e3410]: Refund Settled Scenario
+                      - button "⧉" [ref=f1e3411]
+                    - generic [ref=f1e3412] [cursor=pointer]:
+                      - generic [ref=f1e3413]: POST
+                      - generic [ref=f1e3414]: Refund Bounced Scenario
+                      - button "⧉" [ref=f1e3415]
+                    - generic [ref=f1e3416] [cursor=pointer]:
+                      - generic [ref=f1e3417]: POST
+                      - generic [ref=f1e3418]: Refund Returned Scenario
+                      - button "⧉" [ref=f1e3419]
+                    - generic [ref=f1e3420] [cursor=pointer]:
+                      - generic [ref=f1e3421]: POST
+                      - generic [ref=f1e3422]: Payout Bounced Scenario
+                      - button "⧉" [ref=f1e3423]
+                    - generic [ref=f1e3424] [cursor=pointer]:
+                      - generic [ref=f1e3425]: POST
+                      - generic [ref=f1e3426]: Creditor Verification Status Action Required Scenario
+                      - button "⧉" [ref=f1e3427]
+                    - generic [ref=f1e3428] [cursor=pointer]:
+                      - generic [ref=f1e3429]: POST
+                      - generic [ref=f1e3430]: Creditor Verification Status in Review Scenario
+                      - button "⧉" [ref=f1e3431]
+                    - generic [ref=f1e3432] [cursor=pointer]:
+                      - generic [ref=f1e3433]: POST
+                      - generic [ref=f1e3434]: Creditor Verification Status Successful Scenario
+                      - button "⧉" [ref=f1e3435]
+                - generic [ref=f1e3436]:
+                  - generic [ref=f1e3437] [cursor=pointer]:
+                    - generic [ref=f1e3438]:
+                      - generic "Expand/collapse" [ref=f1e3439]: ▾
+                      - text: Scheme Identifiers
+                    - generic [ref=f1e3440]:
+                      - button "+" [ref=f1e3441]
+                      - generic [ref=f1e3442]: "3"
+                  - generic [ref=f1e3443]:
+                    - generic [ref=f1e3444] [cursor=pointer]:
+                      - generic [ref=f1e3445]: POST
+                      - generic [ref=f1e3446]: Create a Scheme Identifier
+                      - button "⧉" [ref=f1e3447]
+                    - generic [ref=f1e3448] [cursor=pointer]:
+                      - generic [ref=f1e3449]: GET
+                      - generic [ref=f1e3450]: List Scheme Identifiers
+                      - button "⧉" [ref=f1e3451]
+                    - generic [ref=f1e3452] [cursor=pointer]:
+                      - generic [ref=f1e3453]: GET
+                      - generic [ref=f1e3454]: Get a Scheme Identifier
+                      - button "⧉" [ref=f1e3455]
+                - generic [ref=f1e3456]:
+                  - generic [ref=f1e3457] [cursor=pointer]:
+                    - generic [ref=f1e3458]:
+                      - generic "Expand/collapse" [ref=f1e3459]: ▾
+                      - text: Subscriptions
+                    - generic [ref=f1e3460]:
+                      - button "+" [ref=f1e3461]
+                      - generic [ref=f1e3462]: "7"
+                  - generic [ref=f1e3463]:
+                    - generic [ref=f1e3464] [cursor=pointer]:
+                      - generic [ref=f1e3465]: POST
+                      - generic [ref=f1e3466]: Create a Subscripton
+                      - button "⧉" [ref=f1e3467]
+                    - generic [ref=f1e3468] [cursor=pointer]:
+                      - generic [ref=f1e3469]: PUT
+                      - generic [ref=f1e3470]: Update a Subscription
+                      - button "⧉" [ref=f1e3471]
+                    - generic [ref=f1e3472] [cursor=pointer]:
+                      - generic [ref=f1e3473]: GET
+                      - generic [ref=f1e3474]: List Subscriptions
+                      - button "⧉" [ref=f1e3475]
+                    - generic [ref=f1e3476] [cursor=pointer]:
+                      - generic [ref=f1e3477]: GET
+                      - generic [ref=f1e3478]: Get a single Subscription
+                      - button "⧉" [ref=f1e3479]
+                    - generic [ref=f1e3480] [cursor=pointer]:
+                      - generic [ref=f1e3481]: POST
+                      - generic [ref=f1e3482]: Pause a Subscription
+                      - button "⧉" [ref=f1e3483]
+                    - generic [ref=f1e3484] [cursor=pointer]:
+                      - generic [ref=f1e3485]: POST
+                      - generic [ref=f1e3486]: Cancel a Subscription
+                      - button "⧉" [ref=f1e3487]
+                    - generic [ref=f1e3488] [cursor=pointer]:
+                      - generic [ref=f1e3489]: POST
+                      - generic [ref=f1e3490]: Resume a Subscription
+                      - button "⧉" [ref=f1e3491]
+                - generic [ref=f1e3492]:
+                  - generic [ref=f1e3493] [cursor=pointer]:
+                    - generic [ref=f1e3494]:
+                      - generic "Expand/collapse" [ref=f1e3495]: ▾
+                      - text: Tax Rates
+                    - generic [ref=f1e3496]:
+                      - button "+" [ref=f1e3497]
+                      - generic [ref=f1e3498]: "2"
+                  - generic [ref=f1e3499]:
+                    - generic [ref=f1e3500] [cursor=pointer]:
+                      - generic [ref=f1e3501]: GET
+                      - generic [ref=f1e3502]: List Tax Rates
+                      - button "⧉" [ref=f1e3503]
+                    - generic [ref=f1e3504] [cursor=pointer]:
+                      - generic [ref=f1e3505]: GET
+                      - generic [ref=f1e3506]: Get a Single Tax Rate
+                      - button "⧉" [ref=f1e3507]
+                - generic [ref=f1e3508]:
+                  - generic [ref=f1e3509] [cursor=pointer]:
+                    - generic [ref=f1e3510]:
+                      - generic "Expand/collapse" [ref=f1e3511]: ▾
+                      - text: Transferred Mandates
+                    - generic [ref=f1e3512]:
+                      - button "+" [ref=f1e3513]
+                      - generic [ref=f1e3514]: "1"
+                  - generic [ref=f1e3516] [cursor=pointer]:
+                    - generic [ref=f1e3517]: GET
+                    - generic [ref=f1e3518]: Get updated customer bank details
+                    - button "⧉" [ref=f1e3519]
+                - generic [ref=f1e3520]:
+                  - generic [ref=f1e3521] [cursor=pointer]:
+                    - generic [ref=f1e3522]:
+                      - generic "Expand/collapse" [ref=f1e3523]: ▾
+                      - text: Webhooks
+                    - generic [ref=f1e3524]:
+                      - button "+" [ref=f1e3525]
+                      - generic [ref=f1e3526]: "3"
+                  - generic [ref=f1e3527]:
+                    - generic [ref=f1e3528] [cursor=pointer]:
+                      - generic [ref=f1e3529]: GET
+                      - generic [ref=f1e3530]: List Webhooks
+                      - button "⧉" [ref=f1e3531]
+                    - generic [ref=f1e3532] [cursor=pointer]:
+                      - generic [ref=f1e3533]: GET
+                      - generic [ref=f1e3534]: Get a Webhook
+                      - button "⧉" [ref=f1e3535]
+                    - generic [ref=f1e3536] [cursor=pointer]:
+                      - generic [ref=f1e3537]: POST
+                      - generic [ref=f1e3538]: Retry a Webhook
+                      - button "⧉" [ref=f1e3539]
+            - generic [ref=f1e3540]:
+              - generic [ref=f1e3541] [cursor=pointer]:
+                - generic [ref=f1e3542]:
+                  - generic "Expand/collapse" [ref=f1e3543]: ▾
+                  - text: Helper Endpoints
+                - generic [ref=f1e3544]:
+                  - button "+" [ref=f1e3545]
+                  - generic [ref=f1e3546]: "3"
+              - generic [ref=f1e3547]:
+                - generic [ref=f1e3548] [cursor=pointer]:
+                  - generic [ref=f1e3549]: POST
+                  - generic [ref=f1e3550]: Create a Mandate PDF
+                  - button "⧉" [ref=f1e3551]
+                - generic [ref=f1e3552] [cursor=pointer]:
+                  - generic [ref=f1e3553]: POST
+                  - generic [ref=f1e3554]: Bank Details Lookup
+                  - button "⧉" [ref=f1e3555]
+                - generic [ref=f1e3556] [cursor=pointer]:
+                  - generic [ref=f1e3557]: GET
+                  - generic [ref=f1e3558]: Healthcheck
+                  - button "⧉" [ref=f1e3559]
+    - generic [ref=f1e411]:
+      - generic [ref=f1e412]:
+        - combobox [ref=f1e413]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f1e415]
+        - button "Duplicate" [ref=f1e416] [cursor=pointer]
+        - button "Save" [ref=f1e417] [cursor=pointer]
+        - button "Send" [ref=f1e418] [cursor=pointer]
+      - generic [ref=f1e419]:
+        - generic [ref=f1e420] [cursor=pointer]: Body
+        - generic [ref=f1e421] [cursor=pointer]: Params
+        - generic [ref=f1e423] [cursor=pointer]: Headers
+        - generic [ref=f1e425] [cursor=pointer]: Vars
+        - generic [ref=f1e427] [cursor=pointer]: Tests
+        - generic [ref=f1e429] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f1e430]
+      - generic [ref=f1e432]:
+        - generic [ref=f1e433]:
+          - generic [ref=f1e434]: Body
+          - combobox "Body" [ref=f1e435]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f1e436]:
+          - generic [ref=f1e437]:
+            - button "✦ Beautify" [ref=f1e438] [cursor=pointer]
+            - button "Find" [ref=f1e439] [cursor=pointer]
+            - button "Wrap" [ref=f1e440] [cursor=pointer]
+            - button "Full Screen" [ref=f1e441] [cursor=pointer]
+          - generic [ref=f1e442]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f1e443]
+      - generic [ref=f1e446]:
+        - generic [ref=f1e447]: —
+        - generic [ref=f1e450]:
+          - generic [ref=f1e451] [cursor=pointer]: Body
+          - generic [ref=f1e452] [cursor=pointer]: Headers
+          - generic [ref=f1e453] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f1e454]
+  - text: locked

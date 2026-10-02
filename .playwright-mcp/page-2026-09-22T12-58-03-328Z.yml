@@ -1,0 +1,99 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - button "Console" [ref=f4e4] [cursor=pointer]
+      - button "Runner" [ref=f4e5] [cursor=pointer]
+    - generic [ref=f4e6]: Attempt Visibility Demo (local mock, throwaway)
+    - combobox "Active environment" [ref=f4e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f4e8] [cursor=pointer]
+    - generic "Per-request timeout in seconds — applies to Send and the Runner" [ref=f4e9]:
+      - generic [ref=f4e10]: Timeout
+      - spinbutton "Timeout s" [ref=f4e11]: "120"
+      - generic [ref=f4e12]: s
+    - generic [ref=f4e13]: "auth: none"
+    - button "☽" [ref=f4e14] [cursor=pointer]
+  - generic [ref=f4e1275]:
+    - generic [ref=f4e1276]:
+      - textbox "Search a request, folder or collection…" [ref=f4e1277]: Always-500 GET
+      - combobox [ref=f4e1278]:
+        - option "No Environment" [selected]
+        - option "Dev Playground"
+        - option "Dev Testground"
+        - option "UAT Playground"
+      - button "CSV" [ref=f4e1279] [cursor=pointer]
+      - generic [ref=f4e1280]: No CSV — runs once
+      - generic "Leave blank to run once (no CSV) or once per CSV row (CSV attached). Type a number only to CAP how many rows/iterations run." [ref=f4e1281]:
+        - text: Iterations
+        - spinbutton "Iterations" [ref=f4e1282]
+      - generic "Run this many iterations at the same time instead of one after another. Requests within one iteration still run in order — the second request may need a value captured by the first. Requires 'Reset captures each iteration'." [ref=f4e1283]:
+        - text: Parallel
+        - spinbutton "Parallel" [ref=f4e1284]: "1"
+        - text: locked
+      - button "Options 3 retries" [ref=f4e1286] [cursor=pointer]
+      - button "Preview" [ref=f4e1287] [cursor=pointer]
+      - button "Run" [ref=f4e1288] [cursor=pointer]
+      - button "Stop" [disabled] [ref=f4e1289]
+    - generic [ref=f4e1290]:
+      - textbox "Filter results…" [ref=f4e1291]
+      - combobox [ref=f4e1292]:
+        - option "All requests" [selected]
+        - option "Always-500 GET"
+      - button "Failures only" [ref=f4e1293] [cursor=pointer]
+      - button "Compact" [ref=f4e1294] [cursor=pointer]
+      - generic [ref=f4e1679]: 5 of 5 results
+      - button "History" [ref=f4e1295] [cursor=pointer]
+      - button "Export" [ref=f4e1296] [cursor=pointer]
+      - button "Clear" [ref=f4e1297] [cursor=pointer]
+    - generic [ref=f4e1298]:
+      - generic [ref=f4e1680]:
+        - generic [ref=f4e1681]:
+          - generic [ref=f4e1682]: "500"
+          - generic [ref=f4e1683]:
+            - generic [ref=f4e1684]: Always-500 GET — attempt 1/4
+            - generic [ref=f4e1686]: retrying…
+        - generic [ref=f4e1687]:
+          - generic [ref=f4e1688]: "500"
+          - generic [ref=f4e1689]:
+            - generic [ref=f4e1690]: Always-500 GET — attempt 2/4
+            - generic [ref=f4e1692]: retrying…
+        - generic [ref=f4e1693]:
+          - generic [ref=f4e1694]: "500"
+          - generic [ref=f4e1695]:
+            - generic [ref=f4e1696]: Always-500 GET — attempt 3/4
+            - generic [ref=f4e1698]: retrying…
+        - generic [ref=f4e1699]:
+          - generic [ref=f4e1700]: "500"
+          - generic [ref=f4e1701]:
+            - generic [ref=f4e1702]: Always-500 GET — attempt 4/4
+            - generic [ref=f4e1704]: final
+        - generic [ref=f4e1705] [cursor=pointer]:
+          - generic [ref=f4e1706]: "500"
+          - generic [ref=f4e1707]:
+            - generic [ref=f4e1708]:
+              - generic [ref=f4e1709]: Always-500 GET
+              - generic [ref=f4e1710]: 3300 ms
+            - generic [ref=f4e1711]: "iteration 1 · step 1/1 · attempt 4/4 · {\"error\": \"always transient, never recovers\"}"
+      - generic [ref=f4e1300]:
+        - generic [ref=f4e1301]: —
+        - generic [ref=f4e1303]:
+          - generic [ref=f4e1304] [cursor=pointer]: Response
+          - generic [ref=f4e1305] [cursor=pointer]: Headers
+          - generic [ref=f4e1306] [cursor=pointer]: Request
+        - generic [ref=f4e1307]: Select a result.
+    - generic [ref=f4e1309]:
+      - generic [ref=f4e1311]: Exit 1
+      - generic [ref=f4e1712]: no CSV · iteration 1/1 · 1 request(s), 3 retried
+      - generic [ref=f4e1312]:
+        - generic [ref=f4e1313]: OK 0
+        - generic [ref=f4e1314]: Failed 1
+        - generic [ref=f4e1315]: Flagged 0
+        - generic [ref=f4e1316]: Errored 0
+    - generic [ref=f4e1317]: "1 failure(s), 1 distinct reason(s): FAIL 500 — {\"error\": \"always transient, never recovers\"} ×1"
+    - generic [ref=f4e1318]:
+      - text: No CSV attached — the sequence runs once. Attach a CSV to run once per row (an unresolved
+      - code [ref=f4e1319]: "{{col}}"
+      - text: in a header, URL or body fails the run up front — a typo'd column name, not a bug).

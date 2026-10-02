@@ -1,0 +1,524 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - button "Console" [ref=e4] [cursor=pointer]
+      - button "Runner" [ref=e5] [cursor=pointer]
+    - generic [ref=e6]: GoCardless Payments
+    - combobox "Active environment" [ref=e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "test"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=e8] [cursor=pointer]
+    - generic [ref=e9]: "auth: none"
+    - button "⚙ Settings" [ref=e10] [cursor=pointer]
+    - button "☀" [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - complementary [ref=e13]:
+      - generic [ref=e14]:
+        - button "+ New ▾" [ref=e16] [cursor=pointer]
+        - button "↑ Import" [ref=e17] [cursor=pointer]
+        - button "↓ Export" [ref=e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e492]:
+          - generic [ref=e493] [cursor=pointer]:
+            - generic [ref=e494]:
+              - generic "Expand/collapse" [ref=e495]: ▾
+              - text: Lending
+            - generic [ref=e496]:
+              - button "+" [ref=e497]
+              - generic [ref=e498]: "95"
+          - generic [ref=e499]:
+            - generic [ref=e500] [cursor=pointer]:
+              - generic [ref=e501]: GET
+              - generic [ref=e502]: GET all Modified Loan Accounts Copy Copy
+              - button "⧉" [ref=e503]
+            - generic [ref=e504] [cursor=pointer]:
+              - generic [ref=e505]: POST
+              - generic [ref=e506]: Fee Accrual
+              - button "⧉" [ref=e507]
+            - generic [ref=e508] [cursor=pointer]:
+              - generic [ref=e509]: POST
+              - generic [ref=e510]: Fee Accrual Copy
+              - button "⧉" [ref=e511]
+            - generic [ref=e512] [cursor=pointer]:
+              - generic [ref=e513]: POST
+              - generic [ref=e514]: Fee Accrual on Account Closure
+              - button "⧉" [ref=e515]
+            - generic [ref=e516] [cursor=pointer]:
+              - generic [ref=e517]: POST
+              - generic [ref=e518]: Prepayment
+              - button "⧉" [ref=e519]
+            - generic [ref=e520] [cursor=pointer]:
+              - generic [ref=e521]: POST
+              - generic [ref=e522]: Customer Creation
+              - button "⧉" [ref=e523]
+            - generic [ref=e524] [cursor=pointer]:
+              - generic [ref=e525]: GET
+              - generic [ref=e526]: Fee Accrual (2)
+              - button "⧉" [ref=e527]
+            - generic [ref=e528] [cursor=pointer]:
+              - generic [ref=e529]: GET
+              - generic [ref=e530]: Loan Statement Details
+              - button "⧉" [ref=e531]
+            - generic [ref=e532] [cursor=pointer]:
+              - generic [ref=e533]: PUT
+              - generic [ref=e534]: Edit Loan Account
+              - button "⧉" [ref=e535]
+            - generic [ref=e536] [cursor=pointer]:
+              - generic [ref=e537]: POST
+              - generic [ref=e538]: Create Loan Account
+              - button "⧉" [ref=e539]
+            - generic [ref=e540] [cursor=pointer]:
+              - generic [ref=e541]: POST
+              - generic [ref=e542]: disburse loan
+              - button "⧉" [ref=e543]
+            - generic [ref=e544] [cursor=pointer]:
+              - generic [ref=e545]: POST
+              - generic [ref=e546]: Restructure
+              - button "⧉" [ref=e547]
+            - generic [ref=e548] [cursor=pointer]:
+              - generic [ref=e549]: PUT
+              - generic [ref=e550]: Defer Fee
+              - button "⧉" [ref=e551]
+            - generic [ref=e552] [cursor=pointer]:
+              - generic [ref=e553]: GET
+              - generic [ref=e554]: GET Loan Account
+              - button "⧉" [ref=e555]
+            - generic [ref=e556] [cursor=pointer]:
+              - generic [ref=e557]: POST
+              - generic [ref=e558]: Loan Statement
+              - button "⧉" [ref=e559]
+            - generic [ref=e560] [cursor=pointer]:
+              - generic [ref=e561]: GET
+              - generic [ref=e562]: GET Loan Product
+              - button "⧉" [ref=e563]
+            - generic [ref=e564] [cursor=pointer]:
+              - generic [ref=e565]: PUT
+              - generic [ref=e566]: Savings Account Bulk Linking
+              - button "⧉" [ref=e567]
+            - generic [ref=e568] [cursor=pointer]:
+              - generic [ref=e569]: PUT
+              - generic [ref=e570]: Periodic Fee Application
+              - button "⧉" [ref=e571]
+            - generic [ref=e572] [cursor=pointer]:
+              - generic [ref=e573]: POST
+              - generic [ref=e574]: Deferred Demand Batch
+              - button "⧉" [ref=e575]
+            - generic [ref=e576] [cursor=pointer]:
+              - generic [ref=e577]: DEL
+              - generic [ref=e578]: Perodic fee Application Copy
+              - button "⧉" [ref=e579]
+            - generic [ref=e580] [cursor=pointer]:
+              - generic [ref=e581]: POST
+              - generic [ref=e582]: Channe;l Set Up
+              - button "⧉" [ref=e583]
+            - generic [ref=e584] [cursor=pointer]:
+              - generic [ref=e585]: POST
+              - generic [ref=e586]: Roll Up
+              - button "⧉" [ref=e587]
+            - generic [ref=e588] [cursor=pointer]:
+              - generic [ref=e589]: POST
+              - generic [ref=e590]: Savings Account Bulk Linking (2)
+              - button "⧉" [ref=e591]
+            - generic [ref=e592] [cursor=pointer]:
+              - generic [ref=e593]: PUT
+              - generic [ref=e594]: Update PD LGD values
+              - button "⧉" [ref=e595]
+            - generic [ref=e596] [cursor=pointer]:
+              - generic [ref=e597]: GET
+              - generic [ref=e598]: Update cache
+              - button "⧉" [ref=e599]
+            - generic [ref=e600] [cursor=pointer]:
+              - generic [ref=e601]: GET
+              - generic [ref=e602]: Update cache Copy
+              - button "⧉" [ref=e603]
+            - generic [ref=e604] [cursor=pointer]:
+              - generic [ref=e605]: GET
+              - generic [ref=e606]: Consistency
+              - button "⧉" [ref=e607]
+            - generic [ref=e608] [cursor=pointer]:
+              - generic [ref=e609]: GET
+              - generic [ref=e610]: Consistency Copy
+              - button "⧉" [ref=e611]
+            - generic [ref=e612] [cursor=pointer]:
+              - generic [ref=e613]: POST
+              - generic [ref=e614]: Rate Reset
+              - button "⧉" [ref=e615]
+            - generic [ref=e616] [cursor=pointer]:
+              - generic [ref=e617]: PUT
+              - generic [ref=e618]: Undo Event
+              - button "⧉" [ref=e619]
+            - generic [ref=e620] [cursor=pointer]:
+              - generic [ref=e621]: POST
+              - generic [ref=e622]: Interest Accrual
+              - button "⧉" [ref=e623]
+            - generic [ref=e624] [cursor=pointer]:
+              - generic [ref=e625]: POST
+              - generic [ref=e626]: Preview Schedule
+              - button "⧉" [ref=e627]
+            - generic [ref=e628] [cursor=pointer]:
+              - generic [ref=e629]: POST
+              - generic [ref=e630]: Restructure (2)
+              - button "⧉" [ref=e631]
+            - generic [ref=e632] [cursor=pointer]:
+              - generic [ref=e633]: POST
+              - generic [ref=e634]: Preview Restructure
+              - button "⧉" [ref=e635]
+            - generic [ref=e636] [cursor=pointer]:
+              - generic [ref=e637]: POST
+              - generic [ref=e638]: Adhoc Fee Capitalization
+              - button "⧉" [ref=e639]
+            - generic [ref=e640] [cursor=pointer]:
+              - generic [ref=e641]: PUT
+              - generic [ref=e642]: Feature toggle
+              - button "⧉" [ref=e643]
+            - generic [ref=e644] [cursor=pointer]:
+              - generic [ref=e645]: POST
+              - generic [ref=e646]: Add Events
+              - button "⧉" [ref=e647]
+            - generic [ref=e648] [cursor=pointer]:
+              - generic [ref=e649]: GET
+              - generic [ref=e650]: Progressive Search
+              - button "⧉" [ref=e651]
+            - generic [ref=e652] [cursor=pointer]:
+              - generic [ref=e653]: POST
+              - generic [ref=e654]: Schedule correction PROD
+              - button "⧉" [ref=e655]
+            - generic [ref=e656] [cursor=pointer]:
+              - generic [ref=e657]: POST
+              - generic [ref=e658]: Schedule correction Copy
+              - button "⧉" [ref=e659]
+            - generic [ref=e660] [cursor=pointer]:
+              - generic [ref=e661]: POST
+              - generic [ref=e662]: Batch end point
+              - button "⧉" [ref=e663]
+            - generic [ref=e664] [cursor=pointer]:
+              - generic [ref=e665]: POST
+              - generic [ref=e666]: On Demand Batch Job Run
+              - button "⧉" [ref=e667]
+            - generic [ref=e668] [cursor=pointer]:
+              - generic [ref=e669]: POST
+              - generic [ref=e670]: On Demand Batch Job Run Copy
+              - button "⧉" [ref=e671]
+            - generic [ref=e672] [cursor=pointer]:
+              - generic [ref=e673]: POST
+              - generic [ref=e674]: On Demand Batch Job Run From Batch
+              - button "⧉" [ref=e675]
+            - generic [ref=e676] [cursor=pointer]:
+              - generic [ref=e677]: POST
+              - generic [ref=e678]: On Demand Batch Job Run From Batch Copy
+              - button "⧉" [ref=e679]
+            - generic [ref=e680] [cursor=pointer]:
+              - generic [ref=e681]: GET
+              - generic [ref=e682]: Fetch CA by CA Id
+              - button "⧉" [ref=e683]
+            - generic [ref=e684] [cursor=pointer]:
+              - generic [ref=e685]: POST
+              - generic [ref=e686]: Rates Insertion
+              - button "⧉" [ref=e687]
+            - generic [ref=e688] [cursor=pointer]:
+              - generic [ref=e689]: POST
+              - generic [ref=e690]: Repayment Schedule
+              - button "⧉" [ref=e691]
+            - generic [ref=e692] [cursor=pointer]:
+              - generic [ref=e693]: GET
+              - generic [ref=e694]: Consolidated Statement
+              - button "⧉" [ref=e695]
+            - generic [ref=e696] [cursor=pointer]:
+              - generic [ref=e697]: PUT
+              - generic [ref=e698]: Defer Fee (2)
+              - button "⧉" [ref=e699]
+            - generic [ref=e700] [cursor=pointer]:
+              - generic [ref=e701]: POST
+              - generic [ref=e702]: Create Term Child Loan Account
+              - button "⧉" [ref=e703]
+            - generic [ref=e704] [cursor=pointer]:
+              - generic [ref=e705]: POST
+              - generic [ref=e706]: Create Term Child Loan Account - SONIA
+              - button "⧉" [ref=e707]
+            - generic [ref=e708] [cursor=pointer]:
+              - generic [ref=e709]: POST
+              - generic [ref=e710]: Create RCF Child Loan Account
+              - button "⧉" [ref=e711]
+            - generic [ref=e712] [cursor=pointer]:
+              - generic [ref=e713]: POST
+              - generic [ref=e714]: Create Loan Account - Playground
+              - button "⧉" [ref=e715]
+            - generic [ref=e716] [cursor=pointer]:
+              - generic [ref=e717]: POST
+              - generic [ref=e718]: Create Facility Testground
+              - button "⧉" [ref=e719]
+            - generic [ref=e720] [cursor=pointer]:
+              - generic [ref=e721]: POST
+              - generic [ref=e722]: Create Child Testground - IO
+              - button "⧉" [ref=e723]
+            - generic [ref=e724] [cursor=pointer]:
+              - generic [ref=e725]: POST
+              - generic [ref=e726]: Create Child Testground - IR
+              - button "⧉" [ref=e727]
+            - generic [ref=e728] [cursor=pointer]:
+              - generic [ref=e729]: POST
+              - generic [ref=e730]: Create Child Testground - IPP
+              - button "⧉" [ref=e731]
+            - generic [ref=e732] [cursor=pointer]:
+              - generic [ref=e733]: POST
+              - generic [ref=e734]: Create Facility Playground
+              - button "⧉" [ref=e735]
+            - generic [ref=e736] [cursor=pointer]:
+              - generic [ref=e737]: POST
+              - generic [ref=e738]: Create Term Child Loan Account - SONIA Copy
+              - button "⧉" [ref=e739]
+            - generic [ref=e740] [cursor=pointer]:
+              - generic [ref=e741]: POST
+              - generic [ref=e742]: Create Facility Playground Copy
+              - button "⧉" [ref=e743]
+            - generic [ref=e744] [cursor=pointer]:
+              - generic [ref=e745]: POST
+              - generic [ref=e746]: LBT
+              - button "⧉" [ref=e747]
+            - generic [ref=e748] [cursor=pointer]:
+              - generic [ref=e749]: POST
+              - generic [ref=e750]: Combined Batch
+              - button "⧉" [ref=e751]
+            - generic [ref=e752] [cursor=pointer]:
+              - generic [ref=e753]: PUT
+              - generic [ref=e754]: Queue Config
+              - button "⧉" [ref=e755]
+            - generic [ref=e756] [cursor=pointer]:
+              - generic [ref=e757]: GET
+              - generic [ref=e758]: Statement
+              - button "⧉" [ref=e759]
+            - generic [ref=e760] [cursor=pointer]:
+              - generic [ref=e761]: POST
+              - generic [ref=e762]: Account Reposting
+              - button "⧉" [ref=e763]
+            - generic [ref=e764] [cursor=pointer]:
+              - generic [ref=e765]: POST
+              - generic [ref=e766]: Create LF Workaround Term Parent
+              - button "⧉" [ref=e767]
+            - generic [ref=e768] [cursor=pointer]:
+              - generic [ref=e769]: POST
+              - generic [ref=e770]: Create LF Workaround Term Testground
+              - button "⧉" [ref=e771]
+            - generic [ref=e772] [cursor=pointer]:
+              - generic [ref=e773]: POST
+              - generic [ref=e774]: Create LF Workaround Term Child
+              - button "⧉" [ref=e775]
+            - generic [ref=e776] [cursor=pointer]:
+              - generic [ref=e777]: POST
+              - generic [ref=e778]: Create LF Workaround Testground child
+              - button "⧉" [ref=e779]
+            - generic [ref=e780] [cursor=pointer]:
+              - generic [ref=e781]: POST
+              - generic [ref=e782]: Create CA Testground
+              - button "⧉" [ref=e783]
+            - generic [ref=e784] [cursor=pointer]:
+              - generic [ref=e785]: POST
+              - generic [ref=e786]: Interpolated rate insertion
+              - button "⧉" [ref=e787]
+            - generic [ref=e788] [cursor=pointer]:
+              - generic [ref=e789]: GET
+              - generic [ref=e790]: SI Migration Consistency IANP
+              - button "⧉" [ref=e791]
+            - generic [ref=e792] [cursor=pointer]:
+              - generic [ref=e793]: GET
+              - generic [ref=e794]: SI Migration Consistency New Interest
+              - button "⧉" [ref=e795]
+            - generic [ref=e796] [cursor=pointer]:
+              - generic [ref=e797]: POST
+              - generic [ref=e798]: SI Migration - UAT
+              - button "⧉" [ref=e799]
+            - generic [ref=e800] [cursor=pointer]:
+              - generic [ref=e801]: POST
+              - generic [ref=e802]: SI - Fee force accrual
+              - button "⧉" [ref=e803]
+            - generic [ref=e804] [cursor=pointer]:
+              - generic [ref=e805]: POST
+              - generic [ref=e806]: Consolidated statement
+              - button "⧉" [ref=e807]
+            - generic [ref=e808] [cursor=pointer]:
+              - generic [ref=e809]: POST
+              - generic [ref=e810]: Sequential Statement
+              - button "⧉" [ref=e811]
+            - generic [ref=e812] [cursor=pointer]:
+              - generic [ref=e813]: GET
+              - generic [ref=e814]: Sequential Statement Copy
+              - button "⧉" [ref=e815]
+            - generic [ref=e816] [cursor=pointer]:
+              - generic [ref=e817]: GET
+              - generic [ref=e818]: Loan Warning
+              - button "⧉" [ref=e819]
+            - generic [ref=e820] [cursor=pointer]:
+              - generic [ref=e821]: POST
+              - generic [ref=e822]: Syndication
+              - button "⧉" [ref=e823]
+            - generic [ref=e824] [cursor=pointer]:
+              - generic [ref=e825]: POST
+              - generic [ref=e826]: Loan Transfer Filter
+              - button "⧉" [ref=e827]
+            - generic [ref=e828] [cursor=pointer]:
+              - generic [ref=e829]: POST
+              - generic [ref=e830]: ca-repayment-settlement-dev Copy
+              - button "⧉" [ref=e831]
+            - generic [ref=e832] [cursor=pointer]:
+              - generic [ref=e833]: POST
+              - generic [ref=e834]: Repayment Settlement
+              - button "⧉" [ref=e835]
+            - generic [ref=e836] [cursor=pointer]:
+              - generic [ref=e837]: GET
+              - generic [ref=e838]: Eligible Loans Snapshot
+              - button "⧉" [ref=e839]
+            - generic [ref=e840] [cursor=pointer]:
+              - generic [ref=e841]: POST
+              - generic [ref=e842]: Snapshot for a particular Loan
+              - button "⧉" [ref=e843]
+            - generic [ref=e844] [cursor=pointer]:
+              - generic [ref=e845]: GET
+              - generic [ref=e846]: Loan Get \
+              - button "⧉" [ref=e847]
+            - generic [ref=e848] [cursor=pointer]:
+              - generic [ref=e849]: GET
+              - generic [ref=e850]: Get eligible Snapshot
+              - button "⧉" [ref=e851]
+            - generic [ref=e852] [cursor=pointer]:
+              - generic [ref=e853]: PUT
+              - generic [ref=e854]: BB Company Id
+              - button "⧉" [ref=e855]
+            - generic [ref=e856] [cursor=pointer]:
+              - generic [ref=e857]: POST
+              - generic [ref=e858]: Repayment Settlement Surplus
+              - button "⧉" [ref=e859]
+            - generic [ref=e860] [cursor=pointer]:
+              - generic [ref=e861]: PUT
+              - generic [ref=e862]: AppproveDisb
+              - button "⧉" [ref=e863]
+            - generic [ref=e864] [cursor=pointer]:
+              - generic [ref=e865]: POST
+              - generic [ref=e866]: AppproveDisb Copy
+              - button "⧉" [ref=e867]
+            - generic [ref=e868] [cursor=pointer]:
+              - generic [ref=e869]: POST
+              - generic [ref=e870]: AppproveDisb Copy 2
+              - button "⧉" [ref=e871]
+            - generic [ref=e872] [cursor=pointer]:
+              - generic [ref=e873]: POST
+              - generic [ref=e874]: Token Generation-Dev
+              - button "⧉" [ref=e875]
+            - generic [ref=e876] [cursor=pointer]:
+              - generic [ref=e877]: GET
+              - generic [ref=e878]: GET all Modified Loan Accounts Copy Copy copy
+              - button "⧉" [ref=e879]
+        - generic [ref=e880]:
+          - generic [ref=e881] [cursor=pointer]:
+            - generic [ref=e882]:
+              - generic "Expand/collapse" [ref=e883]: ▾
+              - text: GoCardless Payments
+            - generic [ref=e884]:
+              - button "+" [ref=e885]
+              - generic [ref=e886]: "189"
+          - generic [ref=e887]:
+            - generic [ref=e889] [cursor=pointer]:
+              - generic [ref=e890]:
+                - generic "Expand/collapse" [ref=e891]: ▾
+                - text: 🚀 Getting Started
+              - generic [ref=e892]:
+                - button "+" [ref=e893]
+                - generic [ref=e894]: "23"
+            - generic [ref=e896] [cursor=pointer]:
+              - generic [ref=e897]:
+                - generic "Expand/collapse" [ref=e898]: ▾
+                - text: Billing Requests
+              - generic [ref=e899]:
+                - button "+" [ref=e900]
+                - generic [ref=e901]: "44"
+            - generic [ref=e903] [cursor=pointer]:
+              - generic [ref=e904]:
+                - generic "Expand/collapse" [ref=e905]: ▾
+                - text: Core Endpoints
+              - generic [ref=e906]:
+                - button "+" [ref=e907]
+                - generic [ref=e908]: "119"
+            - generic [ref=e910] [cursor=pointer]:
+              - generic [ref=e911]:
+                - generic "Expand/collapse" [ref=e912]: ▾
+                - text: Helper Endpoints
+              - generic [ref=e913]:
+                - button "+" [ref=e914]
+                - generic [ref=e915]: "3"
+    - generic [ref=e447]:
+      - generic [ref=e917] [cursor=pointer]:
+        - generic [ref=e918]: GoCardless Payments
+        - generic "Close" [ref=e919]: ×
+      - generic [ref=e920]:
+        - heading "👋 Introduction" [level=1] [ref=e921]
+        - paragraph [ref=e922]:
+          - text: Documentation for how to use this collection, including a Quickstart guide, is available on the
+          - link "GoCardless Developer Docs" [ref=e923] [cursor=pointer]:
+            - /url: https://developer.gocardless.com/getting-started/introduction
+          - text: .
+        - paragraph [ref=e924]:
+          - text: Detailed documentation for GoCardless API endpoints is at the
+          - link "GoCardless API reference guide" [ref=e925] [cursor=pointer]:
+            - /url: https://developer.gocardless.com/api-reference/
+          - text: .
+        - heading "📝 Prerequisites" [level=2] [ref=e926]
+        - paragraph [ref=e927]:
+          - link "Postman" [ref=e928] [cursor=pointer]:
+            - /url: https://www.getpostman.com/downloads/
+          - link "GoCardless Account" [ref=e929] [cursor=pointer]:
+            - /url: https://manage-sandbox.gocardless.com/
+        - paragraph [ref=e930]: Before you begin, set up your free GoCardless Sandbox account. Here, you can create an access token to add to your forked Postman collection.
+        - heading "🏃 Getting Started" [level=2] [ref=e931]
+        - paragraph [ref=e932]:
+          - text: 1\. Create a GoCardless Sandbox account
+          - link "here" [ref=e933] [cursor=pointer]:
+            - /url: https://manage-sandbox.gocardless.com/sign-up
+          - text: ": the sandbox is our dedicated testing environment where you can build and test your integration without touching real money."
+        - paragraph [ref=e934]:
+          - text: 2\. Go to
+          - link "Developers > Create > Access Token" [ref=e935] [cursor=pointer]:
+            - /url: https://manage-sandbox.gocardless.com/developers/access-tokens/create
+          - text: to generate an API access token. Give it a memorable name, with read-write access.
+        - paragraph [ref=e936]:
+          - img "Creating a new access token" [ref=e937]
+        - paragraph [ref=e938]:
+          - text: 3\.
+          - link "Fork" [ref=e939] [cursor=pointer]:
+            - /url: https://www.postman.com/gocardlessapi/workspace/gocardless-api/collection/22460459-bae9db02-4aec-428e-bbe4-c36d6d199fd0/fork?origin=tab
+          - text: the collection into Postman to synchronize with future updates.
+        - paragraph [ref=e940]
+        - paragraph [ref=e941]:
+          - text: 4\. Set up a
+          - link "Postman Environment" [ref=e942] [cursor=pointer]:
+            - /url: https://learning.postman.com/docs/sending-requests/managing-environments/
+          - text: for the GoCardless API collection by navigating to Environments and selecting the + icon to create a new environment.
+        - paragraph [ref=e943]:
+          - img "Creating a new Environment to store collection data" [ref=e944]
+        - paragraph [ref=e945]: "5\\. Navigate to an API call you'd like to test to save your key into the collection:"
+        - list [ref=e946]:
+          - listitem [ref=e947]: With an API call open, click into "Authorization"
+        - list [ref=e948]:
+          - listitem [ref=e949]: Expand the section
+        - list [ref=e950]:
+          - listitem [ref=e951]: Paste in Copy the access token from _step 2_.
+        - list [ref=e952]:
+          - listitem [ref=e953]: "\"Save authorization to collection\" with the link"
+        - paragraph [ref=e954]:
+          - img "Save token to your Postman collection to execute calls" [ref=e955]
+        - heading "Things to Note" [level=1] [ref=e956]
+        - paragraph [ref=e957]:
+          - text: 1. There are often additional URL parameters or various request bodies that can be passed, we recommended going through our API Developer Guide
+          - link "here" [ref=e958] [cursor=pointer]:
+            - /url: https://developer.gocardless.com/api-reference/#core-endpoints
+          - text: and amending the requests as necessary.
+        - paragraph [ref=e959]:
+          - text: 2. The Bank Account field requirements will vary depending on the scheme and payment method - please update the relevant requests accordingly. See more info
+          - link "here" [ref=e960] [cursor=pointer]:
+            - /url: https://developer.gocardless.com/api-reference/#appendix-local-bank-details
+          - text: .
+        - paragraph [ref=e961]: 3. Our requests are chained together automatically via Environment variables, so there is no need to copy & paste IDs across requests.
+        - paragraph [ref=e962]: 4. Enjoy! 🥳
+  - text: locked

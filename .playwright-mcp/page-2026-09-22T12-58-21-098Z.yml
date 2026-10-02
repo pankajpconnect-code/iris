@@ -1,0 +1,70 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - button "Console" [ref=f5e4] [cursor=pointer]
+      - button "Runner" [ref=f5e5] [cursor=pointer]
+    - generic [ref=f5e6]: no collection
+    - combobox "Active environment" [ref=f5e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f5e8] [cursor=pointer]
+    - generic "Per-request timeout in seconds — applies to Send and the Runner" [ref=f5e9]:
+      - generic [ref=f5e10]: Timeout
+      - spinbutton "Timeout s" [ref=f5e11]: "120"
+      - generic [ref=f5e12]: s
+    - generic [ref=f5e13]: "auth: —"
+    - button "☽" [ref=f5e14] [cursor=pointer]
+  - generic [ref=f5e15]:
+    - complementary [ref=f5e16]:
+      - generic [ref=f5e17]:
+        - button "+ New ▾" [ref=f5e19] [cursor=pointer]
+        - button "↑ Import" [ref=f5e20] [cursor=pointer]
+        - button "↓ Export" [ref=f5e21] [cursor=pointer]
+      - textbox "Search requests…" [ref=f5e23]
+      - generic [ref=f5e24]: Loading collections…
+    - generic [ref=f5e27]:
+      - generic [ref=f5e28]:
+        - combobox [ref=f5e29]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f5e31]
+        - button "Duplicate" [ref=f5e32] [cursor=pointer]
+        - button "Save" [ref=f5e33] [cursor=pointer]
+        - button "Send" [ref=f5e34] [cursor=pointer]
+      - generic [ref=f5e35]:
+        - generic [ref=f5e36] [cursor=pointer]: Body
+        - generic [ref=f5e37] [cursor=pointer]: Params
+        - generic [ref=f5e39] [cursor=pointer]: Headers
+        - generic [ref=f5e41] [cursor=pointer]: Vars
+        - generic [ref=f5e43] [cursor=pointer]: Tests
+        - generic [ref=f5e45] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f5e46]
+      - generic [ref=f5e48]:
+        - generic [ref=f5e49]:
+          - generic [ref=f5e50]: Body
+          - combobox "Body" [ref=f5e51]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f5e52]:
+          - generic [ref=f5e53]:
+            - button "✦ Beautify" [ref=f5e54] [cursor=pointer]
+            - button "Find" [ref=f5e55] [cursor=pointer]
+            - button "Wrap" [ref=f5e56] [cursor=pointer]
+            - button "Full Screen" [ref=f5e57] [cursor=pointer]
+          - generic [ref=f5e58]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f5e59]
+      - generic [ref=f5e62]:
+        - generic [ref=f5e63]: —
+        - generic [ref=f5e66]:
+          - generic [ref=f5e67] [cursor=pointer]: Body
+          - generic [ref=f5e68] [cursor=pointer]: Headers
+          - generic [ref=f5e69] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f5e70]
+  - text: locked

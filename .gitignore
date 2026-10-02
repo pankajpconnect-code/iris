@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Iris runtime data — local collections, environments, venv, logs and icon
+# build byproducts.
+collections/
+environments/
+runs/
+.venv/
+*.log
+.save_bridge_last_dir
+icon/Iris-master.png
+icon/Iris.iconset/
+
+**/.DS_Store
+
+# Local planning, design and session-handoff docs — internal working notes,
+# deliberately kept out of git history.
+ROADMAP.md
+ROADMAP-runner-mockup.html
+NEXT-SESSION-PROMPT*.md
+docs/superpowers/

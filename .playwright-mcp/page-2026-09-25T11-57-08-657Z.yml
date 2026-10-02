@@ -1,0 +1,63 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]: OakNorth
+      - generic [ref=f1e10]: Nucleus — Regression Automation Tool
+  - generic [ref=f1e12]:
+    - generic [ref=f1e13]: 1 Setup
+    - generic [ref=f1e15]: 2 Capturing
+    - generic [ref=f1e17]: 3 Map & Review
+    - generic [ref=f1e19]: 4 Complete
+  - main [ref=f1e20]:
+    - generic [ref=f1e21]:
+      - generic [ref=f1e22]: Configuration
+      - heading "Setup" [level=2] [ref=f1e23]
+      - generic [ref=f1e24]:
+        - generic [ref=f1e25]: LLM Auth Method
+        - generic [ref=f1e26]:
+          - generic [ref=f1e27] [cursor=pointer]:
+            - radio "Auto (API key → CLI fallback)" [checked] [ref=f1e28]
+            - text: Auto (API key → CLI fallback)
+          - generic [ref=f1e29] [cursor=pointer]:
+            - radio "Anthropic API key" [ref=f1e30]
+            - text: Anthropic API key
+          - generic [ref=f1e31] [cursor=pointer]:
+            - radio "Claude CLI (SSO login)" [ref=f1e32]
+            - text: Claude CLI (SSO login)
+      - generic [ref=f1e33]:
+        - generic [ref=f1e34]: Upload apiInputs CSV
+        - generic [ref=f1e35] [cursor=pointer]:
+          - button "Choose File" [ref=f1e36]
+          - generic [ref=f1e37]: Click to upload your apiInputs CSV
+        - generic [ref=f1e39] [cursor=pointer]:
+          - checkbox "APPEND TO EXISTING API (adding new test cases to existing artifacts)" [ref=f1e40]
+          - generic [ref=f1e41]: APPEND TO EXISTING API (adding new test cases to existing artifacts)
+      - generic [ref=f1e43]:
+        - generic [ref=f1e44]:
+          - generic [ref=f1e45]: API Name
+          - textbox "API Name" [ref=f1e46]:
+            - /placeholder: e.g. CreateLoanAccount
+        - generic [ref=f1e47]:
+          - generic [ref=f1e48]: Module
+          - combobox "Module" [ref=f1e49]
+        - generic [ref=f1e50]:
+          - generic [ref=f1e51]: Manifest
+          - combobox "Manifest" [ref=f1e52]:
+            - option "A" [selected]
+            - option "B"
+            - option "C"
+        - generic [ref=f1e53]:
+          - generic [ref=f1e54]: Person
+          - combobox "Person" [ref=f1e55]
+        - generic [ref=f1e56]:
+          - generic [ref=f1e57]: Business Function
+          - combobox "Business Function" [ref=f1e58]
+          - generic [ref=f1e59] [cursor=pointer]:
+            - checkbox "EARLY AUTOMATION (backend isn't developed yet)" [ref=f1e60]
+            - generic [ref=f1e61]: EARLY AUTOMATION (backend isn't developed yet)
+        - generic [ref=f1e62]:
+          - generic [ref=f1e63]: Target Host (only capture traffic from this host)
+          - textbox "Target Host (only capture traffic from this host)" [ref=f1e64]:
+            - /placeholder: e.g. dev.nucleus.oaknorth-nonprod.com
+            - text: dev.nucleus.oaknorth-nonprod.com
+      - button "Start Capture" [ref=f1e66] [cursor=pointer]

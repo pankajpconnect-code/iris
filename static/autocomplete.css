@@ -1,0 +1,11 @@
+.var-autocomplete{position:absolute;z-index:50;background:var(--panel2);border:1px solid var(--line);
+                   border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.4);overflow:hidden;font-size:12.5px}
+.var-autocomplete-row{display:flex;justify-content:space-between;gap:12px;padding:6px 10px;cursor:pointer}
+.var-autocomplete-row:hover{background:var(--bg)}
+.var-autocomplete-name{color:var(--accent);font-family:var(--mono)}
+.var-autocomplete-value{color:var(--dim);font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.var-hover-tooltip{position:absolute;z-index:60;background:var(--panel2);border:1px solid var(--line);
+                    border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.4);padding:6px 10px;
+                    font-size:12.5px;font-family:var(--mono);color:var(--dim);white-space:pre-line;
+                    max-width:360px;pointer-events:none}

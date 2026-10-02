@@ -1,0 +1,244 @@
+.work{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+.urlbar{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line);align-items:center}
+select,.url{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+            border-radius:6px;padding:8px 10px;font-size:13px}
+select{font-weight:600}
+.urlbar .var-input-wrap{flex:1}
+.url{font-family:var(--mono);font-size:12.5px}
+.tabs{display:flex;gap:2px;padding:0 12px;border-bottom:1px solid var(--line);align-items:flex-end}
+.tab{padding:8px 12px;color:var(--dim);cursor:pointer;font-size:12.5px;
+     border-bottom:2px solid transparent;background:none;border-left:0;border-right:0;border-top:0}
+.tab:hover{color:var(--txt)}
+.tab.active{color:var(--txt);border-bottom-color:var(--accent)}
+.tab .badge{background:var(--panel2);border-radius:8px;padding:0 5px;font-size:10.5px;margin-left:5px;color:var(--dim)}
+.editor{flex:1;min-height:0;display:flex;flex-direction:column;overflow:auto}
+.pad{padding:12px;overflow:auto;flex:1;min-height:0}
+pre{margin:0;font-family:var(--mono);font-size:12.5px;color:var(--code-txt);white-space:pre-wrap;word-break:break-word}
+/* Line-numbered response body — one
+   gutter number per logical (\n-delimited) line, not per wrapped visual row,
+   so a long unbroken value (e.g. a JWT) that wraps into many rows still only
+   shows its line's number once, at the top. */
+.code-line{display:flex;align-items:flex-start}
+.code-line .line-no{flex:0 0 32px;text-align:right;padding-right:10px;color:var(--dim);
+                     white-space:nowrap;user-select:none;-webkit-user-select:none}
+.code-line .line-content{flex:1;min-width:0}
+.var{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+/* var(--dim) (#8b929e) at 11px/weight 500 on a near-black background barely
+   registered as a heading at all — easy to miss which column is which,
+   especially with several of them (see the Runner results table). Bumped
+   contrast, weight and size, and a heavier bottom border so the header row
+   reads as a distinct band, not a continuation of the body rows. */
+th{color:var(--txt);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;
+   border-bottom:2px solid var(--line);background:var(--panel2)}
+thead{position:sticky;top:0;z-index:1}
+td.mono{font-family:var(--mono);font-size:12px}
+.row-actions{padding:8px 12px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end}
+
+#tab-body{display:flex;flex-direction:column}
+#bodyModeRow{display:flex;align-items:center;gap:8px;flex:0 0 auto;padding-bottom:8px}
+/* .body-editor-wrap{flex:1} (and the fullscreen toggle, #tab-body.body-
+   fullscreen) depend on being inside a flex column that fills #tab-body's
+   height — the raw/urlencoded sections wrap one level deeper than before, so
+   both need to keep participating in that flex column. */
+#bodyRawSection, #bodyUrlencodedSection{display:flex;flex-direction:column;flex:1;min-height:0}
+.body-editor-toolbar{display:flex;align-items:center;gap:10px;padding-bottom:8px;flex:0 0 auto}
+.body-json-error{color:var(--fail);font-size:11.5px}
+.body-editor-wrap{position:relative;flex:1;min-height:220px}
+.body-editor-wrap pre.body-highlight,
+textarea#bodyEditor{
+  position:absolute;inset:0;margin:0;width:100%;height:100%;box-sizing:border-box;
+  font-family:var(--mono);font-size:12.5px;line-height:1.5;padding:10px;
+  border-radius:6px;border:1px solid var(--line);
+  white-space:pre-wrap;word-break:break-word;overflow:auto;
+}
+.body-editor-wrap pre.body-highlight{background:var(--panel);color:var(--code-txt);pointer-events:none;overflow:hidden}
+/* Line-number gutter for the request body editor — one number per \n
+   (renderBodyLineGutter, body-editor.js), scrolled in sync with the textarea
+   by the same syncBodyScroll() that already syncs .body-highlight. Left
+   padding on the two overlays below is bumped so typed/highlighted text
+   starts to the right of the gutter instead of underneath it. Assumes lines
+   mostly don't visually wrap — true for the JSON object bodies this editor
+   holds; a wrapped line still edits/highlights correctly, it just leaves the
+   gutter numbering below it visually off by that line's extra wrapped rows,
+   same tradeoff every gutter-over-a-plain-textarea makes short of a full
+   line-height-measuring editor (out of scope — see body-editor.js's header
+   comment on why this project doesn't pull in a code-editor library). */
+.body-editor-wrap pre.line-gutter{
+  position:absolute;top:0;left:0;bottom:0;width:34px;margin:0;box-sizing:border-box;
+  font-family:var(--mono);font-size:12.5px;line-height:1.5;padding:10px 6px 10px 0;
+  text-align:right;color:var(--dim);overflow:hidden;pointer-events:none;white-space:pre;
+  border-radius:6px 0 0 6px;
+}
+.body-editor-wrap pre.body-highlight,
+.body-editor-wrap textarea#bodyEditor{padding-left:44px}
+/* The UA stylesheet's `code { font-family: monospace }` outranks an
+   inherited author font-family on this child — without this, the
+   highlighted <code> renders in a different monospace font than the
+   textarea's var(--mono), so glyph widths drift out of alignment with the
+   caret/selection across a line. Scroll is handled manually by
+   syncBodyScroll(), so this <pre> doesn't need (and shouldn't show, since
+   it's pointer-events:none) its own scrollbar either. */
+.body-editor-wrap pre.body-highlight code{font:inherit}
+textarea#bodyEditor{background:transparent;color:transparent;caret-color:var(--txt);resize:none;z-index:1}
+textarea#bodyEditor::placeholder{color:var(--dim);opacity:1}
+textarea#bodyEditor::selection{background:rgba(120,170,255,.35)}
+.json-key{color:var(--json-key)}
+.json-string{color:var(--json-string)}
+.json-number{color:var(--json-number)}
+.json-boolean{color:var(--json-boolean)}
+.json-null{color:var(--json-null)}
+.body-var-token{color:var(--accent);font-weight:600}
+.body-find-active{background:rgba(255,214,0,.35);border-radius:2px}
+
+.body-find-bar{display:flex;align-items:center;gap:6px;padding-bottom:8px;flex:0 0 auto}
+.body-find-bar input[type="text"]{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:6px 8px;font-family:var(--mono);font-size:12px;width:160px}
+.body-find-count{color:var(--dim);font-size:11.5px;min-width:48px}
+
+.body-editor-wrap.no-wrap pre.body-highlight,
+.body-editor-wrap.no-wrap textarea#bodyEditor{white-space:pre;word-break:normal;overflow-x:auto}
+
+/* Fullscreen just takes the body tab's own padded box out of the normal
+   layout flow and pins it over everything else — the toolbar/editor
+   structure underneath is untouched, so nothing else needs a fullscreen
+   variant. */
+#tab-body.body-fullscreen{position:fixed;inset:0;z-index:50;background:var(--bg);padding:12px}
+
+.kv-row{display:flex;gap:8px;align-items:center;padding:4px 0}
+.kv-row input[type="text"]{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:6px 8px;font-family:var(--mono);font-size:12px}
+.kv-row.row-disabled{opacity:.45}
+.kv-row .icon-btn{background:none;border:0;color:var(--dim);cursor:pointer;font-size:14px}
+.kv-row .icon-btn:hover{color:var(--fail)}
+
+/* Shared overlay technique for single-line {{var}} highlighting on the URL
+   bar and header values — the same idea as the multi-line body editor
+   overlay (body-editor.js/.body-editor-wrap), minus the line-gutter/wrap
+   concerns a textarea needs. The input stays the real, interactive element
+   (focus, typing, selection, caret); the div behind it — same font, padding
+   and border so the two line up exactly — carries the colored {{var}} text
+   that the input's own (transparent) text is hiding. Font/padding can't be
+   shared via `inherit` (that reads from the parent .var-input-wrap, which
+   has none of its own, not from the sibling input) so each context
+   (.urlbar vs .kv-row) restates the same values its plain input already used.
+*/
+.var-input-wrap{position:relative}
+.var-input-wrap .var-input-highlight{position:absolute;inset:0;margin:0;overflow:hidden;white-space:pre;pointer-events:none}
+.var-input-wrap input{position:relative;z-index:1;width:100%;box-sizing:border-box;caret-color:var(--txt)}
+.var-input-wrap input::selection{background:rgba(120,170,255,.35)}
+
+.kv-row .var-input-wrap{flex:1}
+.kv-row .var-input-wrap .var-input-highlight,
+.kv-row .var-input-wrap input[type="text"]{
+  padding:6px 8px;font-family:var(--mono);font-size:12px;border-radius:6px;
+  border:1px solid var(--line);box-sizing:border-box;
+}
+.kv-row .var-input-wrap .var-input-highlight{background:var(--panel);color:var(--code-txt)}
+.kv-row .var-input-wrap input[type="text"]{background:transparent;color:transparent}
+
+.urlbar .var-input-wrap .var-input-highlight,
+.urlbar .var-input-wrap .url{
+  padding:8px 10px;font-family:var(--mono);font-size:12.5px;border-radius:6px;
+  border:1px solid var(--line);box-sizing:border-box;
+}
+.urlbar .var-input-wrap .var-input-highlight{background:var(--panel);color:var(--code-txt)}
+.urlbar .var-input-wrap .url{background:transparent;color:transparent}
+
+.kv-row-labels{display:flex;gap:8px;padding:2px 0 6px;color:var(--dim);font-size:11px;
+  text-transform:uppercase;letter-spacing:.5px}
+.kv-row-labels .kv-label{flex:1}
+.kv-row-labels .kv-spacer{flex:0 0 auto}
+.kv-row-labels .kv-spacer.chk{width:20px}
+.kv-row-labels .kv-spacer.del{width:20px}
+
+textarea#headersBulkEditor{width:100%;min-height:160px;background:var(--panel);color:var(--txt);
+  border:1px solid var(--line);border-radius:6px;padding:10px;font-family:var(--mono);font-size:12.5px;resize:vertical}
+
+.vars-note{background:rgba(242,107,33,.09);border:1px solid rgba(242,107,33,.35);
+           border-radius:6px;padding:8px 10px;margin-bottom:12px;font-size:12px;color:var(--note-txt)}
+.hint{color:var(--dim);font-size:11.5px;padding:6px 12px;border-top:1px solid var(--line)}
+.hint.plain{border:0;padding-left:0}
+.console-var-secret-label{color:var(--dim);font-size:11px;margin-left:6px}
+
+.test-row{display:grid;grid-template-columns:78px 74px 1fr 100px 1fr 30px;gap:6px;align-items:center;padding:4px 0}
+.test-row select, .test-row input{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:5px 6px;font-family:var(--mono);font-size:12px;width:100%}
+
+.auth-grid{display:grid;grid-template-columns:160px 1fr;gap:10px 14px;align-items:center;max-width:640px}
+.auth-grid label{color:var(--dim);font-size:12px}
+.auth-grid input,.auth-grid select{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:7px 9px;font-size:12.5px}
+.auth-grid .check-row{display:flex;align-items:center;gap:8px;grid-column:1 / -1}
+
+.resp{height:44%;flex:0 0 auto;border-top:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+/* Drag-to-resize divider above the response panel (Console and Runner both
+   ship a fixed 44% split with no way to see more of a large response — see
+   resize.js). The 1px border above stays visual; this sits on top of it with
+   a wider hit area so the drag target isn't a literal single pixel. */
+.resp-resize-handle{flex:0 0 auto;height:5px;margin-top:-5px;cursor:ns-resize;position:relative;z-index:1}
+/* A hover-only cursor change is invisible until you happen to mouse over a
+   1px border — nothing told a user this line was draggable at all. The pill
+   sits centered on the handle at rest and stays visible, not just on hover. */
+.resp-resize-handle::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:32px;height:3px;border-radius:2px;background:var(--line);pointer-events:none}
+.resp-resize-handle:hover::after,.resp-resize-handle.dragging::after{background:var(--accent)}
+.resp-head{display:flex;align-items:center;gap:12px;padding:9px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.status{display:flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+/* "running" previously just swapped to a static accent color — no different
+   from "idle" at a glance until the status text next to it changed. Pulsing
+   is the actual in-flight signal that was missing before; used by both
+   the Runner (already applied this class throughout a run) and the Console
+   Send button (send.js sets it for the request's own round trip). */
+/* A slow opacity/scale pulse (1s per cycle) needs most of that second to
+   read as motion at all — against a local stub or a fast API, the request
+   round-trips before the animation has visibly changed anything, so it
+   looked like nothing had happened. A spinning ring shows a different
+   rotation angle from the very first frame, so it reads as "in progress"
+   immediately regardless of how long the request actually takes. */
+.dot.running{width:10px;height:10px;background:none;border:2px solid var(--line);
+  border-top-color:var(--accent);border-radius:50%;animation:dot-spin .6s linear infinite}
+.dot.bad{background:var(--fail)}
+@keyframes dot-spin{to{transform:rotate(360deg)}}
+.meta{color:var(--dim);font-size:12px}
+/* #runnerMeta carries the CSV name + "iteration N/total" progress — that's
+   primary run status, not secondary detail (unlike most other .meta uses,
+   e.g. response timing/size), so the shared dim styling undersold it. */
+#runnerMeta{color:var(--txt);font-weight:600}
+.counter{margin-left:auto;display:flex;gap:14px;font-size:12px;align-items:center}
+.counter b{font-family:var(--mono)}
+.c-ok b{color:var(--ok)} .c-fail b{color:var(--fail)} .c-flag b{color:var(--flag)}
+.st{font-family:var(--mono);font-size:11.5px;padding:1px 6px;border-radius:4px}
+.st.ok{color:var(--ok);background:rgba(76,169,113,.13)}
+.st.bad{color:var(--fail);background:rgba(217,83,79,.13)}
+.resp-tabs{display:flex;gap:2px;padding:0 12px;border-bottom:1px solid var(--line)}
+.test-result-row{padding:3px 0}
+/* Re-sending previously left the OLD response's body/headers/raw sitting on
+   screen, unchanged, for the whole round trip — only the spinner (.dot.running
+   above) and status text said anything was happening, easy to miss, and if
+   the round trip outlives the tab (a refresh, e.g.) there was no trace a new
+   request had ever gone out. Dimming (not clearing) the previous result
+   while .pending is set on .resp makes clear it's stale-and-about-to-be-
+   replaced without losing it in the meantime, the way commercial API clients
+   "freeze" the prior response until the next one lands. */
+.resp.pending .pad{opacity:.45}
+
+.batch-setup{display:flex;gap:8px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.batch-setup .meta{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* A collection's rendered description (markdown.js) — plain-language docs,
+   not code, so it gets normal prose styling rather than inheriting the
+   monospace/JSON look the rest of .pad's contents use. #overviewPane stays
+   an unconstrained full-width scroll container (like every other .pad
+   panel, so its scrollbar sits at the pane's outer edge) — .overview-content
+   is the inner box that actually gets centered to a comfortable reading
+   width, matching Postman's doc-pane layout. */
+.overview-content{max-width:760px;margin:0 auto}
+.overview-content h1,.overview-content h2,.overview-content h3{margin:18px 0 8px;color:var(--txt)}
+.overview-content h1:first-child,.overview-content h2:first-child,.overview-content h3:first-child{margin-top:0}
+.overview-content p{margin:0 0 12px;color:var(--txt);line-height:1.5}
+.overview-content ul{margin:0 0 12px;padding-left:20px;color:var(--txt);line-height:1.5}
+.overview-content a{color:var(--accent)}
+.overview-content img{max-width:100%;height:auto;border-radius:6px;margin:8px 0}

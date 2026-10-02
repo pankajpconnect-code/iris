@@ -1,0 +1,64 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - button "Console" [ref=e4] [cursor=pointer]
+      - button "Runner" [ref=e5] [cursor=pointer]
+    - generic [ref=e6]: no collection
+    - combobox "Active environment" [ref=e7]:
+      - option "No Environment" [selected]
+    - button "⚙ Environments" [ref=e8] [cursor=pointer]
+    - generic [ref=e9]: "auth: —"
+    - button "⚙ Settings" [ref=e10] [cursor=pointer]
+    - button "☽" [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - complementary [ref=e13]:
+      - generic [ref=e14]:
+        - button "+ New ▾" [ref=e16] [cursor=pointer]
+        - button "↑ Import" [ref=e17] [cursor=pointer]
+        - button "↓ Export" [ref=e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=e20]
+      - generic [ref=e21]: Loading collections…
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - combobox [ref=e26]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=e28]
+        - button "Duplicate" [ref=e29] [cursor=pointer]
+        - button "Save" [ref=e30] [cursor=pointer]
+        - button "Send" [ref=e31] [cursor=pointer]
+      - generic [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Body
+        - generic [ref=e34] [cursor=pointer]: Params
+        - generic [ref=e36] [cursor=pointer]: Headers
+        - generic [ref=e38] [cursor=pointer]: Vars
+        - generic [ref=e40] [cursor=pointer]: Tests
+        - generic [ref=e42] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=e43]
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: Body
+          - combobox "Body" [ref=e48]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - button "✦ Beautify" [ref=e51] [cursor=pointer]
+            - button "Find" [ref=e52] [cursor=pointer]
+            - button "Wrap" [ref=e53] [cursor=pointer]
+            - button "Full Screen" [ref=e54] [cursor=pointer]
+          - generic [ref=e55]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=e56]
+      - generic [ref=e59]:
+        - generic [ref=e60]: —
+        - generic [ref=e63]:
+          - generic [ref=e64] [cursor=pointer]: Body
+          - generic [ref=e65] [cursor=pointer]: Headers
+          - generic [ref=e66] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=e67]
+  - text: locked

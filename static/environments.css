@@ -1,0 +1,51 @@
+.env-select{background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  border-radius:6px;padding:5px 9px;font-size:12px;max-width:160px}
+
+.env-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;
+  align-items:center;justify-content:center;z-index:50}
+.env-modal-box{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  width:640px;max-width:92vw;max-height:80vh;display:flex;flex-direction:column;overflow:hidden}
+.env-modal-head{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;border-bottom:1px solid var(--line)}
+.env-modal-head .icon-btn{background:none;border:0;color:var(--dim);font-size:18px;cursor:pointer}
+.env-modal-head .icon-btn:hover{color:var(--fail)}
+.env-modal-body{display:flex;flex:1;min-height:0}
+.env-modal-list{width:200px;flex:0 0 auto;border-right:1px solid var(--line);
+  padding:10px;overflow:auto}
+.env-modal-editor{flex:1;padding:14px;overflow:auto}
+.env-modal-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;
+  padding:10px 14px;border-top:1px solid var(--line)}
+/* position:fixed (not absolute) anchors this to the window corner, not to
+   .env-modal-box — it must stay clear of the editor's rows/buttons no matter
+   how many variables are in the list, and overflow:hidden on .env-modal-box
+   doesn't clip fixed-position descendants, so it isn't boxed in by the modal
+   either. z-index above .env-modal (50) so the backdrop can't cover it. */
+.env-modal-saved-flash{position:fixed;top:24px;right:24px;z-index:60;
+  background:var(--ok);color:#fff;font-size:14px;font-weight:700;
+  padding:12px 22px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.35);
+  animation:env-modal-saved-pop .22s ease-out}
+@keyframes env-modal-saved-pop{
+  0%{opacity:0;transform:translateY(-8px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+.env-row{display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:6px 8px;border-radius:6px;cursor:pointer;font-size:12.5px}
+.env-row:hover{background:var(--panel2)}
+.env-row.active{background:var(--panel2);color:var(--accent)}
+.env-row .icon-btn{background:none;border:0;color:var(--dim);cursor:pointer}
+.env-row .icon-btn:hover{color:var(--fail)}
+
+#envVarsBody tr.row-disabled{opacity:.45}
+#envVarsBody .env-var-name{width:100%}
+#envVarsBody .icon-btn{background:none;border:0;color:var(--dim);cursor:pointer;font-size:14px}
+#envVarsBody .icon-btn:hover{color:var(--fail)}
+/* The "session only" caption under a secret's value input makes that cell
+   taller than the others — table cells default to vertical-align:middle,
+   which then re-centers the checkbox/name/delete cells against the taller
+   one, visibly dropping them below the input's own top edge. */
+#envVarsBody td{vertical-align:top;padding-top:8px}
+#envVarsBody .env-var-enabled{margin-top:7px}
+#envVarsBody .console-var-secret-label{display:block;margin-left:0;margin-top:3px}
+
+textarea#envVarsBulkEditor{width:100%;min-height:220px;background:var(--panel);color:var(--txt);
+  border:1px solid var(--line);border-radius:6px;padding:10px;font-family:var(--mono);font-size:12.5px;resize:vertical}

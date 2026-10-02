@@ -1,0 +1,66 @@
+- generic [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - button "Console" [ref=f1e4] [cursor=pointer]
+      - button "Runner" [ref=f1e5] [cursor=pointer]
+    - generic [ref=f1e6]: Retry Fix Demo (local mock)
+    - combobox "Active environment" [ref=f1e7]:
+      - option "No Environment" [selected]
+      - option "Dev Playground"
+      - option "Dev Testground"
+      - option "UAT Playground"
+    - button "⚙ Environments" [ref=f1e8] [cursor=pointer]
+    - generic "Per-request timeout in seconds — applies to Send and the Runner" [ref=f1e9]:
+      - generic [ref=f1e10]: Timeout
+      - spinbutton "Timeout s" [ref=f1e11]: "120"
+      - generic [ref=f1e12]: s
+    - generic [ref=f1e13]: "auth: none"
+    - button "☽" [ref=f1e14] [cursor=pointer]
+  - generic [ref=f1e1269]:
+    - generic [ref=f1e1270]:
+      - textbox "Search a request, folder or collection…" [active] [ref=f1e1271]: (whole collection)
+      - combobox [ref=f1e1272]:
+        - option "No Environment" [selected]
+        - option "Dev Playground"
+        - option "Dev Testground"
+        - option "UAT Playground"
+      - button "CSV" [ref=f1e1273] [cursor=pointer]
+      - generic [ref=f1e1274]: No CSV — runs once
+      - generic "Leave blank to run once (no CSV) or once per CSV row (CSV attached). Type a number only to CAP how many rows/iterations run." [ref=f1e1275]:
+        - text: Iterations
+        - spinbutton "Iterations" [ref=f1e1276]
+      - generic "Run this many iterations at the same time instead of one after another. Requests within one iteration still run in order — the second request may need a value captured by the first. Requires 'Reset captures each iteration'." [ref=f1e1277]:
+        - text: Parallel
+        - spinbutton "Parallel" [ref=f1e1278]: "1"
+        - text: locked
+      - button "Options 3 retries" [ref=f1e1349] [cursor=pointer]
+      - button "Preview" [ref=f1e1281] [cursor=pointer]
+      - button "Run" [ref=f1e1282] [cursor=pointer]
+      - button "Stop" [disabled] [ref=f1e1283]
+    - generic [ref=f1e1284]:
+      - textbox "Filter results…" [ref=f1e1285]
+      - combobox [ref=f1e1286]:
+        - option "All requests" [selected]
+      - button "Failures only" [ref=f1e1287] [cursor=pointer]
+      - button "Compact" [ref=f1e1288] [cursor=pointer]
+      - button "History" [ref=f1e1289] [cursor=pointer]
+      - button "Export" [disabled] [ref=f1e1290]
+      - button "Clear" [ref=f1e1291] [cursor=pointer]
+    - generic [ref=f1e1294]:
+      - generic [ref=f1e1295]: —
+      - generic [ref=f1e1297]:
+        - generic [ref=f1e1298] [cursor=pointer]: Response
+        - generic [ref=f1e1299] [cursor=pointer]: Headers
+        - generic [ref=f1e1300] [cursor=pointer]: Request
+      - generic [ref=f1e1301]: Select a result.
+    - generic [ref=f1e1303]:
+      - generic [ref=f1e1305]: Idle
+      - generic [ref=f1e1306]:
+        - generic [ref=f1e1307]: OK 0
+        - generic [ref=f1e1308]: Failed 0
+        - generic [ref=f1e1309]: Flagged 0
+        - generic [ref=f1e1310]: Errored 0
+    - generic [ref=f1e1312]:
+      - text: No CSV attached — the sequence runs once. Attach a CSV to run once per row (an unresolved
+      - code [ref=f1e1313]: "{{col}}"
+      - text: in a header, URL or body fails the run up front — a typo'd column name, not a bug).

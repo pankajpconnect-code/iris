@@ -1,0 +1,64 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - button "Console" [ref=f6e4] [cursor=pointer]
+      - button "Runner" [ref=f6e5] [cursor=pointer]
+    - generic [ref=f6e6]: no collection
+    - combobox "Active environment" [ref=f6e7]:
+      - option "No Environment" [selected]
+    - button "⚙ Environments" [ref=f6e8] [cursor=pointer]
+    - generic [ref=f6e9]: "auth: —"
+    - button "⚙ Settings" [ref=f6e10] [cursor=pointer]
+    - button "☽" [ref=f6e11] [cursor=pointer]
+  - generic [ref=f6e12]:
+    - complementary [ref=f6e13]:
+      - generic [ref=f6e14]:
+        - button "+ New ▾" [ref=f6e16] [cursor=pointer]
+        - button "↑ Import" [ref=f6e17] [cursor=pointer]
+        - button "↓ Export" [ref=f6e18] [cursor=pointer]
+      - textbox "Search requests…" [ref=f6e20]
+      - generic [ref=f6e21]: Loading collections…
+    - generic [ref=f6e24]:
+      - generic [ref=f6e25]:
+        - combobox [ref=f6e26]:
+          - option "GET" [selected]
+          - option "POST"
+          - option "PUT"
+          - option "PATCH"
+          - option "DELETE"
+        - textbox "Enter request URL" [ref=f6e28]
+        - button "Duplicate" [ref=f6e29] [cursor=pointer]
+        - button "Save" [ref=f6e30] [cursor=pointer]
+        - button "Send" [ref=f6e31] [cursor=pointer]
+      - generic [ref=f6e32]:
+        - generic [ref=f6e33] [cursor=pointer]: Body
+        - generic [ref=f6e34] [cursor=pointer]: Params
+        - generic [ref=f6e36] [cursor=pointer]: Headers
+        - generic [ref=f6e38] [cursor=pointer]: Vars
+        - generic [ref=f6e40] [cursor=pointer]: Tests
+        - generic [ref=f6e42] [cursor=pointer]:
+          - text: Auth
+          - generic "Auth is shared across the whole collection, not just this request" [ref=f6e43]
+      - generic [ref=f6e45]:
+        - generic [ref=f6e46]:
+          - generic [ref=f6e47]: Body
+          - combobox "Body" [ref=f6e48]:
+            - option "raw" [selected]
+            - option "x-www-form-urlencoded"
+        - generic [ref=f6e49]:
+          - generic [ref=f6e50]:
+            - button "✦ Beautify" [ref=f6e51] [cursor=pointer]
+            - button "Find" [ref=f6e52] [cursor=pointer]
+            - button "Wrap" [ref=f6e53] [cursor=pointer]
+            - button "Full Screen" [ref=f6e54] [cursor=pointer]
+          - generic [ref=f6e55]:
+            - generic [aria-hidden]: "1"
+            - textbox "Request body (JSON)" [ref=f6e56]
+      - generic [ref=f6e59]:
+        - generic [ref=f6e60]: —
+        - generic [ref=f6e63]:
+          - generic [ref=f6e64] [cursor=pointer]: Body
+          - generic [ref=f6e65] [cursor=pointer]: Headers
+          - generic [ref=f6e66] [cursor=pointer]: Raw
+        - button "Save Response" [disabled] [ref=f6e67]
+  - text: locked

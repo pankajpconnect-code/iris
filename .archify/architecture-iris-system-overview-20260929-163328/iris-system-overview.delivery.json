@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "ada142bb-baed-4bba-98c8-3bcd26307001",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/candidate.json",
+  "output": "/Users/pankaj.pandey/Desktop/fineract-workspace/iris/.archify/architecture-iris-system-overview-20260929-163328/iris-system-overview.html",
+  "specification": {
+    "sha256": "f4ecf2feca2f3b7c3ec01d68790ec56ee397516b943f5da42966c5ac62901b29",
+    "bytes": 8601
+  },
+  "artifact": {
+    "sha256": "e70dfd7036e115926be57b4fe240d251c14104043b31facfe88dad3740379d72",
+    "bytes": 784770
+  }
+}
